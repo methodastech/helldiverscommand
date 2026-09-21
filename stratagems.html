@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.className+=" js";</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06070A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/app/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bmws.css?v=1789681734">
+<link rel="stylesheet" href="assets/core.css?v=1789681734">
+<link rel="stylesheet" href="assets/pages.css?v=1789681734">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<title>Stratagem Codex · all 93 codes | Helldive Command</title>
+<meta name="description" content="All 93 Helldivers 2 stratagem input codes with cooldown, uses and call-in time. Filter, search, and drill any code in the browser.">
+</head>
+<body>
+
+<header class="sec phead" style="padding-bottom:26px">
+  <div class="phead-bg"><img src="assets/img/art/cine-eaglestorm.webp" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+  <h1 class="t-h1" style="margin:18px 0 16px" data-decode>Stratagem codex</h1>
+  <p class="t-lead">All 93 stratagem codes with cooldown, call-in time and uses. Click any card to drill its code, or search by name or arrows.</p>
+  <div class="hero-cta">
+    <a class="btn" href="arcade.html#hero">Play Stratagem Hero <span class="ar">&#9654;</span></a>
+    <button class="btn ghost" id="randomBtn">Random code drill</button>
+  </div>
+  </div>
+</header>
+
+<div class="hazard thin"></div>
+
+<section class="sec wrap" style="padding-top:34px">
+<h2 class="sr-only">All stratagems</h2>
+  <div class="fbar">
+    <button class="chip on" data-g="all">All <span id="cAll"></span></button>
+    <button class="chip" data-g="offensive">Offensive</button>
+    <button class="chip" data-g="supply">Supply</button>
+    <button class="chip" data-g="defensive">Defensive</button>
+    <button class="chip" data-g="mission">Mission</button>
+    <input class="search" id="q" type="search" placeholder="Search name or code (try DLDUUR)" autocomplete="off">
+    <span class="count" id="resCount"></span>
+  </div>
+  <div class="sgrid" id="grid"></div>
+  <div class="empty hide" id="none">No stratagem matches that filter</div>
+</section>
+
+<!-- drill modal -->
+<div class="modal" id="drill" role="dialog" aria-modal="true" aria-label="Stratagem drill">
+  <button class="modal-x" id="drillX">Close &times;</button>
+  <div class="modal-box">
+    <div class="game" style="clip-path:none;border:0">
+      <div class="game-top"><h3 id="dTitle">Drill</h3>
+        <div class="game-stats"><div><b id="dStreak">0</b><span>Streak</span></div><div><b id="dBest">&mdash;</b><span>Best time</span></div><div><b id="dReps">0</b><span>Practices</span></div></div>
+      </div>
+      <div class="game-body"><div class="sh-stage">
+        <div class="sh-icon"><img id="dIcon" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div>
+        <div class="sh-name" id="dName"></div>
+        <div class="sh-cat" id="dCat"></div>
+        <div class="arrows sh-arrows" id="dArrows"></div>
+        <div class="sh-msg" id="dMsg">Hold Ctrl, or take out the stratagem</div>
+        <button type="button" class="btn sm ghost d-arm" id="dArm" aria-pressed="false">Take out stratagem</button>
+        <div class="dpad" id="dPad"></div>
+        <dl style="margin-top:26px;text-align:left;max-width:420px;margin-inline:auto" id="dStats"></dl>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<script src="data/stratagems.js?v=1789681734"></script>
+<script src="data/images.js?v=1789681734"></script>
+<script src="assets/core.js?v=1789681734"></script>
+<script src="assets/motion.js?v=1789681734"></script>
+<script src="data/stats.js?v=1789681734"></script>
+<script src="data/zones.js?v=1789681734"></script>
+<script src="data/dmgicons.js?v=1789681734"></script><script src="assets/statsui.js?v=1789681734"></script>
+<script src="assets/stratagems.js?v=1789681734"></script>
+<script src="assets/stars.js?v=1789681734"></script>
+</body>
+</html>

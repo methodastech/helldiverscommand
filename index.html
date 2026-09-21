@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.className+=" js";</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06070A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/app/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bmws.css?v=1789681734">
+<link rel="stylesheet" href="assets/core.css?v=1789681734">
+<link rel="stylesheet" href="assets/pages.css?v=1789681734">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<title>Helldive Command · Helldiver Longevity Program</title>
+<meta name="description" content="Classified continuation training for Helldivers 2: live war, every stratagem code, weapon and weak point, the real terminals, and drills that fit the wait.">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-reel" id="heroReel" aria-hidden="true"></div>
+  <div class="hero-vid" id="heroVid" aria-hidden="true"></div>
+
+  <div class="hero-in wrap">
+    <div class="hero-plate" data-reveal>
+      <div class="hp-cell"><img class="hp-flag" src="assets/img/brand/flag.webp" alt="Flag of Super Earth"><div><b>Federation of Super Earth</b><span>Helldiver Longevity Program</span></div></div>
+      <div class="hp-cell red"><img class="hp-seal" src="assets/img/brand/ministry-defense.svg" alt=""><div><b>Ministry of Defense</b><span id="warTag">Super Helldive readiness directive 7-A</span></div></div>
+    </div>
+    <h1 class="t-mega">Dive harder<em data-decode>Die less!</em></h1>
+    <p class="t-lead">Sweet Liberty, you lived! Reinforcement does not bring you back, it brings somebody else. The Longevity Program is how you stay the diver wearing this number: every stratagem code, every weak point, the live war, the real terminals.</p>
+    <div class="hero-cta">
+      <a class="btn" href="arcade.html">Report for training! <span class="ar">&#9654;</span></a>
+      <a class="btn ghost" href="stratagems.html">Open the codex</a>
+    </div>
+    <a class="hero-now" href="#now">Got thirty seconds, citizen? <i>&#9660;</i></a>
+  </div>
+
+  <div class="hero-credit-row"><p class="hero-credit" id="heroCredit">Best moments: in-game cinematics and captures from <a href="https://helldivers.wiki.gg/" target="_blank" rel="noopener noreferrer">the Helldivers Wiki</a></p></div>
+
+  <div class="hero-strip big" id="heroStrip">
+    <div><img class="hs-ic" src="assets/img/brand/skull.webp" alt=""><b><span id="hsPlayers">&hellip;</span></b><span>Helldivers online</span></div>
+    <a href="stratagems.html"><img class="hs-ic" src="assets/img/strat/orbital_precision_strike.webp" alt=""><b>93</b><span>Stratagem codes available</span></a>
+    <a href="arsenal.html"><img class="hs-ic" src="assets/img/weapons/ar-23-liberator.webp" alt=""><b>109</b><span>Weapons catalogued</span></a>
+    <a href="enemies.html"><img class="hs-ic" src="assets/img/enemies/charger.webp" alt=""><b>57</b><span>Enemy weak points</span></a>
+    <a href="intel.html#techniques"><img class="hs-ic" src="assets/img/strat/eagle_airstrike.webp" alt=""><b><span id="hsTech">&hellip;</span></b><span>Unique strategies</span></a>
+  </div>
+  </div>
+
+</section>
+<div class="hazard"></div>
+
+<!-- ============ DEAD TIME ============ -->
+<section class="sec wrap now" id="now">
+  <div class="sec-head" style="margin-bottom:clamp(26px,3vw,46px)">
+    <div>
+      <h2 class="t-h2" data-decode>Featured now</h2>
+    </div>
+    <p class="t-lead" style="max-width:42ch;margin:0">A code to drill, the current order from High Command, and one enemy weak point. Three things worth the thirty seconds you are waiting anyway.</p>
+  </div>
+  <div class="now-grid">
+    <article class="now-c" style="--acc:var(--red)">
+      <div class="nc-art" id="nfArt"><img class="nc-bg" src="assets/img/art/cine-hangar.webp" alt=""><div class="nc-vis" id="nfVis"></div><span class="nc-cap"><b id="nfName">&mdash;</b></span></div>
+      <div class="nc-in">
+      <div class="now-h"><span class="tag red">Awaiting reinforcement</span><span class="now-t">~20 s</span></div>
+      <h3>Drill one code!</h3>
+      <p>Hold <kbd class="kc" id="nfHoldKey">Ctrl</kbd> and input the arrows with <kbd class="kc">W</kbd> <kbd class="kc">A</kbd> <kbd class="kc">S</kbd> <kbd class="kc">D</kbd> or the arrow keys, exactly as in the field. Tap the card if you need to see the code.</p>
+      <div class="now-flash" id="nowFlash" role="button" tabindex="0" aria-label="Flash card: tap to reveal the code"><img id="nfIcon" alt="" src=""><div class="arrows" id="nfArrows"></div><span class="mono dim" id="nfHint">Hold Ctrl and input the code</span></div>
+      <div class="now-acts"><a class="btn sm" href="arcade.html?go=rush">Play Code Rush <span class="ar">&#9654;</span></a><button type="button" class="btn sm ghost d-arm" id="nfArm" aria-pressed="false">Take out stratagem</button></div>
+      </div>
+    </article>
+    <article class="now-c" style="--acc:var(--blue)">
+      <div class="nc-art" id="moArt"><img class="nc-bg" src="assets/img/art/cine-flag.webp" alt=""><img class="nc-glyph" id="moGlyph" src="assets/img/brand/super-earth-emblem.svg" alt=""><span class="nc-cap"><b id="moFront">High Command</b></span></div>
+      <div class="nc-in">
+      <div class="now-h"><span class="tag blue">Between dives</span><span class="now-t">~2 min</span></div>
+      <h3 id="nowMoTitle">Reading the Major Order&hellip;</h3>
+      <p id="nowMoBrief">High Command's current order, the planets that matter tonight, and the builds that clear them. Obedience is efficiency!</p>
+      <div class="now-mo" id="nowMoTimer"></div>
+      <ul class="now-dsp" id="nowDsp" hidden></ul>
+      <div class="now-acts"><a class="btn sm ghost" href="meta.html">Loadouts</a></div>
+      </div>
+    </article>
+    <article class="now-c wide" style="--acc:var(--bug)">
+      <div class="nc-art" id="neArt"><img class="nc-bg" id="neBg" src="assets/img/art/cine-nest.webp" alt=""><img class="nc-unit" id="neImg" alt="" src=""><span class="nc-cap"><i id="neSub">Enemy</i><b id="neName">&mdash;</b></span></div>
+      <div class="nc-in">
+      <div class="now-h"><span class="tag" style="color:var(--bug);border-color:rgba(255,122,24,.4);background:rgba(255,122,24,.07)">Extracting</span><span class="now-t">~90 s</span></div>
+      <h3>Learn one weak point!</h3>
+      <div class="now-enemy" id="nowEnemy"><p><i>Weak point</i><em id="neWeak"></em></p><p id="neKill"></p></div>
+      <div class="ne-zone" id="neZone" hidden></div>
+      <div class="now-acts"><button class="btn sm" type="button" id="neNext">Another enemy <span class="ar">&#9654;</span></button><a class="btn sm ghost" id="neOpen" href="enemies.html">Full card</a></div>
+      </div>
+    </article>
+  </div>
+  <p class="now-install" id="nowInstall" hidden><button class="btn sm ghost" type="button" id="installBtn">Add to home screen</button><span id="installNote">One tap from the lock screen. The codex works offline in the drop pod. Approved by the Ministry of Convenience!</span></p>
+</section>
+
+<div class="hazard thin"></div>
+
+<!-- ============ SUPER HELLDIVE ============ -->
+<section class="sec wrap" id="d10" style="padding-top:0">
+  <div class="sec-head">
+    <div><h2 class="t-h2" data-decode>Super Helldive, declassified!</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">What actually changes when you dial the operation to ten. The Ministry of Truth rates this information 100 percent accurate and 60 percent survivable.</p>
+  </div>
+  <ol class="dladder" id="dladder" aria-label="Difficulty ladder, one to ten"></ol>
+  <div class="dfacts">
+    <article class="dfact"><img class="df-bg" src="assets/img/art/cine-frostown.webp" alt="" loading="lazy"><img class="df-ic" src="assets/img/obj/extract.svg" alt=""><b>3 &times; 40</b><i>Operation</i><h3>Three missions, forty minutes each</h3><p>One operation is three drops with four to five side objectives apiece. Fail one and the operation fails with it. Bring the whole squad's patience, citizen!</p></article>
+    <article class="dfact"><img class="df-bg" src="assets/img/art/cine-hangar.webp" alt="" loading="lazy"><img class="df-ic" src="assets/img/ui/medal.svg" alt=""><b>9 / 12 / 15</b><i>Pay in medals</i><h3>Nine, twelve, fifteen medals</h3><p>The best pay in the galaxy, per mission, in that order. Super Earth rewards those who come back. It also rewards those who do not, slightly less.</p></article>
+    <article class="dfact"><img class="df-bg" src="assets/img/art/cine-lesath.webp" alt="" loading="lazy"><img class="df-ic" src="assets/img/ui/super-credits.svg" alt=""><b>40 / 40 / 6</b><i>Samples per operation</i><h3>Forty common, forty rare, six super, plus confidential</h3><p>The full haul for the Ship Master's shopping list, and one sample type the Ministry declines to name. Do not ask. Extract with it.</p></article>
+    <article class="dfact"><img class="df-bg" src="assets/img/art/cine-eaglestorm.webp" alt="" loading="lazy"><img class="df-ic" src="assets/img/difficulty/super-helldive-difficulty-png.webp" alt=""><b>300%</b><i>Requisition and XP</i><h3>A different game</h3><p>Efficiency, uptime and discipline, not raw power. Nine gives you three mega nests or fortresses. Ten stops apologising. Every code below is a second you do not spend dying.</p></article>
+  </div>
+  <p class="now-install" style="margin-top:16px"><button class="btn sm" type="button" onclick="window.HD.record()">Am I Super Helldive ready? <span class="ar">&#9654;</span></button><span>Your service record grades you. Twelve certifications earns the top grade. Freedom never sleeps!</span></p>
+</section>
+
+<div class="hazard thin"></div>
+
+<!-- ============ RULES ============ -->
+<section class="sec" style="background:linear-gradient(180deg,var(--void),#080A0E)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2 class="t-h2" data-decode>Twelve rules that keep you spreading Democracy!</h2>
+      </div>
+      <p class="t-lead" style="max-width:44ch;margin:0">Loadouts change every patch. Doctrine does not. Internalise these and Super Helldive becomes a pacing problem instead of a funeral.</p>
+    </div>
+    <div class="doc rv">
+      <ol class="doc-list" id="rules" aria-label="Doctrine"></ol>
+      <div class="doc-view" id="docView">
+        <div class="doc-vid" id="docVid" aria-hidden="true"></div>
+        <img class="doc-art" id="docArt" alt="" src="">
+        <div class="doc-over">
+          <div class="doc-top"><span class="count" id="docNum">Rule 1</span><span class="count" id="docSrc"></span></div>
+          <img class="doc-ic" id="docIc" alt="" src="">
+          <h3 id="docTitle"></h3>
+          <p id="docText"></p>
+          <div class="doc-acts"><button type="button" class="btn sm ghost" id="docPrev">Previous</button><button type="button" class="btn sm" id="docNext">Next rule <span class="ar">&#9654;</span></button><span class="doc-credit" id="docCredit"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hazard thin"></div>
+
+<!-- ============ FACTIONS ============ -->
+<section class="sec wrap">
+  <div class="sec-head">
+    <div>
+      <h2 class="t-h2" data-decode>Three enemies of Freedom!</h2>
+    </div>
+    <a class="btn ghost sm" href="enemies.html">Full bestiary <span class="ar">&#9654;</span></a>
+  </div>
+  <div class="facs" id="facs"></div>
+</section>
+
+<!-- ============ CODEX ============ -->
+<section class="sec wrap">
+  <div class="sec-head">
+    <div>
+      <h2 class="t-h2" data-decode>Everything, indexed. For Super Earth!</h2>
+    </div>
+  </div>
+  <nav class="codex rv">
+    <a class="cx brk cx-art" href="stratagems.html" data-art="cine_eaglestorm"><span class="cx-ic"><img src="assets/img/strat/orbital_precision_strike.webp" alt="" loading="lazy"></span><b>93</b><h3>Stratagem codex</h3><p>Every code, cooldown and call-in time. Search it, filter it, drill it on the spot.</p><span class="go">Open <i>&#9654;</i></span></a>
+    <a class="cx brk cx-art" href="arsenal.html" data-art="cine_hangar"><span class="cx-ic"><img src="assets/img/weapons/ar-23-liberator.webp" alt="" loading="lazy"></span><b>109</b><h3>Arsenal database</h3><p>Damage, penetration and fire rate for every primary, sidearm and support weapon, read per faction.</p><span class="go">Open <i>&#9654;</i></span></a>
+    <a class="cx brk cx-art" href="enemies.html" data-art="cine_nest"><span class="cx-ic"><img src="assets/img/enemies/charger.webp" alt="" loading="lazy"></span><b>57</b><h3>Bestiary</h3><p>Every Terminid, Automaton and Illuminate, ranked by threat, with its weak point and fastest kill.</p><span class="go">Open <i>&#9654;</i></span></a>
+    <a class="cx brk cx-art" href="meta.html" data-art="cine_marfark"><span class="cx-ic"><img src="assets/img/difficulty/super-helldive-difficulty-png.webp" alt="" loading="lazy"></span><b>9</b><h3>Meta &amp; builder</h3><p>Tier lists per faction, nine tested loadouts, and a builder that grades your kit before you drop.</p><span class="go">Open <i>&#9654;</i></span></a>
+    <a class="cx brk cx-art" href="armory.html" data-art="cine_flag"><span class="cx-ic tall"><img src="assets/img/armor/ce-07-demolition-specialist.webp" alt="" loading="lazy"></span><b>41</b><h3>Armory</h3><p>Every set with its rating, speed, stamina and the passive that actually decides the fight.</p><span class="go">Open <i>&#9654;</i></span></a>
+    <a class="cx brk cx-art" href="warbonds.html" data-art="cine_hangar"><span class="cx-ic cover"><img src="assets/img/warbonds/helldivers-mobilize.webp" alt="" loading="lazy"></span><b>25</b><h3>Warbond reviews</h3><p>Page by page contents, medal costs, a rating, and the order to buy them in.</p><span class="go">Open <i>&#9654;</i></span></a>
+    <a class="cx brk cx-art" href="manual.html" data-art="cine_shete"><span class="cx-ic"><img src="assets/img/ui/medal.svg" alt="" loading="lazy"></span><b>FM</b><h3>Field manual</h3><p>Currencies, samples, ship module order, unlocks and modifiers. The questions every diver asks.</p><span class="go">Open <i>&#9654;</i></span></a>
+    <a class="cx brk cx-art" href="terminals.html" data-art="cine_frostown"><span class="cx-ic"><img src="assets/img/obj/extract.svg" alt="" loading="lazy"></span><b>11</b><h3>Field Ops terminals</h3><p>Extraction, ICBM, E-710, SAM sites, the security grid, fuses, valves and Hellbomb. Phase for phase, W A S D.</p><span class="go">Open <i>&#9654;</i></span></a>
+    <a class="cx brk cx-art" href="blueberries.html" data-art="cine_bays"><span class="cx-ic tall"><img src="assets/img/armor/b-0-tactical.webp" alt="" loading="lazy"></span><b>0-1</b><h3>Blueberries</h3><p>The personnel file on new Helldivers: how to spot one, carry one, and mourn one.</p><span class="go">Open <i>&#9654;</i></span></a>
+    <a class="cx brk cx-art" href="hellpod.html" data-art="cine_hangar"><span class="cx-ic"><img src="assets/img/strat/reinforce.webp" alt="" loading="lazy"></span><b>HP</b><h3>The Hellpod</h3><p>Annotated cross-sections of every pod variant, and the drop sequence from launch to impact.</p><span class="go">Open <i>&#9654;</i></span></a>
+    <a class="cx brk cx-art" href="intel.html" data-art="cine_frostown"><span class="cx-ic"><img src="assets/img/difficulty/helldive-difficulty-header-png.webp" alt="" loading="lazy"></span><b>10</b><h3>Intel</h3><p>The ten difficulties, what each adds, and thirty-three field techniques from the wiki.</p><span class="go">Open <i>&#9654;</i></span></a>
+    <a class="cx-art-panel" href="arcade.html">
+      <img src="assets/img/art/cine-eaglestorm.webp" alt="" decoding="async">
+      <div class="cx-art-in">
+        <b>Reading is for dissidents.</b>
+        <p>Every code above is a second you do not spend dying. Drill them.</p>
+        <span class="go">Enter the arcade <i>&#9654;</i></span>
+      </div>
+    </a>
+</nav>
+</section>
+
+<div class="hazard thin"></div>
+
+<!-- ============ LOADOUTS ============ -->
+<section class="sec wrap">
+  <div class="sec-head">
+    <div>
+      <h2 class="t-h2" data-decode>Three loadouts approved for Super Helldive!</h2>
+    </div>
+    <a class="btn ghost sm" href="meta.html">All nine builds <span class="ar">&#9654;</span></a>
+  </div>
+  <div class="lds" id="homeLoadouts"></div>
+</section>
+
+<div class="hazard thin"></div>
+
+<!-- ============ ENLIST ============ -->
+<section class="sec enlist" id="enlist">
+  <img class="enlist-bg" src="assets/img/art/cine-flag.webp" alt="" loading="lazy">
+  <div class="wrap">
+    <div>
+      <h2 class="t-h2" data-decode>Enlist. <em>Get the briefing</em> before the patch drops.</h2>
+      <p class="t-lead">One dispatch per patch: what changed in the numbers, which weapons moved tiers and why, the new stratagem codes, and the drill that fixes the thing that killed you last week. No Ministry filler. Unsubscribe is a single click and carries no treason charge.</p>
+      <div class="en-perks">
+        <div><img src="assets/img/strat/eagle_rearm.webp" alt=""><b>Patch briefings</b><span>Every balance pass, re-scored the same day.</span></div>
+        <div><img src="assets/img/strat/reinforce.webp" alt=""><b>Your callsign on record</b><span>Scores, certifications and builds under one name.</span></div>
+        <div><img src="assets/img/strat/upload_data.webp" alt=""><b>New drills first</b><span>Terminals and ranges ship to the list a week early.</span></div>
+      </div>
+      <div class="en-count"><div><b id="enCount">1,204</b>Enlisted</div><div><b>0</b>Ads, ever</div><div><b>1</b>Email per patch</div></div>
+    </div>
+    <div class="en-form" id="enForm">
+      <div class="en-art"><img class="bg" src="assets/img/art/hellpod-launch-bays.webp" alt=""><img class="crest" src="assets/img/brand/crest.webp" alt=""><b>Enlistment</b><span>Form E-710</span></div>
+      <form id="enlistForm" novalidate>
+        <label for="enCall">Callsign</label><input id="enCall" name="callsign" type="text" maxlength="24" autocomplete="nickname" placeholder="What the squad calls you">
+        <label for="enMail">Email</label><input id="enMail" name="email" type="email" required autocomplete="email" placeholder="you@superearth.gov">
+        <button class="btn" type="submit">Enlist me <span class="ar">&#9654;</span></button>
+        <p class="en-fine" id="enFine">Stored on this device and, when the uplink is live, sent to the list. Nothing else, nowhere else.</p>
+      </form>
+      <div class="en-done"><img src="assets/img/brand/crest.webp" alt=""><b>Enlisted</b><span id="enDoneMsg">Welcome to the Program. Your callsign is on the record.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEEDBACK ============ -->
+<section class="sec fb-sec" id="feedback">
+  <img class="fb-bgart" src="assets/img/art/cine-marfark.webp" alt="" loading="lazy">
+  <div class="wrap">
+    <div>
+      <img class="fb-ic" src="assets/img/brand/ministry-truth.svg" alt="">
+      <h2 class="t-h2" data-decode>Spotted something wrong? <em style="font-style:normal;color:var(--gold)">Report it.</em></h2>
+      <p class="t-lead" style="margin-top:14px">Numbers come from the game files and the wiki, verdicts are ours, and patches move both. If a code, a stat, a weak point or a step list is off, say which and where. Reports land on the corrections desk and the fix ships with the next pass.</p>
+      <div class="fb-scene">
+        <figure class="fb-who diver"><img src="assets/img/misc/helldiver-report.webp" alt="A Helldiver" loading="lazy"><figcaption><b>Helldiver</b><span>Permission to report an error in the manual, Officer.</span></figcaption></figure>
+        <figure class="fb-who officer"><img src="assets/img/misc/democracy-officer.webp" alt="Democracy Officer" loading="lazy"><figcaption><b>Democracy Officer</b><span>Granted. The Ministry does not make mistakes, Helldiver. It issues corrections.</span></figcaption></figure>
+      </div>
+      <ul class="fb-list" id="fbRecent"><li><b>How it works</b>Every report is stored with the page and the time. When the desk uplink is live it is sent straight through; until then it is saved here and you can copy it to send by hand.</li></ul>
+    </div>
+    <form class="fb-form" id="fbForm" novalidate>
+      <div class="en-art fb-art"><img class="bg" src="assets/img/art/cine-cyberstan.webp" alt=""><img class="crest" src="assets/img/brand/ministry-truth.svg" alt=""><b>Corrections desk</b><span>Ministry of Truth</span></div>
+      <label for="fbWhere">Where</label>
+      <select id="fbWhere" name="where"><option>Home page</option><option>Stratagem codex</option><option>Arsenal</option><option>Bestiary or simulator</option><option>Armory</option><option>Warbonds</option><option>Meta and builder</option><option>Terminals</option><option>Arcade or range</option><option>Field manual or intel</option><option>Somewhere else</option></select>
+      <label for="fbWhat">What is wrong</label>
+      <textarea id="fbWhat" name="what" required placeholder="The Charger's butt is listed at AV 0, the wiki says …"></textarea>
+      <label for="fbSrc">Your source, if you have one</label>
+      <input id="fbSrc" name="src" type="text" placeholder="Wiki page, patch note, a clip">
+      <label for="fbMail">Email, only if you want a reply</label>
+      <input id="fbMail" name="email" type="email" autocomplete="email" placeholder="optional">
+      <button class="btn sm" type="submit">File the report <span class="ar">&#9654;</span></button>
+      <button class="btn sm ghost" type="button" id="fbCopy" hidden>Copy report</button>
+      <p class="fb-note" id="fbNote">Nothing leaves this device until the uplink is configured.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ ARCADE ============ -->
+<section class="sec" style="background:linear-gradient(180deg,#080A0E,var(--void))">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2 class="t-h2" data-decode>Train it! Reading is for dissidents.</h2>
+      </div>
+      <a class="btn sm" href="arcade.html">Enter the arcade <span class="ar">&#9654;</span></a>
+    </div>
+    <div class="split">
+      <div>
+        <p class="t-lead">Knowing a code and hitting it while a Charger closes are different skills. Stratagem Hero, the eleven terminals and the Helldive Simulator, all in the browser, all keyboard or touch. Sweat now, salute later!</p>
+        <div class="grid" style="grid-template-columns:1fr;margin-top:26px;gap:1px;background:var(--line);border:1px solid var(--line)">
+          <a class="cx cx-row" style="padding:11px 16px" href="arcade.html#hero"><svg class="tab-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="11.8" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 10v5M5.5 12.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="16" cy="11.4" r="1.2" fill="currentColor"/><circle cx="18.4" cy="14" r="1.2" fill="currentColor"/></svg><h3 style="font-size:17px">Stratagem Hero</h3><p style="margin-top:6px">The full arcade cabinet. Rounds, timer, perfect bonuses, escalating speed, local high scores.</p></a>
+          <a class="cx cx-row" style="padding:11px 16px" href="arcade.html#rush"><svg class="tab-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3 5 14h6l-1 7 8-11h-6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><h3 style="font-size:17px">Code Rush</h3><p style="margin-top:6px">Endless. One mistake ends the run. How deep can you get before your hands betray you.</p></a>
+          <a class="cx cx-row" style="padding:11px 16px" href="arcade.html#intel"><svg class="tab-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c4.3 0 7.3 3 7.3 7.3v3.2l1.9 4.5H2.8l1.9-4.5v-3.2c0-4.3 3-7.3 7.3-7.3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="9.1" cy="11.4" r="1.5" fill="currentColor"/><circle cx="14.9" cy="11.4" r="1.5" fill="currentColor"/></svg><h3 style="font-size:17px">Enemy Intel Drill</h3><p style="margin-top:6px">Weak points, counters and threat calls under a timer. Built from the bestiary.</p></a>
+          <a class="cx cx-row" style="padding:11px 16px" href="arcade.html#reflex"><svg class="tab-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6c3.1 2.6 4.6 6 4.6 9.6 0 3-1.5 5.9-4.6 8.8-3.1-2.9-4.6-5.8-4.6-8.8 0-3.6 1.5-7 4.6-9.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><h3 style="font-size:17px">Hellpod Reflex</h3><p style="margin-top:6px">Directional reaction training. Hit the input before the beacon expires. Do not hit the red ones.</p></a>
+          <a class="cx cx-row" style="padding:11px 16px" href="arcade.html#field"><svg class="tab-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6 21.4 12 12 21.4 2.6 12Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 7.4v9.2M8.2 11.2 12 7.4l3.8 3.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><h3 style="font-size:17px">Field Drill <span class="pill hot" style="margin-left:8px;vertical-align:middle">Realistic</span></h3><p style="margin-top:6px">Hold the stratagem key, read the list, input while holding, arm it, throw it, wait for the call-in. Exactly like the dive.</p></a>
+          <a class="cx cx-row" style="padding:11px 16px" href="arcade.html?go=range"><svg class="tab-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4" stroke="currentColor" stroke-width="1.7"/></svg><h3 style="font-size:17px">Helldive Simulator <span class="pill hot" style="margin-left:8px;vertical-align:middle">3D</span></h3><p style="margin-top:6px">Grenade fuses and stratagem call-in against a moving Charger. Dive throw and Servo-Assisted ranges from community measurements.</p></a>
+          <a class="cx cx-row" style="padding:11px 16px" href="terminals.html"><img class="tab-ic" src="assets/img/obj/extract.svg" alt=""><h3 style="font-size:17px">Field Ops terminals <span class="pill hot" style="margin-left:8px;vertical-align:middle">11 objectives</span></h3><p style="margin-top:6px">All eleven objectives, phase for phase, W A S D like the game. The only way to rehearse them outside a dive.</p></a>
+        </div>
+      </div>
+      <div class="game rv rv-d2" id="teaser">
+        <div class="game-top"><h3>Quick drill</h3><div class="game-stats"><div><b id="tzScore">0</b><span>Streak</span></div></div></div>
+        <div class="game-body"><div class="sh-stage">
+          <div class="sh-icon"><img id="tzIcon" alt="" src="assets/img/strat/reinforce.webp"></div>
+          <div class="sh-name" id="tzName">Reinforce</div>
+          <div class="sh-cat" id="tzCat">Mission</div>
+          <div class="arrows sh-arrows" id="tzArrows"></div>
+          <div class="sh-msg" id="tzMsg">Hold Ctrl and input the code</div>
+          <button type="button" class="btn sm ghost d-arm" id="tzArm" aria-pressed="false">Take out stratagem</button>
+          <div class="dpad" id="tzPad"></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="data/stratagems.js?v=1789681734"></script>
+<script src="data/images.js?v=1789681734"></script>
+<script src="data/enemies.js?v=1789681734"></script>
+<script src="data/meta.js?v=1789681734"></script>
+<script src="data/stats.js?v=1789681734"></script>
+<script src="data/zones.js?v=1789681734"></script>
+<script src="data/dmgicons.js?v=1789681734"></script><script src="assets/statsui.js?v=1789681734"></script>
+<script src="assets/core.js?v=1789681734"></script>
+<script src="assets/motion.js?v=1789681734"></script>
+<script src="data/techniques.js?v=1789681734"></script>
+<script src="assets/home.js?v=1789681734"></script>
+<script>
+/* the WebGL star chart only on wide screens that allow motion: phones keep the static hero and skip the three.js download */
+/* best moments: a cross-fade of the game's own cinematic stills behind the banner */
+(function reel(){
+  const el=document.getElementById('heroReel'); if(!el)return;
+  const SHOTS=['cine-eaglestorm','cine-bays','cine-hellpod','cine-cyberstan','cine-nest','cine-overships','cine-lesath','cine-effluvia','cine-hangar','cine-varylia'];
+  const imgs=SHOTS.map((n,i)=>{ const im=new Image(); im.src='assets/img/art/'+n+'.webp'; im.alt=''; im.loading=i?'lazy':'eager'; if(!i) im.classList.add('on'); el.appendChild(im); return im; });
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches||imgs.length<2) return;
+  let i=0; setInterval(()=>{ imgs[i].classList.remove('on'); i=(i+1)%imgs.length; imgs[i].classList.add('on'); },5200);
+})();
+</script>
+</body>
+</html>

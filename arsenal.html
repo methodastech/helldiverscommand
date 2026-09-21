@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.className+=" js";</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06070A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/app/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bmws.css?v=1789681734">
+<link rel="stylesheet" href="assets/core.css?v=1789681734">
+<link rel="stylesheet" href="assets/pages.css?v=1789681734">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<title>Arsenal · 109 weapons ranked | Helldive Command</title>
+<meta name="description" content="Every Helldivers 2 weapon with damage, penetration, capacity, fire rate, source and a per-faction tier rating. Filter by slot and tier.">
+</head>
+<body>
+
+<header class="sec phead" style="padding-bottom:26px">
+  <div class="phead-bg"><img src="assets/img/art/cine-hangar.webp" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+  <h1 class="t-h1" style="margin:18px 0 16px" data-decode>Arsenal database</h1>
+  <p class="t-lead">109 weapons with the game's own numbers, scored out of 1000 with the working shown. Filter by slot or tier, switch to the roster to see the ranking, or send any weapon into the simulator.</p>
+  </div>
+</header>
+
+<div class="hazard thin"></div>
+
+<section class="sec wrap" style="padding-top:34px">
+<h2 class="sr-only">All weapons</h2>
+  <div class="fbar">
+    <button class="chip on" data-s="all">All</button>
+    <button class="chip" data-s="PRIMARY">Primary</button>
+    <button class="chip" data-s="SECONDARY">Sidearm</button>
+    <button class="chip" data-s="SUPPORT">Support</button>
+    <span style="width:1px;height:26px;background:var(--line)"></span>
+    <button class="chip" data-t="S">S tier</button>
+    <button class="chip" data-t="A">A tier</button>
+    <input class="search" id="q" type="search" placeholder="Search weapon, trait or warbond" autocomplete="off">
+    <select class="chip" id="sort" style="padding-right:26px">
+      <option value="tier">Sort: tier</option>
+      <option value="bug">Sort: best vs Terminids</option>
+      <option value="bot">Sort: best vs Automatons</option>
+      <option value="squid">Sort: best vs Illuminate</option>
+      <option value="name">Sort: name</option>
+    </select>
+    <span class="count" id="resCount"></span>
+  </div>
+  <div class="wgrid" id="grid"></div>
+  <div class="empty hide" id="none">No weapon matches that filter</div>
+</section>
+
+<script src="data/weapons.js?v=1789681734"></script>
+<script src="data/images.js?v=1789681734"></script>
+<script src="data/warbonds.js?v=1789681734"></script>
+<script src="assets/core.js?v=1789681734"></script>
+<script src="assets/motion.js?v=1789681734"></script>
+<script src="data/stats.js?v=1789681734"></script>
+<script src="data/zones.js?v=1789681734"></script>
+<script src="data/dmgicons.js?v=1789681734"></script><script src="assets/statsui.js?v=1789681734"></script>
+<script src="assets/arsenal.js?v=1789681734"></script>
+<script src="assets/stars.js?v=1789681734"></script>
+</body>
+</html>

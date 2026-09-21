@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js";</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06070A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/app/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bmws.css?v=1789681734">
+<link rel="stylesheet" href="assets/core.css?v=1789681734">
+<link rel="stylesheet" href="assets/pages.css?v=1789681734">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<title>The Hellpod · cross-section and drop | Helldive Command</title>
+<meta name="description" content="How the Helldivers 2 Hellpod works: annotated cross-sections, the drop sequence, every variant, and facts kept apart from claims.">
+</head>
+<body>
+<header class="sec phead" style="padding-bottom:22px">
+  <div class="phead-bg"><img src="assets/img/art/cine-hangar.webp" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+  <h1 class="t-h1" style="margin:18px 0 16px" data-decode>The Hellpod</h1>
+  <p class="t-lead">How the Hellpod works: annotated cross-sections, the drop sequence, every variant, with the facts kept apart from the claims.</p>
+  </div>
+</header>
+<div class="hazard thin"></div>
+
+<section class="sec wrap" style="padding-top:34px" id="cross">
+  <div class="sec-head"><div><span class="idx">1 / Cross-section</span><h2 class="t-h2" data-decode>Personnel pod, Mk. IV</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">Drawn from the game's own pod: faceted hull, nozzle head, side nozzles, the rounded nose that goes in first, doors that fold open. Green facts are the wiki's. Gold items are Ministry of Science claims and should be believed at the usual rate.</p></div>
+  <div class="pod-wrap">
+    <figure class="pod-fig">
+      <svg viewBox="0 0 440 720" role="img" aria-label="Cross-section of a landed personnel Hellpod, one door open">
+        <defs>
+          <linearGradient id="hull" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1c1f23"/><stop offset=".5" stop-color="#3d4248"/><stop offset="1" stop-color="#181b1e"/></linearGradient>
+          <linearGradient id="nose" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#26292d"/><stop offset=".45" stop-color="#666b72"/><stop offset="1" stop-color="#1b1e21"/></linearGradient>
+          <linearGradient id="cav" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a110c"/><stop offset="1" stop-color="#0d0907"/></linearGradient>
+          <pattern id="hz" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="12" fill="#FFE01B"/><rect x="6" width="6" height="12" fill="#111"/></pattern>
+          <marker id="dot" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="6" markerHeight="6"><circle cx="3" cy="3" r="2.5" fill="#FFE01B"/></marker>
+        </defs>
+        <!-- ground, crater and the buried nose -->
+        <path d="M0 600 H440" stroke="#5a5040" stroke-width="2"/>
+        <path d="M0 600 H440 V720 H0 Z" fill="#100e0b"/>
+        <path d="M118 600 Q220 646 322 600" fill="#1a1611"/>
+        <path d="M60 600 l22 -9 18 9 M330 600 l24 -8 22 8 M92 604 l-30 14 M350 606 l34 12" stroke="#3a332a" stroke-width="1.5" fill="none"/>
+        <path d="M150 560 Q220 700 290 560" fill="url(#nose)" stroke="#9aa0a6" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <!-- body: faceted prism, front face removed for the cutaway -->
+        <path d="M132 160 H308 V560 H132 Z" fill="url(#hull)" stroke="#9aa0a6" stroke-width="1.5"/>
+        <path d="M170 160 V560 M270 160 V560" stroke="#0e1013" stroke-width="2.5"/>
+        <path d="M132 262 H170 M270 262 H308 M132 404 H170 M270 404 H308 M132 500 H170 M270 500 H308" stroke="#0e1013" stroke-width="1.6"/>
+        <g fill="#6d7378"><circle cx="140" cy="176" r="1.6"/><circle cx="140" cy="548" r="1.6"/><circle cx="300" cy="176" r="1.6"/><circle cx="300" cy="548" r="1.6"/><circle cx="140" cy="262" r="1.6"/><circle cx="300" cy="262" r="1.6"/><circle cx="140" cy="404" r="1.6"/><circle cx="300" cy="404" r="1.6"/></g>
+        <path d="M136 172 H164 M136 178 H154" stroke="#c8ccd0" stroke-opacity=".5" stroke-width="1"/>
+        <!-- interior with its ribs -->
+        <rect x="172" y="164" width="96" height="392" fill="url(#cav)"/>
+        <g stroke="#ff7a18" stroke-opacity=".32" stroke-width="1.4"><path d="M172 200 H268 M172 236 H268 M172 272 H268 M172 308 H268 M172 344 H268 M172 380 H268 M172 416 H268 M172 452 H268 M172 488 H268 M172 524 H268"/></g>
+        <path d="M172 164 V556 M268 164 V556" stroke="#ff7a18" stroke-opacity=".5" stroke-width="1.2"/>
+        <!-- the Helldiver, standing, harnessed -->
+        <g>
+          <path d="M204 226 a16 18 0 1 1 32 0 v10 h-32 z" fill="#2a2b2e" stroke="#4a4c50"/>
+          <rect x="207" y="222" width="26" height="8" rx="2" fill="#1c3f6e"/>
+          <path d="M196 238 h48 l4 14 h-56 z" fill="#2e2f33" stroke="#4a4c50"/>
+          <path d="M202 252 H238 L234 334 H206 Z" fill="#343539" stroke="#4a4c50"/>
+          <path d="M206 334 H234 V344 H206 Z" fill="#FFE01B" fill-opacity=".85"/>
+          <path d="M206 344 L201 442 H215 L220 360 L225 442 H239 L234 344 Z" fill="#2b2c2f" stroke="#4a4c50"/>
+          <rect x="197" y="442" width="20" height="14" rx="2" fill="#1e1f21"/><rect x="223" y="442" width="20" height="14" rx="2" fill="#1e1f21"/>
+          <path d="M196 252 L184 300 L192 306 L204 268 Z" fill="#2e2f33" stroke="#4a4c50"/>
+          <path d="M244 252 L256 296 L248 302 L236 268 Z" fill="#2e2f33" stroke="#4a4c50"/>
+          <path d="M186 312 L254 262" stroke="#8a8f96" stroke-width="5" stroke-linecap="round"/>
+          <path d="M214 292 L232 278" stroke="#5a5f66" stroke-width="8" stroke-linecap="round"/>
+          <!-- harness -->
+          <path d="M202 254 L238 322 M238 254 L202 322" stroke="#FFE01B" stroke-width="3" stroke-opacity=".9"/>
+          <circle cx="202" cy="254" r="3" fill="#FFE01B"/><circle cx="238" cy="254" r="3" fill="#FFE01B"/><circle cx="202" cy="322" r="3" fill="#FFE01B"/><circle cx="238" cy="322" r="3" fill="#FFE01B"/>
+        </g>
+        <!-- the door, folded open on its bottom hinge -->
+        <path d="M308 556 L426 512 L432 528 L314 572 Z" fill="#2b2f34" stroke="#9aa0a6" stroke-width="1.2"/>
+        <path d="M311 560 L427 517" stroke="url(#hz)" stroke-width="6"/>
+        <circle cx="310" cy="562" r="4" fill="#0e1013" stroke="#9aa0a6"/>
+        <!-- thruster head, nozzles, antenna -->
+        <path d="M150 100 H290 V160 H150 Z" fill="url(#hull)" stroke="#9aa0a6" stroke-width="1.5"/>
+        <path d="M150 100 L164 82 H276 L290 100" fill="#2a2e33" stroke="#9aa0a6" stroke-width="1.2"/>
+        <g><ellipse cx="180" cy="82" rx="11" ry="5" fill="#0e1013" stroke="#9aa0a6"/><ellipse cx="207" cy="82" rx="11" ry="5" fill="#0e1013" stroke="#9aa0a6"/><ellipse cx="233" cy="82" rx="11" ry="5" fill="#0e1013" stroke="#9aa0a6"/><ellipse cx="260" cy="82" rx="11" ry="5" fill="#0e1013" stroke="#9aa0a6"/></g>
+        <rect x="150" y="150" width="140" height="8" fill="url(#hz)"/>
+        <path d="M172 118 H268 M172 130 H268" stroke="#0e1013" stroke-width="2"/>
+        <path d="M220 82 V44" stroke="#9aa0a6" stroke-width="2"/><circle cx="220" cy="40" r="4" fill="#ff3b30"/>
+        <!-- side nozzle pods -->
+        <rect x="108" y="168" width="24" height="46" rx="8" fill="#2b2f34" stroke="#9aa0a6" stroke-width="1.2"/><ellipse cx="120" cy="214" rx="8" ry="3" fill="#0e1013"/>
+        <rect x="308" y="168" width="24" height="46" rx="8" fill="#2b2f34" stroke="#9aa0a6" stroke-width="1.2"/><ellipse cx="320" cy="214" rx="8" ry="3" fill="#0e1013"/>
+        <!-- markings -->
+        <path d="M151 452 L139 474 H163 Z" fill="#FFE01B"/><circle cx="151" cy="466" r="2.6" fill="#111"/>
+        <text x="151" y="492" text-anchor="middle" font-family="Barlow Semi Condensed, sans-serif" font-size="8" letter-spacing="1.5" fill="#c8ccd0">SES</text>
+        <!-- callouts -->
+        <g stroke="#FFE01B" stroke-width="1.2" fill="none" marker-start="url(#dot)">
+          <path d="M292 92 H392"/><path d="M334 190 H392"/><path d="M246 292 H392"/><path d="M372 540 L392 500 H392"/><path d="M220 664 H392"/>
+          <path d="M132 330 H48"/><path d="M151 470 H48"/><path d="M202 286 H48"/><path d="M110 600 H48"/>
+        </g>
+        <g font-family="Barlow Semi Condensed, sans-serif" font-size="15" font-weight="700" fill="#FFE01B">
+          <text x="402" y="97">1</text><text x="402" y="195">2</text><text x="402" y="297">3</text><text x="402" y="505">4</text><text x="402" y="669">6</text>
+          <text x="30" y="335">5</text><text x="30" y="475">8</text><text x="30" y="291">9</text><text x="30" y="605">7</text>
+        </g>
+      </svg>
+      <figcaption class="mono dim">Not to scale. The Ministry of Science does not publish scale.</figcaption>
+    </figure>
+    <ol class="callouts" id="callouts"></ol>
+  </div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="equip">
+  <div class="sec-head"><div><span class="idx">2 / Equipment variant</span><h2 class="t-h2" data-decode>Same pod, no passenger</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">Support weapons, backpacks, the Resupply and the Hellbomb arrive in the same hull with a rack instead of a harness.</p></div>
+  <div class="pod-wrap">
+    <figure class="pod-fig">
+      <svg viewBox="0 0 440 600" role="img" aria-label="Cross-section of an equipment Hellpod: weapon rack, backpack cradle and supply crates">
+        <defs>
+          <linearGradient id="hull2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1c1f23"/><stop offset=".5" stop-color="#3d4248"/><stop offset="1" stop-color="#181b1e"/></linearGradient>
+          <linearGradient id="nose2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#26292d"/><stop offset=".45" stop-color="#666b72"/><stop offset="1" stop-color="#1b1e21"/></linearGradient>
+          <pattern id="hz2" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="12" fill="#FFE01B"/><rect x="6" width="6" height="12" fill="#111"/></pattern>
+          <marker id="dot2" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="6" markerHeight="6"><circle cx="3" cy="3" r="2.5" fill="#FFE01B"/></marker>
+        </defs>
+        <path d="M0 500 H440" stroke="#5a5040" stroke-width="2"/><path d="M0 500 H440 V600 H0 Z" fill="#100e0b"/><path d="M118 500 Q220 540 322 500" fill="#1a1611"/>
+        <path d="M150 462 Q220 590 290 462" fill="url(#nose2)" stroke="#9aa0a6" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <path d="M132 100 H308 V462 H132 Z" fill="url(#hull2)" stroke="#9aa0a6" stroke-width="1.5"/>
+        <path d="M170 100 V462 M270 100 V462" stroke="#0e1013" stroke-width="2.5"/>
+        <path d="M132 200 H170 M270 200 H308 M132 330 H170 M270 330 H308" stroke="#0e1013" stroke-width="1.6"/>
+        <rect x="172" y="104" width="96" height="354" fill="#0f0b09"/>
+        <g stroke="#ff7a18" stroke-opacity=".3" stroke-width="1.4"><path d="M172 140 H268 M172 176 H268 M172 212 H268 M172 248 H268 M172 284 H268 M172 320 H268 M172 356 H268 M172 392 H268 M172 428 H268"/></g>
+        <!-- rack: support weapon, backpack, supply crates -->
+        <path d="M180 120 H260 M180 250 H260" stroke="#8a8f96" stroke-width="3"/>
+        <path d="M186 236 L254 132" stroke="#9aa0a6" stroke-width="9" stroke-linecap="round"/><path d="M206 210 L222 188" stroke="#5a5f66" stroke-width="14" stroke-linecap="round"/><path d="M186 236 L200 214" stroke="#3a3d42" stroke-width="12" stroke-linecap="round"/>
+        <rect x="196" y="258" width="48" height="60" rx="5" fill="#33363b" stroke="#9aa0a6" stroke-width="1.2"/><path d="M204 270 H236 M204 284 H236" stroke="#FFE01B" stroke-opacity=".6" stroke-width="2"/>
+        <g fill="#2e3136" stroke="#9aa0a6" stroke-width="1.1"><rect x="180" y="332" width="38" height="28" rx="3"/><rect x="222" y="332" width="38" height="28" rx="3"/><rect x="180" y="366" width="38" height="28" rx="3"/><rect x="222" y="366" width="38" height="28" rx="3"/></g>
+        <g fill="#FFE01B"><rect x="194" y="342" width="10" height="8"/><rect x="236" y="342" width="10" height="8"/><rect x="194" y="376" width="10" height="8"/><rect x="236" y="376" width="10" height="8"/></g>
+        <path d="M308 458 L426 414 L432 430 L314 474 Z" fill="#2b2f34" stroke="#9aa0a6" stroke-width="1.2"/><path d="M311 462 L427 419" stroke="url(#hz2)" stroke-width="6"/>
+        <path d="M150 40 H290 V100 H150 Z" fill="url(#hull2)" stroke="#9aa0a6" stroke-width="1.5"/><path d="M150 40 L164 22 H276 L290 40" fill="#2a2e33" stroke="#9aa0a6" stroke-width="1.2"/>
+        <g><ellipse cx="180" cy="22" rx="11" ry="5" fill="#0e1013" stroke="#9aa0a6"/><ellipse cx="207" cy="22" rx="11" ry="5" fill="#0e1013" stroke="#9aa0a6"/><ellipse cx="233" cy="22" rx="11" ry="5" fill="#0e1013" stroke="#9aa0a6"/><ellipse cx="260" cy="22" rx="11" ry="5" fill="#0e1013" stroke="#9aa0a6"/></g>
+        <rect x="150" y="90" width="140" height="8" fill="url(#hz2)"/>
+        <rect x="108" y="108" width="24" height="46" rx="8" fill="#2b2f34" stroke="#9aa0a6" stroke-width="1.2"/><rect x="308" y="108" width="24" height="46" rx="8" fill="#2b2f34" stroke="#9aa0a6" stroke-width="1.2"/>
+        <g stroke="#FFE01B" stroke-width="1.2" fill="none" marker-start="url(#dot2)"><path d="M254 150 H392"/><path d="M244 288 H392"/><path d="M260 380 H392"/><path d="M292 60 H392"/></g>
+        <g font-family="Barlow Semi Condensed, sans-serif" font-size="15" font-weight="700" fill="#FFE01B"><text x="402" y="155">A</text><text x="402" y="293">B</text><text x="402" y="385">C</text><text x="402" y="65">D</text></g>
+      </svg>
+      <figcaption class="mono dim">A: support weapon on the rack. B: backpack in its cradle. C: Resupply crates, ejected onto the ground on landing. D: thruster head.</figcaption>
+    </figure>
+    <div>
+      <div class="tscroll"><table class="tbl"><thead><tr><th>Variant</th><th>Payload</th><th>How it opens</th><th>Field note</th></tr></thead><tbody id="variants"></tbody></table></div>
+      <p class="mono dim" style="margin-top:14px">Exosuits, the Fast Recon Vehicle and the Bastion are not Hellpod cargo. Pelican-1 lowers them on a magnetic clamp.</p>
+    </div>
+  </div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="drop">
+  <div class="sec-head"><div><span class="idx">3 / The drop</span><h2 class="t-h2" data-decode>Launch bay to impact</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">What happens in the seconds between the Ship Master's countdown and the doors blowing open.</p></div>
+  <div class="rules" id="dropSteps"></div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="materials">
+  <div class="sec-head"><div><span class="idx">4 / Materials and modules</span><h2 class="t-h2" data-decode>What it is made of</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">Two columns. One of them is true.</p></div>
+  <div class="split">
+    <div class="panel" style="padding:clamp(18px,2vw,26px)"><span class="tag" style="color:var(--green);border-color:rgba(123,209,106,.4);background:rgba(123,209,106,.07)">Field observed</span><ul class="facts" id="facts"></ul></div>
+    <div class="panel" style="padding:clamp(18px,2vw,26px)"><span class="tag">Ministry of Science claims</span><ul class="facts claims" id="claims"></ul></div>
+  </div>
+  <div class="pod-photos">
+    <figure><img src="assets/img/art/hellpod.webp" alt="A Hellpod on the ground, doors open" loading="lazy"><figcaption class="mono dim">A landed Hellpod. Wiki upload.</figcaption></figure>
+    <figure><img src="assets/img/art/hellpod-launch-bays.webp" alt="Hellpod launch bays on the Super Destroyer" loading="lazy"><figcaption class="mono dim">Launch bays on the Super Destroyer. Wiki upload.</figcaption></figure>
+  </div>
+</section>
+
+<script src="assets/core.js?v=1789681734"></script>
+<script src="assets/motion.js?v=1789681734"></script>
+<script>
+(function(){
+try{ localStorage.setItem('hd_pod','1'); }catch(e){}
+const $=s=>document.querySelector(s);
+const CALL=[
+ ['1','Thruster head','The nozzle cluster on top. Hellpods steer before they land: your movement inputs steer the crewed pod, and the Power Steering ship module improves it.','fact'],
+ ['2','Side nozzles','One pod either side of the head, on every Hellpod. The Ministry of Science says they are for attitude. It did not say whose.','claim'],
+ ['3','Passenger, harnessed','Standing, armed. With the Hellpod Space Optimization booster you land with full ammo, grenades and stims. Without it you land with what you had, which is a lesson.','fact'],
+ ['4','Door panels','Fold open on landing and stay open. From then on the hull is cover. Hazard trim on the inner edge, because someone once stood there.','fact'],
+ ['5','Hull','"Shock-absorbing tubes that break the atmosphere at extreme velocities only to crack the ground when they open", in the game\'s own words. Faceted gunmetal panels, hazard band, rivets.','fact'],
+ ['6','Impact nose','Goes in first. The impact deals explosion damage enough for Hulks, Chargers and Harvesters, with demolition force 40: Automaton Fabricators and bug holes under it are destroyed.','fact'],
+ ['7','Ground contact','The pod stays where it landed, nose in the dirt. Pods within 10 metres of the extraction landing area retract when Pelican-1 lands. The Ministry calls the rest "field recycling".','fact'],
+ ['8','Markings','The Helldivers skull in a warning triangle and the SES name of your Super Destroyer, stencilled on the panels.','fact'],
+ ['9','Harness','Holds one Helldiver upright through launch, descent and impact. Rated by the Ministry for orbital re-entry and one landing. You walk out when the doors open.','claim']
+];
+$('#callouts').innerHTML=CALL.map(c=>`<li class="${c[3]}"><b>${c[0]}</b><div><h3>${c[1]}</h3><p>${c[2]}</p></div></li>`).join('');
+const VAR=[['Personnel','One Helldiver, standing','Front panels blow outward','Your first drop of the mission'],['Reinforcement','One returning Helldiver','Front panels blow outward','Aim it at the thing that killed them'],['Support weapon','One weapon on the rack','Panels open, weapon stays on the rack until taken','Streamlined Launch Process removes the deploy delay'],['Backpack','One backpack on the cradle','Same hull, cradle instead of rack','Hand Carts module: 10% faster cooldown'],['Resupply','Four supply boxes','Boxes stay in the open pod','One box each. Blueberries: one box each.'],['Hellbomb','Portable nuclear device','Panel opens, arming terminal exposed','Arm it, then be 45 metres away'],['Sentry or emplacement','Turret on a mount','Deploys on landing','Rapid Launch System: no deployment time']];
+$('#variants').innerHTML=VAR.map(r=>'<tr>'+r.map((c,i)=>'<td'+(i===0?' style="font-weight:600;white-space:nowrap"':'')+'>'+c+'</td>').join('')+'</tr>').join('');
+const DROP=[['Step 1','Hellpod bay','Strapped in on the Super Destroyer\'s launch deck. The Ship Master counts you down. The Democracy Officer says something inspiring. Neither can be skipped.'],['Step 2','Launch','Fired from the bay toward the point you chose on the map. Reinforcements go where the beacon lands.'],['Step 3','Descent','Steer with the movement keys. The Power Steering ship module sharpens the response. Watch what is under the marker.'],['Step 4','Impact','Nose first. Explosion damage on landing with demolition force 40: a Charger, a Hulk, a Harvester, a Fabricator, a bug hole, or a teammate under the pod is gone.'],['Step 5','Doors','The panels fold out and you step onto the planet with your loadout. Hellpod Space Optimization means full ammo, grenades and stims.'],['Step 6','After','The hull stays as cover. Resupply pods eject their crates onto the ground. At extraction, pods within 10 metres retract when the shuttle lands.']];
+$('#dropSteps').innerHTML=DROP.map(s=>`<article class="rule-c"><b>${s[0]}</b><h3>${s[1]}</h3><p>${s[2]}</p></article>`).join('');
+const FACTS=['A Hellpod kills most things it lands on: Hulks, Chargers, Harvesters. Reinforce onto the heavy.','Demolition force 40 on impact: Automaton Fabricators and bug holes under the pod are destroyed.','Hellpods steer before they land, with your movement inputs. Power Steering improves it.','Hellpod Space Optimization: you land fully stocked on ammo, grenades and stims.','Resupply pods eject their contents onto the ground for anyone to pick up.','Pods within 10 metres of the extraction landing area retract when the shuttle lands.','Exosuits, the Fast Recon Vehicle and the Bastion are not Hellpod cargo. Pelican-1 lowers them on a clamp.'];
+const CLAIMS=['Hull alloy: patriotic.','Every pod is recycled after use through a programme the Ministry calls "field recycling", meaning it stays where it landed.','The thruster head is rated for one landing. Nobody has tested a second.','The harness is designed for a Helldiver of average build, defined by the Ministry as "whoever fits".','The side nozzles provide attitude. The Ministry declined to say whose.','The door hazard trim is decorative. The Ministry declined to explain the scuff marks.'];
+$('#facts').innerHTML=FACTS.map(f=>'<li>'+f+'</li>').join(''); $('#claims').innerHTML=CLAIMS.map(f=>'<li>'+f+'</li>').join('');
+})();
+</script>
+<script src="assets/stars.js?v=1789681734"></script>
+</body>
+</html>

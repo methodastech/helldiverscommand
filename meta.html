@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.className+=" js";</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06070A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/app/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bmws.css?v=1789681734">
+<link rel="stylesheet" href="assets/core.css?v=1789681734">
+<link rel="stylesheet" href="assets/pages.css?v=1789681734">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<title>Meta and loadout builder | Helldive Command</title>
+<meta name="description" content="Helldivers 2 tier lists per faction, nine field-tested loadouts, and a builder that grades your kit before you drop.">
+</head>
+<body>
+
+<header class="sec phead" style="padding-bottom:26px">
+  <div class="phead-bg"><img src="assets/img/art/cine-marfark.webp" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+  <h1 class="t-h1" style="margin:18px 0 16px" data-decode>Meta and builder</h1>
+  <p class="t-lead">The tier list per faction and nine complete loadouts, weighted for Super Helldive. Build your own kit below and the builder tells you what it cannot answer.</p>
+  </div>
+</header>
+
+<div class="hazard thin"></div>
+
+<!-- TIER LISTS -->
+<section id="tierlist" class="sec wrap" style="padding-top:34px">
+  <div class="sec-head">
+    <div><span class="idx">1 / Rankings</span><h2 class="t-h2" data-decode>Tier list by faction</h2></div>
+    <div class="fbar" style="margin:0">
+      <button class="chip on" data-tf="all">Overall</button>
+      <button class="chip" data-tf="b">vs Terminids</button>
+      <button class="chip" data-tf="a">vs Automatons</button>
+      <button class="chip" data-tf="i">vs Illuminate</button>
+    </div>
+  </div>
+  <details class="scoring">
+    <summary>How the score works</summary>
+    <div class="scoring-in">
+      <p>Every weapon is scored out of 1000 <b>against its own slot</b>, so a sidearm is judged as a sidearm. Each component is scaled across the weapons in that slot, then weighted. Hover any tile for its breakdown; the parts add up to the total.</p>
+      <div class="tscroll"><table class="tbl"><thead><tr><th>Component</th><th>What it measures</th><th class="num">Primary</th><th class="num">Secondary</th><th class="num">Support</th><th class="num">Grenade</th></tr></thead><tbody>
+        <tr><td>Roster</td><td class="dim">Threat-weighted share of every enemy it handles cheaply</td><td class="num">450</td><td class="num">450</td><td class="num">450</td><td class="num">450</td></tr>
+        <tr><td>Heavy kills</td><td class="dim">Threat-5 enemies killed in two hits, or under three seconds of flame</td><td class="num">80</td><td class="num">100</td><td class="num">150</td><td class="num">200</td></tr>
+        <tr><td>Chaff</td><td class="dim">Average hits on threat 1-2 enemies, fewer is better</td><td class="num">120</td><td class="num">120</td><td class="num">80</td><td class="num">150</td></tr>
+        <tr><td>DPS</td><td class="dim">Damage through one magazine over the time to empty and reload it</td><td class="num">150</td><td class="num">130</td><td class="num">150</td><td class="num">0</td></tr>
+        <tr><td>Penetration</td><td class="dim">Armour penetration class</td><td class="num">50</td><td class="num">50</td><td class="num">50</td><td class="num">50</td></tr>
+        <tr><td>Ammo</td><td class="dim">Rounds carried</td><td class="num">100</td><td class="num">100</td><td class="num">70</td><td class="num">100</td></tr>
+        <tr><td>Control</td><td class="dim">Stun plus 0.6 x demolition</td><td class="num">50</td><td class="num">50</td><td class="num">50</td><td class="num">50</td></tr>
+      </tbody></table></div>
+      <p class="es-note"><b>Tiers are percentile cuts inside each slot, not fixed scores.</b> The top 10 percent of a slot are S, the next 25 A, the next 35 B, the next 20 C, and the bottom 10 D, so a weapon is ranked against the weapons it competes with. That puts the S line at 594 for primaries, 714 for sidearms, 810 for support and 879 for grenades. Where two published community lists agree on a weapon, the model is blended 70 / 30 with that consensus: 43 weapons are, and their breakdown shows both the model subtotal and the blended score. Nine melee weapons are left unranked because reach, exposure and swing arcs are not modelled. Stats are the game's; the weights and the blend are ours.</p>
+    </div>
+  </details>
+  <div id="tiers"></div>
+</section>
+
+<div class="hazard thin"></div>
+
+<!-- LOADOUTS -->
+<section id="loadout-list" class="sec wrap">
+  <div class="sec-head">
+    <div><span class="idx">2 / Field-tested kit</span><h2 class="t-h2" data-decode>Nine loadouts that hold</h2></div>
+    <div class="fbar" style="margin:0">
+      <button class="chip on" data-lf="all">All</button>
+      <button class="chip" data-lf="bug">Terminids</button>
+      <button class="chip" data-lf="bot">Automatons</button>
+      <button class="chip" data-lf="squid">Illuminate</button>
+    </div>
+  </div>
+  <div class="lds" id="loadouts"></div>
+</section>
+
+<div class="hazard thin"></div>
+
+<!-- BUILDER -->
+<section class="sec wrap" id="builder">
+  <div class="sec-head">
+    <div><span class="idx">3 / Loadout builder</span><h2 class="t-h2" data-decode>Grade your drop</h2></div>
+    <p class="t-lead" style="max-width:40ch;margin:0">Pick a kit. The builder scores coverage against the faction you choose and names the gaps that will kill you.</p>
+  </div>
+  <div class="bld">
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+      <div class="slot"><label for="bFac">Target faction</label><select id="bFac">
+        <option value="b">Terminids</option><option value="a">Automatons</option><option value="i">Illuminate</option></select></div>
+      <div class="slot"><label for="bPrim">Primary</label><select id="bPrim"></select></div>
+      <div class="slot"><label for="bSec">Sidearm</label><select id="bSec"></select></div>
+      <div class="slot"><label for="bGren">Grenade</label><select id="bGren"></select></div>
+      <div class="slot"><label for="bBoost">Booster</label><select id="bBoost"></select></div>
+      <div class="slot"><label for="bS1">Stratagem 1</label><select id="bS1"></select></div>
+      <div class="slot"><label for="bS2">Stratagem 2</label><select id="bS2"></select></div>
+      <div class="slot"><label for="bS3">Stratagem 3</label><select id="bS3"></select></div>
+      <div class="slot"><label for="bS4">Stratagem 4</label><select id="bS4"></select></div>
+    </div>
+    <aside class="panel bld-out">
+      <div class="score-ring"><b id="bScore">0</b><span>Readiness</span></div>
+      <div id="bGrade" class="tag" style="width:100%;justify-content:center">Pick a kit</div>
+      <div class="notes" id="bNotes"></div>
+      <hr class="rule" style="margin:18px 0">
+      <p class="mono dim" style="margin-bottom:10px">Codes to memorise</p>
+      <div id="bCodes" class="grid" style="gap:7px"></div>
+      <button class="btn sm" id="bShare" style="width:100%;justify-content:center;margin-top:18px">Copy loadout</button>
+    </aside>
+  </div>
+</section>
+
+<script src="data/weapons.js?v=1789681734"></script>
+<script src="data/stratagems.js?v=1789681734"></script>
+<script src="data/boosters.js?v=1789681734"></script>
+<script src="data/meta.js?v=1789681734"></script>
+<script src="data/images.js?v=1789681734"></script>
+<script src="assets/core.js?v=1789681734"></script>
+<script src="assets/motion.js?v=1789681734"></script>
+<script src="data/stats.js?v=1789681734"></script>
+<script src="data/zones.js?v=1789681734"></script>
+<script src="assets/meta.js?v=1789681734"></script>
+<script src="assets/stars.js?v=1789681734"></script>
+</body>
+</html>

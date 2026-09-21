@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.className+=" js";</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06070A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/app/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bmws.css?v=1789681734">
+<link rel="stylesheet" href="assets/core.css?v=1789681734">
+<link rel="stylesheet" href="assets/pages.css?v=1789681734">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<title>Intel · difficulty, boosters, glossary | Helldive Command</title>
+<meta name="description" content="Helldivers 2 reference: the ten difficulties, every booster, what to buy first, and the glossary the rest of the site assumes.">
+</head>
+<body>
+
+<header class="sec phead" style="padding-bottom:26px">
+  <div class="phead-bg"><img src="assets/img/art/cine-varylia.webp" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+  <h1 class="t-h1" style="margin:18px 0 16px" data-decode>Intel</h1>
+  <p class="t-lead">The reference layer: what each difficulty adds, what every booster does, the warbond buy order and the vocabulary the rest of the site assumes.</p>
+  </div>
+</header>
+
+<div class="hazard thin"></div>
+
+<section class="sec wrap" style="padding-top:34px" id="difficulty">
+  <div class="sec-head"><div><span class="idx">1 / Escalation</span><h2 class="t-h2" data-decode>The ten difficulties</h2></div></div>
+  <div class="tscroll"><table class="tbl"><thead><tr>
+    <th>#</th><th>Name</th><th>Missions</th><th>Medals</th><th>What changes</th>
+  </tr></thead><tbody id="diffBody"></tbody></table></div>
+</section>
+
+<section class="sec wrap" id="boosters">
+  <div class="sec-head"><div><span class="idx">2 / Boosters</span><h2 class="t-h2" data-decode>Every booster</h2></div>
+  <p class="t-lead" style="max-width:40ch;margin:0">One per Helldiver, four per squad, and they apply to everyone. Hellpod Space Optimization is close to mandatory. Coordinate the rest.</p></div>
+  <div class="tscroll"><table class="tbl"><thead><tr>
+    <th>Booster</th><th>Effect</th><th>Warbond</th><th>Cost</th>
+  </tr></thead><tbody id="boostBody"></tbody></table></div>
+</section>
+
+<div class="hazard thin"></div>
+
+<section class="sec wrap" id="warbonds">
+  <div class="sec-head"><div><h2 class="t-h2" data-decode>What to buy, in what order</h2></div>
+    <p class="t-lead" style="max-width:52ch;margin:0">Warbonds never expire and never go on sale. Buy for the one or two items you will actually equip, not for completion.</p></div>
+  <a class="xref" href="warbonds.html">
+    <div><b>The buy order lives on the Warbonds page</b>
+      <span>All 24 reviewed, page by page contents, medal costs and a rating, with the order to buy them in.</span></div>
+    <span class="go">Open warbonds <i>&#9654;</i></span>
+  </a>
+</section>
+
+<section class="sec wrap" id="glossary">
+  <div class="sec-head"><div><span class="idx">4 / Language</span><h2 class="t-h2" data-decode>Glossary</h2></div></div>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))" id="gloss"></div>
+</section>
+
+<div class="hazard thin"></div>
+
+<section class="sec wrap" id="techniques">
+  <div class="sec-head"><div><span class="idx">5 / Field techniques</span><h2 class="t-h2" data-decode>Plays the wiki confirms and most divers never learn</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">Every card below is lifted from the tactical notes on the named helldivers.wiki.gg page. Nothing here is folklore.</p></div>
+  <div class="fbar" id="techBar"></div>
+  <div class="grid techs" id="techs" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))"></div>
+</section>
+
+<div class="hazard thin"></div>
+
+<section class="sec wrap" id="legal">
+  <div class="sec-head"><div><span class="idx">6 / Small print</span><h2 class="t-h2">Sources and disclaimer</h2></div></div>
+  <div class="split">
+    <div>
+      <h3 class="t-h3" style="margin-bottom:14px">Where the numbers come from</h3>
+      <p class="t-lead">Stratagem codes, weapon statistics, enemy rosters and booster effects are compiled from the community-maintained Helldivers wiki, which mirrors the game's own data files. Live war telemetry comes from the open community war API that reads Arrowhead's public war endpoints.</p>
+      <p class="t-lead" style="margin-top:16px">Tier ratings, faction scores, loadouts and doctrine are editorial. They reflect the September 2026 consensus for Difficulty 8 to 10 play and they will drift as patches land. Treat them as a starting point, not an authority.</p>
+    </div>
+    <div>
+      <h3 class="t-h3" style="margin-bottom:14px">Not affiliated</h3>
+      <p class="t-lead">This is an unofficial fan project. HELLDIVERS is a trademark of Sony Interactive Entertainment and the game is developed by Arrowhead Game Studios. This site is not endorsed by, affiliated with, or connected to either. All game names, marks and data belong to their respective owners.</p>
+      <p class="t-lead" style="margin-top:16px">The stratagem trainer is built in the spirit of <a class="gold" href="https://combustibletoast.github.io/" target="_blank" rel="noopener noreferrer">Stratagem Hero Online</a>, the community trainer that got there first.</p>
+    </div>
+  </div>
+</section>
+
+<script src="data/techniques.js?v=1789681734"></script>
+<script src="data/boosters.js?v=1789681734"></script>
+<script src="data/meta.js?v=1789681734"></script>
+<script src="data/images.js?v=1789681734"></script>
+<script src="assets/core.js?v=1789681734"></script>
+<script src="assets/motion.js?v=1789681734"></script>
+<script>
+(function(){
+  const {$}=window.HD;
+  const IMG=window.HD_IMG||{};
+  const ic=(cat,key)=>(IMG[cat]&&IMG[cat][key])?`assets/img/${cat}/${IMG[cat][key]}`:'';
+  $('#diffBody').innerHTML=(window.HD_DIFFICULTY||[]).map(d=>
+    `<tr><td class="mono gold">${d.n}</td>
+      <td style="font-family:var(--f-disp);text-transform:uppercase;white-space:nowrap">${ic('difficulty',d.name)?`<img class="diff-ic" loading="lazy" src="${ic('difficulty',d.name)}" alt="">`:''}${d.name}</td>
+      <td>${d.missions}</td><td>${d.medals}</td><td class="dim">${d.note}</td></tr>`).join('');
+  $('#boostBody').innerHTML=(window.HD_BOOSTERS||[]).map(b=>
+    `<tr><td style="font-weight:600;white-space:nowrap"><span style="display:inline-flex;align-items:center;gap:10px">${ic('boosters',b.n.replace(' Booster',''))?`<img class="boost-ic" loading="lazy" src="${ic('boosters',b.n.replace(' Booster',''))}" alt="">`:''}${b.n}</span></td><td class="dim">${b.e}</td>
+      <td class="mono" style="color:var(--blue)">${b.w}</td><td class="nowrap">${b.p}</td></tr>`).join('');
+
+  /* field techniques, filterable by tag, each with the picture of the thing it is about */
+  (function(){
+    const box=$('#techs'), bar=$('#techBar'); if(!box) return;
+    const T=window.HD_TECH||[]; const IMGS=window.HD_IMG||{};
+    const pic=t=>{ const m=IMGS[t.cat]; if(t.cat==='obj') return 'assets/img/obj/'+t.k+'.svg'; if(t.cat==='strat') return 'assets/img/strat/'+t.k+'.webp'; return (m&&m[t.k])?`assets/img/${t.cat}/${m[t.k]}`:''; };
+    const tags=[...new Set(T.flatMap(t=>t.tags))].sort(); let cur='';
+    bar.innerHTML='<button class="chip on" data-t="">All ('+T.length+')</button>'+tags.map(t=>`<button class="chip" data-t="${t}">${t}</button>`).join('');
+    const paint=()=>{ box.innerHTML=T.filter(t=>!cur||t.tags.includes(cur)).map(t=>`<article class="tech panel">
+        <div class="tech-h"><i class="tech-ic" style="background-image:url(${pic(t)})"></i><div><h3>${t.t}</h3><span>${t.tags.join(' · ')}</span></div></div>
+        <p class="tech-how">${t.how}</p><p class="tech-why"><b>Why it matters</b>${t.why}</p>
+        <p class="tech-src">Source: ${t.src}</p></article>`).join(''); };
+    bar.addEventListener('click',e=>{ const b=e.target.closest('.chip'); if(!b)return; cur=b.dataset.t; bar.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===b)); paint(); });
+    paint();
+    if(location.hash==='#techniques') setTimeout(()=>document.getElementById('techniques').scrollIntoView({behavior:'smooth'}),300);
+  })();
+  $('#gloss').innerHTML=(window.HD_GLOSSARY||[]).map(g=>
+    `<div class="panel" style="padding:18px 20px"><h3 class="t-h3" style="font-size:17px;margin-bottom:8px">${g[0]}</h3>
+      <p style="font-size:14px;color:var(--ink-2);line-height:1.6">${g[1]}</p></div>`).join('');
+})();
+</script>
+<script src="assets/stars.js?v=1789681734"></script>
+</body>
+</html>

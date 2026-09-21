@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js";</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06070A">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bmws.css?v=1789681734">
+<link rel="stylesheet" href="assets/core.css?v=1789681734">
+<link rel="stylesheet" href="assets/pages.css?v=1789681734">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<title>Taste · the rules this site is built to | Helldive Command</title>
+<meta name="description" content="Super admin workspace: every taste rule Bazil has given for this site, with its status and where it is enforced.">
+</head>
+<body>
+<header class="sec phead" style="padding-bottom:22px">
+  <div class="phead-bg"><img src="assets/img/art/cine-bays.webp" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+  <h1 class="t-h1" style="margin:0 0 16px" data-decode>The rules</h1>
+  <p class="t-lead">Every taste rule given for this site, in the order it was given, with how it is enforced and its status on 14 Sep 2026. A rule stays on this page until the site stops needing it.</p>
+  </div>
+</header>
+
+<section class="sec wrap" id="rules" style="padding-top:34px">
+  <div class="sec-head"><div><h2 class="t-h2" data-decode>What the site must do</h2></div>
+    <p class="t-lead">Enforced means a stylesheet rule, a build check or a sweep catches it. Editorial means a person has to remember.</p></div>
+  <div class="tscroll"><table class="tbl cmp-tbl"><thead><tr><th>#</th><th>Rule, in his words</th><th>What it means here</th><th>Enforced by</th><th>Status</th></tr></thead><tbody id="rulesBody"></tbody></table></div>
+</section>
+
+<section class="sec wrap" id="structure">
+  <div class="sec-head"><div><h2 class="t-h2" data-decode>Page structure</h2></div>
+    <p class="t-lead">Every page follows the same skeleton so a visitor understands it in seconds.</p></div>
+  <div class="rules" id="struct"></div>
+</section>
+
+<section class="sec wrap" id="audit">
+  <div class="sec-head"><div><h2 class="t-h2" data-decode>Last audit</h2></div>
+    <p class="t-lead">Headless Chrome across every page: eyebrows, lines, chips, punctuation, broken images, empty cards, script errors, phone width.</p></div>
+  <div class="tscroll"><table class="tbl cmp-tbl"><thead><tr><th>Page</th><th>Header tags</th><th>Chips</th><th>Left lines</th><th>Broken images</th><th>Empty cards</th><th>JS errors</th><th>Phone overflow</th></tr></thead><tbody id="auditBody"></tbody></table></div>
+  <p class="cmp-note" id="auditStamp"></p>
+</section>
+
+<script src="assets/core.js?v=1789681734"></script>
+<script>
+(function(){
+const {$}=window.HD;
+const R=[
+ ['No dashes as pauses or separators','Middle dots, colons and commas instead; no em or en dash anywhere in copy or data','Sweep counts " — " and " – " on every page','Enforced'],
+ ['No exclamation marks in copy','Applies to our own prose; the in-universe propaganda voice keeps them','Editorial','Editorial'],
+ ['Never zero-pad numbers','1 2 3, not 01 02 03, in labels, ladders, lists and buy orders. Clocks stay mm:ss','Sweep counts stray "0N" text; the admin bar tabs are the standard and exempt','Enforced'],
+ ['No left lines as a design element','No border-left, no left stripes, no left-accented callouts. Emphasis by tint, chip or a top rule','Sweep counts elements with a 2 px solid left border','Enforced'],
+ ['Use lines sparingly','Corner brackets on three surfaces only (wait cards, doctrine panel, terminal bezel); hazard stripe only after the hero strip and page headers; thin dividers off','pages.css: .hazard.thin{display:none}, HUD list in motion.js','Enforced'],
+ ['Fewer eyebrows','Numbered section labels off site-wide; no micro labels on cards, deck or bands; header eyebrow tags removed on every page','pages.css: .sec-head .idx{display:none}; header tags stripped 14 Sep','Enforced'],
+ ['Icons and visuals everywhere, from the correct source','Real renders and wiki icons on cards, tiles, loadouts, wait cards, deck; no drawn fallbacks','Sweep counts broken images; icon pipeline in tools/pipeline','Enforced'],
+ ['Premium, immersive, like being on the Super Destroyer','Bridge strip, hero film, deck menu, art bands, calm motion; no cheap tilt','motion.js, pages.css','Editorial'],
+ ['More vertical spacing','Sections 72 to 128 px, heads 38 to 72 px below, dividers carry margin','core.css .sec, .sec-head','Enforced'],
+ ['Title, index and description aligned','Index gone; the lead\'s first line sits level with the title and on the last card column','pages.css .sec-head rules','Enforced'],
+ ['Cards never empty','Wait cards carry art bands, card 2 lists dispatches when there is no order','home.js','Enforced'],
+ ['Hold rule on every stratagem activity','Input only while the stratagem key is held, with the player\'s binding; arcade hold mode on by default','HD.hold in core.js; arcade HOLD','Enforced'],
+ ['Everything must function, verified in the browser','CDP sweep of 14 pages plus phone width after every change','/tmp/func.py, phone sweep','Enforced'],
+ ['Numbers must be exact, recent and sourced','Game-extracted anatomy and weapon data via the wiki; scores print their working; doctrine cites the page','build_stats.py, data/stats.js, HD_RULES src','Enforced'],
+ ['Weak points as a diagram','Zone map with hand-placed pins on 57 enemies, on cards, the wait card and the simulator','data/zones.js, statsui.js zoneMap','Enforced'],
+ ['Responsive','Phone width checked on every changed page; no horizontal overflow','Phone sweep','Enforced'],
+ ['Feedback and enlist','Corrections desk and enlist form on the home page, both stored locally until an endpoint is set','home.js; HD_ENLIST_ENDPOINT, HD_FEEDBACK_ENDPOINT','Waiting on endpoints'],
+ ['Super admin bar identical everywhere','One sheet (assets/bmws.css), one markup in core.js, measured 62 px','core.js nav()','Enforced'],
+ ['Little time to understand, most value first','One-line leads that say what the page is and what to do; a primary action on every card; the simulator at the top of the bestiary','Editorial; header leads rewritten 14 Sep','Editorial'],
+];
+$('#rulesBody').innerHTML=R.map((r,i)=>`<tr><td class="mono">${i+1}</td><td class="cmp-n1" style="white-space:normal">${r[0]}</td><td class="cmp-d">${r[1]}</td><td class="cmp-d">${r[2]}</td><td><span class="${r[3]==='Enforced'?'cmp-y':r[3]==='Editorial'?'cmp-p':'cmp-n'}">${r[3]}</span></td></tr>`).join('');
+const S=[
+ ['Admin bar and nav','The super admin bar, then the site nav, then the bridge strip. Identical on every page.'],
+ ['Header','Title and one lead: what the page is, what to do. No eyebrow, no chips. Live counters on the right.'],
+ ['The tool first','Where a page has an interactive tool (simulator, drill, terminal, builder) it comes before the reference list.'],
+ ['Filter bar','Chips for the main split, a search box, a sort, a count, a view toggle. One row.'],
+ ['Cards','Visual first, name, the numbers block, one reason, chips for slot and pen only, then the actions: the primary in gold, one ghost.'],
+ ['Footer','Sources, the report link, the ribbon. Nothing else.'],
+];
+$('#struct').innerHTML=S.map((s,i)=>`<article class="rule-c"><b>${i+1}</b><h3>${s[0]}</h3><p>${s[1]}</p></article>`).join('');
+const A=[{"tags":0,"pills":9,"chips":0,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"index"},{"tags":0,"pills":0,"chips":5,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"stratagems"},{"tags":0,"pills":0,"chips":7,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"arsenal"},{"tags":0,"pills":21,"chips":5,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"enemies"},{"tags":0,"pills":9,"chips":8,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"meta"},{"tags":0,"pills":0,"chips":5,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"armory"},{"tags":0,"pills":174,"chips":4,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"warbonds"},{"tags":0,"pills":7,"chips":7,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"manual"},{"tags":0,"pills":0,"chips":0,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"terminals"},{"tags":0,"pills":0,"chips":0,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"blueberries"},{"tags":0,"pills":0,"chips":0,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"hellpod"},{"tags":0,"pills":24,"chips":26,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"intel"},{"tags":0,"pills":0,"chips":11,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"arcade"},{"tags":0,"pills":0,"chips":0,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"competitors"},{"tags":0,"pills":0,"chips":0,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"logo"},{"tags":0,"pills":0,"chips":0,"leftLines":0,"broken":0,"empties":0,"errs":0,"ov":0,"p":"taste"}];
+$('#auditBody').innerHTML=A.map(a=>`<tr><td class="cmp-n1">${a.p}</td><td class="num">${a.tags}</td><td class="num">${a.pills+a.chips}</td><td class="num">${a.leftLines}</td><td class="num">${a.broken}</td><td class="num">${a.empties}</td><td class="num">${a.errs}</td><td class="num">${a.ov===0?'<span class="cmp-y">none</span>':a.ov+' px'}</td></tr>`).join('');
+$('#auditStamp').textContent='Run '+"13 Sep 2026"+', 1440 wide and 390 wide, headless Chrome.';
+})();
+</script>
+</body>
+</html>

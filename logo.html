@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js";</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06070A">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bmws.css?v=1789681734">
+<link rel="stylesheet" href="assets/core.css?v=1789681734">
+<link rel="stylesheet" href="assets/pages.css?v=1789681734">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<title>Logo · every mark and where it lives | Helldive Command</title>
+<meta name="description" content="Super admin workspace: the Helldive Command logo, its history, the candidates, the in-game references it draws from, and every place the mark is used.">
+</head>
+<body>
+<header class="sec phead" style="padding-bottom:22px">
+  <div class="phead-bg"><img src="assets/img/art/cine-flag.webp" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+  <h1 class="t-h1" style="margin:18px 0 16px" data-decode>The mark</h1>
+  <p class="t-lead">One page for everything about the logo: the mark in use right now, where it appears and at what size, the candidates on the table, the marks it replaced, and the in-game emblems it borrows from. Facts about the game's own emblems are marked; the rest is our brand decisions.</p>
+  </div>
+</header>
+<div class="hazard thin"></div>
+
+<section class="sec wrap" style="padding-top:34px" id="current">
+  <div class="sec-head"><div><span class="idx">1 / In use</span><h2 class="t-h2" data-decode>The crest</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">Chosen 13 Sep 2026 ("use this as the logo for now"). Helldivers skull inside a laurel wreath, a star and chevrons above, a diamond below. Supplied as a 1254 px square on black; cut to a transparent mark by luminance keying.</p></div>
+  <div class="lg-hero">
+    <figure class="lg-swatch dark"><img src="assets/img/brand/crest.webp" alt="The crest on the site's black"><figcaption>On void, #06070A</figcaption></figure>
+    <figure class="lg-swatch gold"><img src="assets/img/brand/crest.webp" alt="The crest on gold" style="filter:brightness(0)"><figcaption>Knocked out on gold, #FFE01B</figcaption></figure>
+    <figure class="lg-swatch light"><img src="assets/img/brand/crest.webp" alt="The crest on white" style="filter:brightness(0)"><figcaption>Knocked out on white</figcaption></figure>
+    <figure class="lg-swatch dark sm"><img src="assets/img/brand/crest.webp" alt="" style="width:34px;height:34px"><img src="assets/img/brand/crest.webp" alt="" style="width:64px;height:64px"><img src="assets/img/brand/crest.webp" alt="" style="width:128px;height:128px"><figcaption>34, 64 and 128 px</figcaption></figure>
+  </div>
+  <div class="tscroll"><table class="tbl lg-tbl"><thead><tr><th>Where</th><th>File</th><th>Size</th><th>Notes</th></tr></thead><tbody>
+    <tr><td>Navigation, every page</td><td class="mono">assets/img/brand/crest.webp</td><td>34 &times; 34 px, 256 px source</td><td>Injected by core.js as <span class="mono">MARK</span>, so it is identical everywhere. Was the official skull at 30 &times; 31.</td></tr>
+    <tr><td>Browser tab</td><td class="mono">assets/img/brand/favicon.png</td><td>64 px</td><td>Replaced the inline SVG skull on all 16 pages.</td></tr>
+    <tr><td>Home screen, iOS</td><td class="mono">assets/img/app/icon-180.png</td><td>180 px on #080A0E</td><td>6 percent margin.</td></tr>
+    <tr><td>Home screen, Android and PWA</td><td class="mono">assets/img/app/icon-192.png, icon-512.png</td><td>192 and 512 px on #080A0E</td><td>Listed in manifest.webmanifest.</td></tr>
+    <tr><td>Maskable icon</td><td class="mono">assets/img/app/icon-512-maskable.png</td><td>512 px, 18 percent safe margin</td><td>Android masks the corners; the wreath stays inside the circle.</td></tr>
+    <tr><td>Build card PNG</td><td class="mono">assets/meta.js buildCard()</td><td>1200 &times; 720</td><td>Text lockup only, no mark yet. Open item.</td></tr>
+    <tr><td>Source</td><td class="mono">assets/img/brand/crest-512.png</td><td>512 px transparent</td><td>Regenerate the rest from this; the 1254 px original is in the chat, not the repo.</td></tr>
+  </tbody></table></div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="candidates">
+  <div class="sec-head"><div><span class="idx">2 / On the table</span><h2 class="t-h2" data-decode>Candidates</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">Two more marks arrived on 13 Sep after the crest. Both put the skull over the Super Earth globe. Their files have not reached the repo yet, so the slots below describe them and wait for the PNGs.</p></div>
+  <div class="lg-cands">
+    <article class="panel lg-cand"><div class="lg-cand-img"><img src="assets/img/brand/crest.webp" alt=""></div><div class="lg-cand-in"><span class="tag">Candidate 1 &middot; in use</span><h3>Crest</h3><p>Skull, laurel wreath, star and chevrons, diamond. Gold on black. Reads at 34 px, which is the test the nav sets.</p></div></article>
+    <article class="panel lg-cand pending"><div class="lg-cand-img"><span>PNG pending</span></div><div class="lg-cand-in"><span class="tag">Candidate 2</span><h3>Globe and wreath, light</h3><p>Yellow skull over the blue Super Earth globe, the HD2 skyline on top, two gold laurel wings, five blue stars under it, on white. Three colours, so it needs the blue kept where the site is gold on black.</p></div></article>
+    <article class="panel lg-cand pending"><div class="lg-cand-img"><span>PNG pending</span></div><div class="lg-cand-in"><span class="tag">Candidate 3</span><h3>Globe and wings, blue</h3><p>The same skull and globe on Super Earth blue, white aviator wings behind the skull, gold laurels, seven white stars. Closest to the in-game federation emblem, and the one with the strongest colour ownership.</p></div></article>
+  </div>
+  <p class="cmp-note">To file them: save the two images as assets/img/brand/cand-globe-light.png and assets/img/brand/cand-globe-blue.png; the slots above will show them once the files exist.</p>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="history">
+  <div class="sec-head"><div><span class="idx">3 / Before</span><h2 class="t-h2" data-decode>Marks this one replaced</h2></div></div>
+  <div class="lg-hist">
+    <figure class="lg-swatch dark"><img src="assets/img/brand/skull.webp" alt="The official Helldivers skull"><figcaption>Official Helldivers skull, 11 to 13 Sep. The game's own mark; kept as the in-game reference.</figcaption></figure>
+    <figure class="lg-swatch dark"><img src="assets/img/brand/skull-mark.svg" alt="Custom fierce skull"><figcaption>Custom fierce skull, 12 Sep. Asked for, built, then rejected the same day: "use the previous logo or helldiver skull logo".</figcaption></figure>
+  </div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="reference">
+  <div class="sec-head"><div><span class="idx">4 / Reference</span><h2 class="t-h2" data-decode>The game's own emblems</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">What the candidates borrow from. Descriptions from the game and its wiki; the assets below are the ones already in the repo.</p></div>
+  <div class="lg-ref">
+    <figure class="lg-swatch dark"><img src="assets/img/brand/super-earth-emblem.svg" alt=""><figcaption>Super Earth emblem: globe, skyline, laurels, stars. Used on the flag, the Super Destroyer bridge and the training facility floor.</figcaption></figure>
+    <figure class="lg-swatch dark"><img src="assets/img/brand/flag.webp" alt=""><figcaption>Flag of Super Earth, blue field with the emblem and a row of stars.</figcaption></figure>
+    <figure class="lg-swatch dark"><img src="assets/img/brand/flag-state.webp" alt=""><figcaption>State flag variant.</figcaption></figure>
+    <figure class="lg-swatch dark"><img src="assets/img/brand/seaf.webp" alt=""><figcaption>SEAF, the Super Earth Armed Forces.</figcaption></figure>
+    <figure class="lg-swatch dark"><img src="assets/img/brand/navy.webp" alt=""><figcaption>Super Earth Navy.</figcaption></figure>
+    <figure class="lg-swatch dark row"><img src="assets/img/brand/glyph-bug.webp" alt=""><img src="assets/img/brand/glyph-bot.webp" alt=""><img src="assets/img/brand/glyph-squid.webp" alt=""><figcaption>Faction glyphs: Terminids, Automatons, Illuminate.</figcaption></figure>
+    <figure class="lg-swatch dark row"><img src="assets/img/brand/ministry-defense.svg" alt=""><img src="assets/img/brand/ministry-truth.svg" alt=""><img src="assets/img/brand/ministry-science.svg" alt=""><img src="assets/img/brand/ministry-humanity.svg" alt=""><figcaption>Ministry seals: Defense, Truth, Science, Humanity.</figcaption></figure>
+  </div>
+  <div class="tscroll"><table class="tbl lg-tbl"><thead><tr><th>Emblem</th><th>Where it appears in the game</th><th>What it tells the mark</th></tr></thead><tbody>
+    <tr><td>Helldivers 1 emblem</td><td>Federation symbol in the first game: globe on a grid, skyline on top, one laurel sweep.</td><td>The skyline and the single sweep are the oldest elements; every later emblem keeps them.</td></tr>
+    <tr><td>Helldivers 2 intro emblem</td><td>The opening broadcast: white globe, gold laurels either side, ring of stars.</td><td>Gold laurels plus stars is the HD2 signature; candidates 2 and 3 use it.</td></tr>
+    <tr><td>Super Earth Federation roundel</td><td>Training facility floor, with "Super Earth Federation" on the scroll and gold wings.</td><td>Wings under the globe; candidate 3 moves them behind the skull.</td></tr>
+    <tr><td>In-game emblem</td><td>Bridge screens, Acquisitions terminals, banners and the flag.</td><td>Globe, skyline, laurel and a row of seven stars; the canonical current form.</td></tr>
+    <tr><td>Helldivers skull</td><td>The Helldivers' own insignia on armour, the cape and the game logo.</td><td>The skull is the part that says "Helldivers" rather than "Super Earth"; the crest keeps it central.</td></tr>
+  </tbody></table></div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="rules">
+  <div class="sec-head"><div><span class="idx">5 / Rules</span><h2 class="t-h2" data-decode>How the mark is used</h2></div></div>
+  <div class="rules" id="lgRules"></div>
+</section>
+
+<script src="assets/core.js?v=1789681734"></script>
+<script src="assets/motion.js?v=1789681734"></script>
+<script>
+(function(){
+const {$}=window.HD;
+const R=[
+ ['Gold on void','The mark is #FFE01B on #06070A. On gold or white it is knocked out to black. Never a third colour behind it, and never a drop shadow.'],
+ ['One file, one place','core.js holds the nav markup, so the mark is byte-identical on every page. Change the file, not a page.'],
+ ['Clear space','Leave the wreath\'s width as air on every side. Nothing overlaps the star or the diamond.'],
+ ['Minimum size','34 px in the nav is the floor. Below that use the skull alone, which still reads at 16 px in the tab.'],
+ ['No left lines','No stripes, rules or bars beside the mark; the lockup is mark, wordmark and the small line under it.'],
+ ['Fan work','This is a fan site. The skull and the Super Earth emblem belong to Arrowhead Game Studios; the crest arrangement is ours. Say so in the footer.'],
+];
+$('#lgRules').innerHTML=R.map((r,i)=>`<article class="rule-c"><b>RULE ${i+1}</b><h3>${r[0]}</h3><p>${r[1]}</p></article>`).join('');
+/* candidate files drop in when they exist */
+[['cand-globe-light','Candidate 2'],['cand-globe-blue','Candidate 3']].forEach(([f,lab])=>{
+  const im=new Image(); im.onload=()=>{ const c=[...document.querySelectorAll('.lg-cand.pending')].find(x=>x.querySelector('.tag').textContent.trim()===lab); if(c){ c.classList.remove('pending'); c.querySelector('.lg-cand-img').innerHTML=''; c.querySelector('.lg-cand-img').appendChild(im);} };
+  im.src=`assets/img/brand/${f}.png`;
+});
+})();
+</script>
+</body>
+</html>

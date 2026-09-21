@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.className+=" js";</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06070A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/app/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bmws.css?v=1789681734">
+<link rel="stylesheet" href="assets/core.css?v=1789681734">
+<link rel="stylesheet" href="assets/pages.css?v=1789681734">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<title>The Arcade · Stratagem Hero and drills | Helldive Command</title>
+<meta name="description" content="Stratagem Hero rebuilt rule for rule, Code Rush, Enemy Intel Drill, Hellpod Reflex and a realistic Field Drill, all in the browser.">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<link rel="stylesheet" href="assets/range.css?v=1789681734">
+</head>
+<body>
+
+<header class="sec phead" style="padding-bottom:22px">
+  <div class="phead-bg"><img src="assets/img/art/cine-flag.webp" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+  <h1 class="t-h1" style="margin:0 0 16px" data-decode>Training deck</h1>
+  <p class="t-lead">Report for drills, Helldiver! Stratagem Hero with five drills, and the Helldive Simulator, all in the browser, keyboard or touch. The input beeps and the game-over jingle are the real in-game samples. Turn on realistic hold-to-input and every drill demands you hold the stratagem key while you type, exactly like the dive. Freedom never sleeps!</p>
+  </div>
+</header>
+
+<div class="arc-lay wrap"><aside class="arc-side"><div class="arc-side-in"><b class="arc-lab">Drills</b>  <nav class="drill-tabs" id="drillTabs" aria-label="Drills">
+    <a class="chip on" href="#hero"><svg class="tab-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.6" y="6.4" width="18.8" height="11.8" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 10v5M5.5 12.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="16" cy="11.4" r="1.2" fill="currentColor"/><circle cx="18.4" cy="14" r="1.2" fill="currentColor"/></svg>Stratagem Hero</a>
+    <a class="chip" href="#rush"><svg class="tab-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3 5 14h6l-1 7 8-11h-6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Code Rush</a>
+    <a class="chip" href="#intel"><svg class="tab-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c4.3 0 7.3 3 7.3 7.3v3.2l1.9 4.5H2.8l1.9-4.5v-3.2c0-4.3 3-7.3 7.3-7.3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="9.1" cy="11.4" r="1.5" fill="currentColor"/><circle cx="14.9" cy="11.4" r="1.5" fill="currentColor"/></svg>Enemy Intel Drill</a>
+    <a class="chip" href="#reflex"><svg class="tab-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6c3.1 2.6 4.6 6 4.6 9.6 0 3-1.5 5.9-4.6 8.8-3.1-2.9-4.6-5.8-4.6-8.8 0-3.6 1.5-7 4.6-9.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Hellpod Reflex</a>
+    <a class="chip" href="#field"><svg class="tab-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6 21.4 12 12 21.4 2.6 12Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 7.4v9.2M8.2 11.2 12 7.4l3.8 3.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Field Drill</a>
+    <a class="chip" href="#range"><svg class="tab-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4" stroke="currentColor" stroke-width="1.7"/></svg>Helldive Simulator</a>
+    <a class="chip ext" href="terminals.html"><svg class="tab-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.8" y="4" width="18.4" height="13" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M6.4 8.2 9 10.6l-2.6 2.4M11.4 13.2h5.2M8.4 20h7.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Field Ops &#9654;</a>
+    </nav><b class="arc-lab">Settings</b><div class="arc-set">
+    <label class="chip hold"><input type="checkbox" id="holdMode" style="accent-color:var(--gold)"> Realistic hold-to-input</label>
+    <select class="chip" id="holdKey" title="Stratagem menu key"><option value="Control">Stratagems: hold Ctrl (game default)</option><option value="CapsLock">Stratagems: hold Caps Lock</option><option value="Shift">Stratagems: hold Shift</option><option value="Alt">Stratagems: hold Alt</option><option value="Mouse4">Stratagems: hold Mouse 4 (side button)</option><option value="Mouse5">Stratagems: hold Mouse 5 (side button)</option><option value="Toggle:Control">Stratagems: press Ctrl to open, again to close</option></select><select class="chip" id="diveKey" style="padding-right:26px" title="Dive key"><option value="Space">Dive: Space (game default)</option><option value="Control">Dive: Ctrl</option><option value="KeyC">Dive: C</option><option value="KeyX">Dive: X</option><option value="Mouse4">Dive: Mouse 4</option><option value="Mouse5">Dive: Mouse 5</option></select>
+    <button class="chip" id="sfxBtn" aria-pressed="true">Sound: on</button>
+  </div><p class="mono dim" id="holdNote"></p></div></aside><div class="arc-main"><!-- ============ 1. STRATAGEM HERO (the cabinet) ============ -->
+<section class="sec wrap" id="hero" style="padding-top:34px">
+<h2 class="sr-only">Drills</h2>
+  <div class="sec-head">
+    <div><span class="idx">Drill 1 &middot; Super Destroyer arcade</span><h2 class="t-h2" data-decode>Stratagem Hero</h2><p class="prov game">In the game &middot; the Super Destroyer cabinet, rule for rule</p>
+      <p class="t-lead" style="margin-top:14px">The cabinet from the Super Citizen deck, rule for rule. Ten seconds a round, one second back per correct code, six codes in round one and one more every round up to sixteen. Five points per arrow. Round bonus, time bonus, perfect bonus. Three seconds of shame on the game-over screen before it lets you restart.</p></div>
+  </div>
+  <div class="cab" id="cab">
+    <div class="cab-bezel">
+      <div class="cab-screen" id="cabScreen">
+        <div class="cab-scan"></div>
+        <div class="cab-view" id="cabStart">
+          <div class="cab-logo">STRATAGEM<span>HERO</span></div>
+          <p class="cab-prompt blink">Enter any Stratagem Input to Start!</p>
+          <div class="cab-hs"><h3>High Scores</h3><ol id="cabHS"></ol></div>
+        </div>
+        <div class="cab-view hide" id="cabReady">
+          <div class="cab-big">Get Ready</div>
+          <div class="cab-roundlabel">Round <b id="cabReadyRound">1</b></div>
+          <p class="cab-flavour" id="cabFlavour"></p>
+        </div>
+        <div class="cab-view hide" id="cabGame">
+          <div class="cab-top"><span>Round <b id="cabRound">1</b></span><span>Score <b id="cabScore">0</b></span></div>
+          <div class="cab-name" id="cabName">&nbsp;</div>
+          <div class="cab-strip" id="cabStrip"></div>
+          <div class="arrows cab-arrows" id="cabArrows"></div>
+          <div class="cab-time" id="cabTimeWrap"><i id="cabTime"></i></div>
+        </div>
+        <div class="cab-view hide" id="cabOver">
+          <div class="cab-big sm">Round <b id="cabOverRound">1</b></div>
+          <dl class="cab-bonus">
+            <div id="cabRBrow"><dt>Round Bonus</dt><dd id="cabRB">0</dd></div>
+            <div id="cabTBrow"><dt>Time Bonus</dt><dd id="cabTB">0</dd></div>
+            <div id="cabPBrow"><dt>Perfect Bonus</dt><dd id="cabPB">0</dd></div>
+            <div id="cabTSrow" class="tot"><dt>Total Score</dt><dd id="cabTS">0</dd></div>
+          </dl>
+        </div>
+        <div class="cab-view hide" id="cabDead">
+          <div class="cab-big over">Game Over</div>
+          <div class="cab-hs cab-hs3" id="cabHSwrap"><h3>High Scores</h3><ol id="cabHS2"></ol></div>
+          <p class="cab-sub">Your Final Score</p>
+          <div class="cab-final" id="cabFinal">0</div>
+          <div class="cab-initials hide" id="cabInit"><p>Top three. Enter your initials</p><div class="cab-letters" id="cabLetters"><b class="on">A</b><b>A</b><b>A</b></div><p class="cab-hint">↑ ↓ letter &middot; → next &middot; Enter confirm</p></div>
+          <p class="cab-prompt blink hide" id="cabRestart">Enter any Stratagem Input to Restart!</p>
+        </div>
+      </div>
+    </div>
+    <div class="cab-deck"><span class="cab-plate cab-hold" id="cabHoldPlate">Hold <kbd class="kc">Ctrl</kbd> &middot; arrows or W A S D</span><div class="dpad" id="cabPad" style="margin:0"></div><span class="cab-plate" id="cabBestPlate">Best 0</span></div>
+  </div>
+</section>
+
+
+<!-- ============ 2. CODE RUSH ============ -->
+<section class="sec wrap" id="rush">
+  <div class="sec-head">
+    <div><span class="idx">Drill 2</span><h2 class="t-h2" data-decode>Code Rush</h2><p class="prov ours">Stratagem input &middot; endless</p>
+      <p class="t-lead" style="margin-top:14px">Endless codes, no timer. One wrong input and the run is over. Go deep, Helldiver.</p></div>
+  </div>
+  <div class="game" id="crGame">
+    <div class="game-top">
+      <h3>Endless</h3>
+      <div class="game-stats">
+        <div><b id="crDepth">0</b><span>Depth</span></div>
+        <div><b id="crInputs">0</b><span>Inputs</span></div>
+        <div><b id="crBest">0</b><span>Best depth</span></div>
+      </div>
+    </div>
+    <div class="game-body">
+      <div class="sh-stage" id="crStage">
+        <div id="crPlay" class="hide"><div class="fd-list open cr-list" id="crList" aria-label="Stratagem list"></div>
+          <div class="sh-icon"><img id="crIcon" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div>
+          <div class="sh-name" id="crName"></div>
+          <div class="sh-cat" id="crCat"></div>
+          <div class="arrows sh-arrows" id="crArrows"></div>
+          <div class="sh-msg" id="crMsg"></div>
+          <div class="dpad" id="crPad"></div>
+        </div>
+        <div id="crIdle">
+          <h3 class="sh-name" style="margin-bottom:14px">Code Rush</h3>
+          <button class="btn" id="crStart">Start the run <span class="ar">&#9654;</span></button>
+        </div>
+        <div id="crOver" class="hide">
+          <h3 class="sh-name" style="color:var(--red);margin-bottom:8px">Run ended</h3>
+          <p class="sh-cat" id="crSummary"></p>
+          <button class="btn" id="crAgain" style="margin-top:22px">Again <span class="ar">&#9654;</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ 3. ENEMY INTEL DRILL ============ -->
+<section class="sec wrap" id="intel">
+  <div class="sec-head">
+    <div><span class="idx">Drill 3</span><h2 class="t-h2" data-decode>Enemy Intel Drill</h2><p class="prov ours">Enemy identification &middot; ten questions</p>
+      <p class="t-lead" style="margin-top:14px">Ten questions pulled from the bestiary. Weak points, factions and threat calls. Knowing where to shoot is worth more than any weapon in the arsenal.</p></div>
+  </div>
+  <div class="game" id="qzGame">
+    <div class="game-top">
+      <h3 id="qzProgress">Question 0 of 10</h3>
+      <div class="game-stats">
+        <div><b id="qzScore">0</b><span>Correct</span></div>
+        <div><b id="qzBest">0</b><span>Best</span></div>
+      </div>
+    </div>
+    <div class="game-body">
+      <div class="qz" id="qzStage">
+        <div id="qzPlay" class="hide">
+          <p class="qsub" id="qzKind"></p>
+          <h4 id="qzQ"></h4>
+          <div class="qz-opts" id="qzOpts" style="margin-top:22px"></div>
+          <p class="sh-msg" id="qzMsg"></p>
+        </div>
+        <div id="qzIdle">
+          <h3 class="sh-name" style="margin-bottom:14px">Enemy Intel Drill</h3>
+          <button class="btn" id="qzStart">Begin <span class="ar">&#9654;</span></button>
+        </div>
+        <div id="qzOver" class="hide">
+          <h3 class="sh-name" id="qzGrade" style="margin-bottom:8px"></h3>
+          <p class="qsub" id="qzSummary"></p>
+          <div id="qzReview" style="text-align:left;margin-top:22px"></div>
+          <button class="btn" id="qzAgain" style="margin-top:22px">New set <span class="ar">&#9654;</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ 4. HELLPOD REFLEX ============ -->
+<section class="sec wrap" id="reflex">
+  <div class="sec-head">
+    <div><span class="idx">Drill 4</span><h2 class="t-h2" data-decode>Hellpod Reflex</h2><p class="prov ours">Reaction drill &middot; three lives</p>
+      <p class="t-lead" style="margin-top:14px">Beacons drop across the field. Press the direction shown before it expires. Red beacons are enemy jammers: press one and you lose a life. Three lives.</p></div>
+  </div>
+  <div class="game" id="rxGame">
+    <div class="game-top">
+      <h3 id="rxLives">&#9670;&#9670;&#9670;</h3>
+      <div class="game-stats">
+        <div><b id="rxScore">0</b><span>Score</span></div>
+        <div><b id="rxAvg">·</b><span>Avg reaction</span></div>
+        <div><b id="rxBest">0</b><span>Best</span></div>
+      </div>
+    </div>
+    <div class="game-body">
+      <div style="width:100%">
+        <div class="rx-field" id="rxField"></div>
+        <div class="sh-msg" id="rxMsg" style="text-align:center">Press the direction on each yellow beacon</div>
+        <div class="dpad" id="rxPad"></div>
+        <div style="text-align:center;margin-top:18px"><button class="btn" id="rxStart">Start <span class="ar">&#9654;</span></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============ 5. MISSION SIM ============ -->
+<section class="sec wrap" id="field">
+  <div class="sec-head">
+    <div><span class="idx">Drill 5 &middot; In-mission simulation</span><h2 class="t-h2" data-decode>Field Drill</h2><p class="prov game">In the game &middot; the real call-in loop, cooldowns and call-in times</p>
+      <p class="t-lead" style="margin-top:14px">A full HUD and the real call-in loop. Command issues an order. Hold the stratagem key, the list opens, input while holding, the stratagem arms, throw it, and the Super Destroyer delivers on its real call-in time. Cooldowns are the real values on a ×6 sim clock. Eagles carry their real number of uses before rearming. Let the threat meter fill and you die, which costs a reinforcement and your next order is REINFORCE.</p></div>
+  </div>
+  <div class="game" id="fdGame" style="margin-bottom:0;clip-path:polygon(20px 0,100% 0,100% 100%,0 100%,0 20px)">
+    <div class="game-top"><h3>Field Drill</h3><div class="game-stats"><div><b id="fdScore">0</b><span>Score</span></div><div><b id="fdAvg">·</b><span>Order to throw</span></div><div><b id="fdErr">0</b><span>Errors</span></div><div><b id="fdBest">0</b><span>Best</span></div></div></div>
+  </div>
+  <div class="sim" id="sim" style="clip-path:polygon(0 0,100% 0,100% calc(100% - 20px),calc(100% - 20px) 100%,0 100%)">
+    <div class="sim-bg"><img id="simBg" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div>
+    <div class="sim-fx" id="simFx"><div class="sim-beam" id="simBeam"></div><div class="sim-streak" id="simStreak"></div><div class="sim-flash" id="simFlash"></div></div>
+    <div class="hud" id="hud">
+      <div class="hud-obj"><div class="hud-mtitle" id="hudMission">DEFEND THE POSITION</div><ul id="hudObj"></ul></div>
+      <div class="hud-timer"><b id="hudTime">40:00</b><span>Mission time &middot; sim ×6</span></div>
+      <div class="hud-reinf"><span>Reinforcements</span><b id="hudReinf">◆◆◆◆</b></div>
+      <div class="hud-mods" id="hudMods"></div>
+      <div class="hud-radio" id="hudRadio"></div>
+      <div class="hud-order" id="hudOrder"><i id="hudOrderFrom">SUPER DESTROYER</i><p id="hudOrderTxt">Awaiting orders</p></div>
+      <div class="hud-list" id="hudList"></div>
+      <div class="hud-state" id="hudState"><span class="fd-key" id="hudKey">HOLD CTRL</span><span id="hudStateTxt">to open the stratagem list</span></div>
+      <div class="hud-typed arrows" id="hudTyped"></div>
+      <div class="hud-ball hide" id="hudBall"><img id="hudBallIc" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><b id="hudBallName"></b><span>STRATAGEM READY &middot; throw with Space or click</span></div>
+      <div class="hud-inbound hide" id="hudInbound"><b id="hudInboundName"></b><i id="hudInboundT"></i><div class="timer"><i id="hudInboundBar"></i></div></div>
+      <div class="hud-map"><canvas id="hudMap" width="150" height="150"></canvas><div class="hud-compass" id="hudCompass"></div></div>
+      <div class="hud-slots" id="hudSlots"></div>
+      <div class="hud-threat"><span>Threat</span><div><i id="hudThreat"></i></div></div>
+      <div class="hud-center" id="hudCenter"></div>
+    </div>
+    <div class="sim-idle" id="simIdle">
+      <h3 class="sh-name" style="margin-bottom:10px">Ready to dive</h3>
+      <p class="t-lead" style="margin:0 auto 8px;text-align:center;font-size:15px;max-width:52ch">Hold <b class="gold" id="fdKeyName">Ctrl</b> to open the list. Input with arrows or WASD while holding. Throw with <b class="gold">Space</b> or click. Eight orders. Do not let the threat meter fill.</p>
+      <button class="btn" id="fdStart" style="margin-top:18px">Deploy <span class="ar">&#9654;</span></button>
+    </div>
+    <div class="sim-over hide" id="simOver">
+      <span class="tag" id="fdTag">Mission debrief</span>
+      <h3 class="sh-name" id="fdGrade" style="margin:12px 0 6px">Mission complete</h3>
+      <p class="sh-cat" id="fdSummary"></p>
+      <p class="fd-officer" id="fdOfficer"></p>
+      <div id="fdLog" class="lb" style="max-width:520px;margin:18px auto 0;text-align:left"></div>
+      <button class="btn" id="fdAgain" style="margin-top:22px">Redeploy <span class="ar">&#9654;</span></button>
+    </div>
+    <div class="fd-touch sim-touch">
+      <button class="fd-hold" id="fdHold">HOLD</button>
+      <div class="dpad" id="fdPad" style="margin:0"></div>
+      <button class="fd-throw" id="fdThrow">THROW</button>
+    </div>
+  </div>
+</section>
+
+<!-- range section -->
+<section class="sec wrap" id="range">
+  <div class="sec-head"><div><span class="idx">Drill 6 &middot; Helldive Simulator</span><h2 class="t-h2" data-decode>Helldive Simulator</h2><p class="prov game">In the game &middot; measured throw physics and fuses</p></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">Throw grenades and stratagem beacons at bug holes and a moving Charger, then switch to Aim and shoot steel plates out to 150 m with real projectile drop. 3D, with the game's own controls.</p></div>
+  <details class="range-how"><summary>How the range works, in the game's numbers</summary><p>Reinforce, Resupply, SOS Beacon and the Hellbomb are always in the list and never take a slot. Hold <b>Ctrl</b> and the stratagem list appears; input the code with <b>W A S D</b>; release, and the beacon is in your hand: <b>left click</b> throws it. <b>G</b> throws your grenade, <b>Shift</b> sprints, <b>Space</b> dives, <b>Q</b> marks a distance. There is no charge: how far it flies is how high you aim, about 40 metres at 45 degrees, 34.6 at 30 or 60, 20 at 15 or 75; 65 metres at 45 in Servo-Assisted armour; a dive adds about 5 metres and a sprint dive about 15. Fuses and radii are the wiki's. A stratagem strike lands its call-in time after the beacon anchors.</p></details>
+  <div class="fbar" id="rgModes"></div>
+  <div class="range" id="rangeStage">
+    <button type="button" class="rg-full" id="rgFull" title="Play the range full screen">Fullscreen</button><div class="range-keys">Ctrl stratagem menu &middot; W A S D code &middot; left click throws or fires &middot; right click zooms &middot; G grenade &middot; Shift sprint &middot; Space dive &middot; Q mark &middot; pointer aims</div><div class="range-reticle" aria-hidden="true"></div><div class="range-mark" id="rgMark"></div><div class="range-compass" id="rgCompass" aria-hidden="true"></div><div class="range-lock" id="rgLock"><span>Click the range to take the mouse</span></div><div class="range-list" id="rgList" hidden></div><div class="range-aim" id="rgAim"></div>
+    <div class="range-hud"><div class="range-slots" id="rgSlots" aria-label="Stratagem slots"></div><div class="range-line"><span class="range-hand" id="rgHand"></span><span class="range-clock" id="rgClock">&mdash;</span></div><div class="range-msg" id="rgMsg"></div></div>
+    <div class="range-start">
+      <div class="rs-card">
+        <span class="tag">Drill 6 &middot; Helldive Simulator</span>
+        <h3 class="t-h3">Enter the range</h3>
+        <p>Your loadout, your grenade, the game's keys and sounds.</p>
+        <ul class="rs-list"><li><b>3</b><span>bug holes at 26, 42, 58 m</span></li><li><b>1</b><span>Charger crossing at sprint</span></li><li><b>2</b><span>Automaton tanks at 57 and 79 m</span></li></ul>
+        <button class="btn" id="rgStart">Enter the range <span class="ar">&#9654;</span></button>
+        <p class="rs-note">Loads the 3D range, about 600 KB.</p>
+      </div>
+    </div>
+  </div>
+  <div class="range-bar"><div class="range-stats" id="rgStats"></div><p class="range-note" id="rgNote"></p></div>
+  <div class="range-pad" id="rgPad" aria-label="Touch controls"><button data-k="Control" class="rp-hold">CTRL</button><button data-k="zoom" class="rp-zoom">AIM</button><div class="rp-dpad"><button data-k="w">&#9650;</button><button data-k="a">&#9664;</button><button data-k="d">&#9654;</button><button data-k="s">&#9660;</button></div><button data-k="g">G</button><button data-k=" " data-code="Space">DIVE</button><button data-k="throw" class="rp-throw">THROW</button></div>
+</section></div></div>
+
+<script src="data/comms.js?v=1789681734"></script>
+<script src="data/stratagems.js?v=1789681734"></script>
+<script src="data/enemies.js?v=1789681734"></script>
+<script src="data/images.js?v=1789681734"></script>
+<script src="assets/core.js?v=1789681734"></script>
+<script src="assets/motion.js?v=1789681734"></script>
+<script>window.RANGE_SRC="assets/range.js?v=1789681734";</script>
+<script src="data/stats.js?v=1789681734"></script>
+<script src="data/zones.js?v=1789681734"></script>
+<script src="assets/arcade.js?v=1789681734"></script>
+<script src="assets/stars.js?v=1789681734"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js";</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06070A">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bmws.css?v=1789681734">
+<link rel="stylesheet" href="assets/core.css?v=1789681734">
+<link rel="stylesheet" href="assets/pages.css?v=1789681734">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<title>Competitors · who we are fighting | Helldive Command</title>
+<meta name="description" content="Super admin workspace: the Helldivers 2 fan sites Helldive Command competes with, what each does, and where we win or lose.">
+</head>
+<body>
+<header class="sec phead" style="padding-bottom:22px">
+  <div class="phead-bg"><img src="assets/img/art/cine-cyberstan.webp" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+  <h1 class="t-h1" style="margin:18px 0 16px" data-decode>Who we are fighting</h1>
+  <p class="t-lead">Thirteen Helldivers 2 sites a player could open instead of ours, ranked, screenshotted, profiled one by one, and mined for what to take. Their descriptions are their own page titles and meta descriptions, fetched 13 Sep 2026. Signals (framework, support links, analytics, install support, Discord, headers) were read from each site's HTML the same day. Scores and verdicts are ours and say so.</p>
+  </div>
+</header>
+<div class="hazard thin"></div>
+
+<section class="sec wrap" style="padding-top:34px" id="ranking">
+  <div class="sec-head"><div><span class="idx">1 / The ranking</span><h2 class="t-h2" data-decode>Most dangerous to least, and why</h2></div>
+    <p class="t-lead">Six criteria, each 0 to 5: reach (search position and brand), depth (how much of the game it covers with numbers), training (drills that build reflexes), live war, polish, and upkeep (signals it is still maintained). Weighted 25 / 20 / 20 / 10 / 15 / 10 into a threat score out of 100.</p></div>
+  <div class="cmp-stats">
+    <div><b>13</b><span>Sites audited</span></div>
+    <div><b>5</b><span>Trainers</span></div>
+    <div><b>5</b><span>Databases and builders</span></div>
+    <div><b>4</b><span>War maps</span></div>
+    <div><b>0</b><span>Simulate terminals</span></div>
+  </div>
+  <div class="tscroll"><table class="tbl cmp-tbl"><thead><tr><th>#</th><th>Site</th><th>Job</th><th>Reach</th><th>Depth</th><th>Train</th><th>War</th><th>Polish</th><th>Upkeep</th><th>Threat</th><th>Why it sits here</th></tr></thead><tbody id="rankBody"></tbody></table></div>
+  <p class="cmp-note">Reach for u.gg is assumed from the brand, not measured: the site refused every fetch. Upkeep reads Last-Modified headers where a host sends them (Stratagem Hero: 2 April 2024; Loadout Builder: 8 Sep 2026; Training Manual: the day of the audit) and otherwise the freshness of what the page shows.</p>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="snapshots">
+  <div class="sec-head"><div><span class="idx">2 / The snapshots</span><h2 class="t-h2" data-decode>What each one looks like</h2></div>
+    <p class="t-lead">Headless Chrome, 1280 by 800, 13 Sep 2026, eight seconds after load. Two of them are exactly what a visitor sees: a bot wall and a certificate error.</p></div>
+  <div class="cmp-shots" id="shots"></div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="rivals">
+  <div class="sec-head"><div><span class="idx">3 / The rivals, one by one</span><h2 class="t-h2" data-decode>Real rivals, in full</h2></div>
+    <p class="t-lead">Own words first, then what we saw in the HTML, where the data comes from, the scores with reasons, and the one thing worth taking.</p></div>
+  <div id="profiles"></div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="matrix">
+  <div class="sec-head"><div><span class="idx">4 / The matrix</span><h2 class="t-h2" data-decode>Feature by feature</h2></div>
+    <p class="t-lead">The last row is us. Read the Terminals column: it is the whole reason the site exists.</p></div>
+  <div class="tscroll"><table class="tbl cmp-tbl"><thead><tr><th>Site</th><th>Trainer</th><th>Hold rule</th><th>Bestiary</th><th>Weapon numbers</th><th>Builder</th><th>Warbonds</th><th>Live war</th><th>Terminals</th><th>Installable</th><th>API</th><th>Support ask</th></tr></thead><tbody id="matrixBody"></tbody></table></div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="takings">
+  <div class="sec-head"><div><span class="idx">5 / The takings</span><h2 class="t-h2" data-decode>What to take from each job</h2></div></div>
+  <div id="cmpGroups"></div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="brief">
+  <div class="sec-head"><div><span class="idx">6 / The brief</span><h2 class="t-h2" data-decode>Six things this site must do next</h2></div>
+    <p class="t-lead">Ordered by how much of the field each one neutralises.</p></div>
+  <div class="rules" id="brief"></div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="moat">
+  <div class="sec-head"><div><span class="idx">7 / Our position</span><h2 class="t-h2" data-decode>What nobody else ships</h2></div></div>
+  <div class="rules" id="moatList"></div>
+  <div class="cmp-risk">
+    <h3 class="t-h3">Where we are behind</h3>
+    <ul id="behind"></ul>
+  </div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="honest">
+  <div class="sec-head"><div><span class="idx">8 / The honest column</span><h2 class="t-h2" data-decode>What we could not verify</h2></div></div>
+  <ul class="cmp-honest" id="honest"></ul>
+</section>
+
+<script src="assets/core.js?v=1789681734"></script>
+<script src="assets/motion.js?v=1789681734"></script>
+<script>
+(function(){
+const {$}=window.HD;
+const C=[{"k":"training-manual","n":"Helldivers Training Manual","u":"https://helldiverstrainingmanual.com/","job":"Trainer + wiki","tier":"A","own":"\"In the Helldivers Training Manual you will find everything you need to know to become a proficient Helldiver. From basic training exercises to advanced combat tactics.\"","seen":"Navigation: war status, planetary records, planet glossary, stratagems with interactive practice, bestiary, API, disclaimer. Svelte build on Cloudflare, page updated the day we looked.","data":"Own database plus a public API it advertises in its navigation.","sc":{"reach":4,"depth":3,"train":3,"war":4,"polish":4,"upkeep":5},"why":"The only rival with training and a bestiary under one roof, and it is maintained (Last-Modified the same day). Its practice mode types codes freely; no hold rule, no weapon anatomy, no terminals.","take":"Publish an API page. Theirs is a navigation item and it earns links.","score":74,"sig":{"ads":false,"support":[],"framework":["svelte"],"pwa":false,"analytics":["cloudflareinsights"],"api":false,"discord":false,"github":true,"server":"cloudflare","last_mod":"Sun, 13 Sep 2026 11:14:27 GMT","ogimg":true,"size_kb":23,"links":120}},{"k":"democracy-hub","n":"Democracy Hub","u":"https://democracy-hub.net/","job":"Builder + map","tier":"A","own":"\"The most advanced Helldivers 2 loadout builder\" with randomiser, enemy simulator, galactic war map and statistics pages (search listing and fetched page).","seen":"Buy Me a Coffee and a donate link, a Discord, calls a live war API. Humorous in-universe copy with \"classified logs\". Nginx host.","data":"Community collected weapon and enemy numbers, plus the live war API.","sc":{"reach":4,"depth":4,"train":0,"war":4,"polish":4,"upkeep":4},"why":"Strongest builder in the field and the only enemy simulator. Zero training. Its numbers are crowd sourced where ours are extracted from the game files and cross-checked against the wiki.","take":"An enemy simulator: pick a weapon, pick an enemy, see the hits. We already have the model; it needs a front end.","score":64,"sig":{"ads":false,"support":["buymeacoffee","donate"],"framework":[],"pwa":false,"analytics":[],"api":true,"discord":true,"github":false,"server":"nginx/1.29.8","last_mod":null,"ogimg":true,"size_kb":94,"links":36}},{"k":"divers-gg","n":"divers.gg","u":"https://divers.gg/","job":"Wiki + map","tier":"B","own":"\"Divers.gg - Helldivers 2 Wiki & Database\" with a War Status liberation map, armour, weapons, stratagems, enemies, planets, biomes, conditions, and a ship name generator.","seen":"Next.js and React with WordPress content, Google Tag Manager, a Discord. 317 KB home page, 81 links.","data":"Its own wiki-style pages; source not stated on the home page.","sc":{"reach":3,"depth":4,"train":0,"war":3,"polish":3,"upkeep":3},"why":"Breadth without a point of view: no ranking, no reasons, no training. The reference competitor for our codex pages on coverage alone.","take":"Planets, biomes and conditions pages; we have none.","score":52,"sig":{"ads":false,"support":[],"framework":["__next","react","vite","wp-content"],"pwa":false,"analytics":["googletagmanager","gtag("],"api":false,"discord":true,"github":false,"server":"cloudflare","last_mod":null,"ogimg":true,"size_kb":317,"links":81}},{"k":"stratagem-hero","n":"Stratagem Hero","u":"https://stratagemhero.net/","job":"Trainer","tier":"B","own":"\"Stratagem Hero is an online website that includes both, the Helldivers 2 ingame arcade, and an utility to see all the stratagems with its codes.\"","seen":"Static site on S3, home page 2 KB, Last-Modified 2 April 2024. No analytics, no support links.","data":"Its own stratagem list.","sc":{"reach":4,"depth":1,"train":3,"war":0,"polish":2,"upkeep":1},"why":"Owns the phrase \"stratagem hero\" and has since 2024, and has not changed since April 2024 by its own headers. One drill, the cabinet, no hold rule.","take":"Nothing to copy. Its search position is the thing to take, with a page that answers the same query better.","score":44,"sig":{"ads":false,"support":[],"framework":[],"pwa":false,"analytics":[],"api":false,"discord":false,"github":false,"server":"AmazonS3","last_mod":"Tue, 02 Apr 2024 16:56:51 GMT","ogimg":false,"size_kb":2,"links":0}},{"k":"stratagem-hero-trainer","n":"Stratagem Hero Trainer","u":"https://stratagem-hero-trainer.vercel.app/","job":"Trainer","tier":"B","own":"\"Turning Average Joes into Stratagem Superstars, Because Even Bugs Fear a Well-Placed Stratagem!\" Search listing adds customisable training on chosen stratagems, mobile friendly, installable PWA, scoring and personal bests.","seen":"Next.js on Vercel, installable PWA, Buy Me a Coffee, GitHub link. 131 KB, two links: an app, not a site.","data":"Its own stratagem list.","sc":{"reach":2,"depth":1,"train":4,"war":0,"polish":4,"upkeep":3},"why":"The best pure trainer: pick your stratagems, personal bests, installable. Still no hold rule and no bindings. We match everything it does and add the field rule, the range and the terminals.","take":"\"Train only these\" selection. Our drills draw from the whole codex; a per-player pick list is one afternoon.","score":48,"sig":{"ads":false,"support":["buymeacoffee"],"framework":["__next","react"],"pwa":true,"analytics":[],"api":false,"discord":false,"github":true,"server":"Vercel","last_mod":null,"ogimg":false,"size_kb":131,"links":2}},{"k":"stratagem-trainer","n":"Stratagem Trainer","u":"https://stratagemtrainer.com/","job":"Trainer","tier":"C","own":"\"Stratagem Trainer - Practice your stratagem codes so you can manage democracy and spread liberty with better efficiency!\"","seen":"1 KB shell, service worker, Cloudflare analytics. Everything renders client side.","data":"Its own stratagem list.","sc":{"reach":3,"depth":0,"train":2,"war":0,"polish":2,"upkeep":2},"why":"Single purpose and thin. It exists for one search term.","take":"Nothing.","score":33,"sig":{"ads":false,"support":[],"framework":[],"pwa":true,"analytics":["cloudflareinsights"],"api":false,"discord":false,"github":false,"server":"cloudflare","last_mod":null,"ogimg":false,"size_kb":1,"links":0}},{"k":"weapon-customizer","n":"Helldivers 2 Weapon Customizer","u":"https://helldivers2-weapon-customization.com/","job":"Database","tier":"B","own":"\"Helldivers 2 weapon customizer with live stats, faction weaknesses, stratagem synergies, mission tactics, and Warbond unlock paths to win the Galactic War.\"","seen":"Next.js on Vercel, installable, Google Tag Manager, 186 KB. An exact-match domain built for search.","data":"Not stated on the home page.","sc":{"reach":3,"depth":3,"train":0,"war":0,"polish":3,"upkeep":3},"why":"Covers weapon attachments, which we do not, and stitches warbond paths to weapons the way our warbond page does. No training, no enemies.","take":"Attachment data per weapon. The wiki has it; our arsenal cards have a slot for it.","score":42,"sig":{"ads":false,"support":[],"framework":["__next"],"pwa":true,"analytics":["googletagmanager"],"api":false,"discord":false,"github":false,"server":"Vercel","last_mod":null,"ogimg":true,"size_kb":186,"links":17}},{"k":"loadout-builder","n":"Loadout Builder (helldivers2challenges)","u":"https://helldivers2challenges.com/loadoutbuilder/","job":"Builder","tier":"C","own":"\"Create, save, and share loadouts from Helldivers 2! Join the community of Helldivers and enhance your gameplay experience.\"","seen":"Static shell on S3 (1 KB), Last-Modified 8 Sep 2026, no analytics seen.","data":"Its own item list.","sc":{"reach":2,"depth":1,"train":0,"war":0,"polish":2,"upkeep":3},"why":"One feature, share links for builds, and it was touched this month. Our builder exports a PNG and has no link.","take":"A share link: the build encoded in the URL, so a squad can pass a kit around.","score":26,"sig":{"ads":false,"support":[],"framework":[],"pwa":false,"analytics":[],"api":false,"discord":false,"github":false,"server":"AmazonS3","last_mod":"Tue, 08 Sep 2026 13:14:04 GMT","ogimg":true,"size_kb":1,"links":0}},{"k":"u-gg","n":"u.gg Helldivers 2","u":"https://u.gg/hd2/builds","job":"Builds","tier":"B","unf":true,"own":"Search listing: \"Loadouts for every playstyle with the best Helldivers 2 builds including stratagems, weapons and armor.\" Not fetched: a bot wall answered 403 twice.","seen":"Nothing beyond the wall. u.gg is a large multi-game stats brand, so reach is assumed from the brand, not measured.","data":"Unknown.","sc":{"reach":5,"depth":2,"train":0,"war":0,"polish":4,"upkeep":3},"why":"Brand weight and search authority we cannot match head on. Editorial builds without numbers behind them as far as the listing shows. Inference: they compete on \"best loadout\" queries, not on training or terminals.","take":"Nothing to copy; avoid its query space or answer it with numbers.","score":51,"sig":{"error":"HTTP Error 403: Forbidden"}},{"k":"helldiving-net","n":"helldiving.net","u":"https://helldiving.net/","job":"Database","tier":"C","unf":true,"own":"Search listing: \"Helldivers 2 Database & Wiki\" with a loadouts section. The certificate had expired on 13 Sep 2026, so the fetch was made without verification.","seen":"WordPress with Vite, Google Tag Manager, a Discord, 426 KB home page, 133 links. Browsers show a privacy error before the page.","data":"Its own wiki pages.","sc":{"reach":2,"depth":3,"train":0,"war":0,"polish":2,"upkeep":1},"why":"A broad database behind a certificate warning. An expired certificate is a signal of neglect, not proof.","take":"Nothing. Watch whether the certificate comes back.","score":30,"sig":{"ads":false,"support":[],"framework":["vite","wp-content"],"pwa":false,"analytics":["googletagmanager","gtag("],"api":false,"discord":true,"github":false,"server":"LiteSpeed","last_mod":null,"ogimg":true,"size_kb":426,"links":133}},{"k":"companion","n":"Helldivers 2 Companion","u":"https://helldiverscompanion.com/","job":"War map","tier":"C","own":"\"A Helldivers 2 app, allowing you to view the war progress and track planet liberation statuses!\"","seen":"Svelte, installable PWA, Cloudflare analytics, 3 KB shell.","data":"The live war API.","sc":{"reach":3,"depth":1,"train":0,"war":5,"polish":3,"upkeep":3},"why":"A pure war tracker done well. We dropped our war board on purpose because it changes hourly; the live readout on the home page keeps the Major Order.","take":"Nothing for the site. Link to it from the home readout if a reader wants the map.","score":44,"sig":{"ads":false,"support":[],"framework":["svelte"],"pwa":true,"analytics":["cloudflareinsights"],"api":false,"discord":false,"github":false,"server":"cloudflare","last_mod":null,"ogimg":true,"size_kb":3,"links":0}},{"k":"hd2-clan-hub","n":"HD2 Clan Hub","u":"https://hd2clans.com/map","job":"War map + clans","tier":"B","own":"\"Live Helldivers 2 galactic war map showing all planets, supply lines, and faction control.\" Navigation: hangar, clans, operations, leaderboards, stories, contribute.","seen":"Vite build, Cloudflare, a Discord, 436 KB, 76 links. Community features around the map.","data":"The live war API plus its own clan data.","sc":{"reach":3,"depth":2,"train":0,"war":5,"polish":3,"upkeep":4},"why":"A community, not a codex. Leaderboards are the one feature that overlaps our record page, and theirs are cross-device.","take":"Cross-device records need a backend; theirs shows the demand exists.","score":50,"sig":{"ads":false,"support":[],"framework":["vite"],"pwa":false,"analytics":["cloudflareinsights"],"api":false,"discord":true,"github":false,"server":"cloudflare","last_mod":null,"ogimg":true,"size_kb":436,"links":76}},{"k":"hd2galaxy","n":"HD2 Galaxy","u":"https://hd2galaxy.com/","job":"War map","tier":"C","own":"\"Navigate the galaxy with ease using this interactive map for Helldivers 2. Enhance your gameplay experience with managed democracy!\"","seen":"1 KB shell, Cloudflare analytics, client rendered.","data":"The live war API.","sc":{"reach":2,"depth":0,"train":0,"war":4,"polish":2,"upkeep":2},"why":"Map only.","take":"Nothing.","score":28,"sig":{"ads":false,"support":[],"framework":[],"pwa":false,"analytics":["cloudflareinsights"],"api":false,"discord":false,"github":false,"server":"cloudflare","last_mod":null,"ogimg":false,"size_kb":1,"links":0}}];
+const T={reach:'Reach',depth:'Depth',train:'Train',war:'War',polish:'Polish',upkeep:'Upkeep'};
+const sc=v=>`<span class="cmp-sc s${v}">${v}</span>`;
+const ranked=[...C].sort((a,b)=>b.score-a.score);
+$('#rankBody').innerHTML=ranked.map((c,i)=>`<tr><td class="mono">${i+1}</td><td class="cmp-n1"><a href="${c.u}" target="_blank" rel="noopener">${c.n}</a>${c.unf?'<i>not fetched</i>':''}</td><td class="mono">${c.job}</td>${['reach','depth','train','war','polish','upkeep'].map(k=>`<td>${sc(c.sc[k])}</td>`).join('')}<td><b class="cmp-threat">${c.score}</b></td><td class="cmp-v">${c.why}</td></tr>`).join('');
+$('#shots').innerHTML=ranked.map(c=>`<figure class="cmp-shot"><a href="${c.u}" target="_blank" rel="noopener"><img src="assets/img/competitors/${c.k}.webp" alt="${c.n} home page, 13 Sep 2026" loading="lazy"></a><figcaption><b>${c.n}</b><span>${c.job} &middot; threat ${c.score}</span></figcaption></figure>`).join('');
+const yn=v=>v?'<span class="cmp-y">Yes</span>':'<span class="cmp-n">No</span>';
+$('#profiles').innerHTML=ranked.map((c,i)=>{const s=c.sig||{};
+  const sig=[['Framework',(s.framework||[]).filter(x=>x!=='vite').join(', ')||'not visible'],['Host',s.server||'not sent'],['Installable',s.pwa?'Yes':'No'],['Analytics',(s.analytics||[]).join(', ')||'none seen'],['Support ask',(s.support||[]).join(', ')||'none'],['Discord',s.discord?'Yes':'No'],['Page weight',s.size_kb!=null?s.size_kb+' KB':'n/a'],['Last-Modified',s.last_mod||'not sent']];
+  return `<article class="panel cmp-prof"><div class="cmp-prof-img"><img src="assets/img/competitors/${c.k}.webp" alt="" loading="lazy"></div><div class="cmp-prof-in">
+    <div class="cmp-gh"><span class="tier tier-${c.tier}">${c.tier}</span><h3 class="t-h3">${i+1}. ${c.n}</h3><a class="count" href="${c.u}" target="_blank" rel="noopener">${c.u.replace(/^https?:\/\//,'')}</a><span class="count">${c.job}</span><b class="cmp-threat">${c.score}</b></div>
+    <p class="cmp-own">${c.own}</p>
+    <div class="cmp-cols"><div><i>What we saw</i><p>${c.seen}</p></div><div><i>Where its data comes from</i><p>${c.data}</p></div></div>
+    <dl class="cmp-sig">${sig.map(x=>`<div><dt>${x[0]}</dt><dd>${x[1]}</dd></div>`).join('')}</dl>
+    <div class="cmp-scores">${Object.keys(T).map(k=>`<div><b>${c.sc[k]}</b><span>${T[k]}</span></div>`).join('')}</div>
+    <p class="cmp-why"><i>Verdict</i>${c.why}</p>
+    <p class="cmp-take"><i>Take</i>${c.take}</p>
+  </div></article>`;}).join('');
+/* the matrix: y yes, p partial, n no; from the sites' own navigation and descriptions */
+const M={'training-manual':'y n y p n n y n n y n','democracy-hub':'n n p y y n y n n n y','divers-gg':'n n y p n p y n n n n','stratagem-hero':'y n n n n n n n n n n','stratagem-hero-trainer':'y n n n n n n n y n y','stratagem-trainer':'y n n n n n n n y n n','weapon-customizer':'n n n y p y n n y n n','loadout-builder':'n n n n y n n n n n n','u-gg':'n n n p y n n n n n n','helldiving-net':'n n p p y n n n n n n','companion':'n n n n n n y n y n n','hd2-clan-hub':'n n n n n n y n n n n','hd2galaxy':'n n n n n n y n n n n'};
+const cell={y:'<span class="cmp-y">Yes</span>',p:'<span class="cmp-p">Partial</span>',n:'<span class="cmp-n">No</span>'};
+$('#matrixBody').innerHTML=ranked.map(c=>`<tr><td class="cmp-n1">${c.n}</td>${M[c.k].split(' ').map(v=>`<td>${cell[v]}</td>`).join('')}</tr>`).join('')+
+  `<tr class="cmp-us"><td class="cmp-n1">Helldive Command</td>${'y y y y y y p y y n n'.split(' ').map(v=>`<td>${cell[v]}</td>`).join('')}</tr>`;
+const G=[
+ ['Trainers','Stratagem Hero, Stratagem Hero Trainer, Stratagem Trainer, Training Manual','They own the search terms "stratagem hero" and "stratagem trainer" and have since 2024; the Vercel trainer adds a per-player pick list, personal bests and install.','Six drills not one, the hold rule with the player\'s own binding, a throw range with real projectile physics, and terminals nobody simulates. Take: the "train only these" pick list, and a page that answers the "stratagem hero" query head on.'],
+ ['Databases and builders','Democracy Hub, divers.gg, Weapon Customizer, helldiving.net, u.gg','An enemy simulator (Democracy Hub), weapon attachments (Customizer), planets and biomes (divers.gg), share links (Loadout Builder), brand weight (u.gg).','Per-part armour and hit counts from the game files, a model that prints its working, top answers per enemy including grenades and structures, warbond grades with reasons, armour drip. Take: the simulator front end, attachments, share links.'],
+ ['War maps','Companion, HD2 Clan Hub, HD2 Galaxy, Democracy Hub, divers.gg','The map itself, supply lines, clans and cross-device leaderboards.','Nothing here by choice: the map changes hourly and a strategy site should not host it. The home readout keeps the Major Order. Take: link out to a map, and note that cross-device records have demand.'],
+ ['Terminals and mission steps','Nobody','No competitor simulates the in-mission terminals or lists the real step sequences.','Eleven objectives rebuilt from the wiki step lists with the input beeps and real countdowns. This is the moat; keep it accurate and make it the thing the home page leads with.']
+];
+$('#cmpGroups').innerHTML=G.map(g=>`<article class="panel cmp-g"><div class="cmp-gh"><h3 class="t-h3">${g[0]}</h3><span class="count">${g[1]}</span></div><div class="cmp-cols"><div><i>Where they win</i><p>${g[2]}</p></div><div><i>Where we win, and what to take</i><p>${g[3]}</p></div></div></article>`).join('');
+const BR=[
+ ['Answer the "stratagem hero" query','A page titled for it, with the cabinet, the codes list and the hold rule. Two trainers rank on that phrase alone and one has not been updated since April 2024.'],
+ ['Enemy simulator: shipped','Pick a weapon, pick an enemy, see the hits per zone, on enemies.html. Democracy Hub is the only rival with one and theirs is crowd sourced. Next: a zone diagram with measured coordinates instead of name-based pins.'],
+ ['Share links: shipped, add a preview','The builder already writes the loadout to the URL and copies it. Add an Open Graph image per build so a pasted link shows the kit.'],
+ ['Publish the API','Expose the stratagem, weapon and anatomy JSON under a documented URL. The Training Manual earns links with its API; ours has better data.'],
+ ['Weapon attachments','Add the attachment tables to the arsenal cards. The Customizer built a whole site on them.'],
+ ['Cross-device record','A backend for the service record. Clan Hub shows people want leaderboards; ours live in one browser.'],
+];
+$('#brief').innerHTML=BR.map((b,i)=>`<article class="rule-c"><b>MOVE ${i+1}</b><h3>${b[0]}</h3><p>${b[1]}</p></article>`).join('');
+const MO=[
+ ['Anatomy from the game files','Per-part health, armour value and durability for 56 enemies, with the hit count for every weapon computed, not guessed.'],
+ ['The hold rule everywhere','Every stratagem activity needs the stratagem key held, with the bindings top players use. Every trainer audited lets you type codes freely.'],
+ ['Eleven terminals','Extraction, ICBM, E-710, SAM, security grid, relays, fuses, valves, launch codes, Hellbomb, from the wiki step lists.'],
+ ['Reasons, not just ranks','Every score out of 1000 prints the numbers behind it and the model\'s caveats.'],
+ ['Doctrine with sources','Twelve rules; six carry the wiki page they come from.'],
+ ['No ads, no support ask, works offline','None of the thirteen show ad networks either, but four ask for coffee money. We ask for nothing and the codex runs offline.'],
+];
+$('#moatList').innerHTML=MO.map((m,i)=>`<article class="rule-c"><b>EDGE ${i+1}</b><h3>${m[0]}</h3><p>${m[1]}</p></article>`).join('');
+$('#behind').innerHTML=['Share links exist (the builder writes the loadout to the URL and copies it); what is missing is a preview card when the link is pasted.','No weapon attachment data (Weapon Customizer).','Enemy simulator shipped 13 Sep on the bestiary page; theirs has more enemies per session, ours has the per-zone maths.','No search ranking yet for "stratagem hero" or "stratagem trainer".','No public API (Training Manual).','Records live in one browser (Clan Hub has cross-device leaderboards).','No planets, biomes or conditions pages (divers.gg).'].map(b=>`<li>${b}</li>`).join('');
+$('#honest').innerHTML=[
+ 'Traffic. No site publishes it and we did not buy a third-party estimate; reach is judged from search results for the obvious queries and from brand, and is marked as such.',
+ 'u.gg. Two fetches met a bot wall (HTTP 403), so its description is the search listing and its polish score is the brand\'s reputation, not a measurement.',
+ 'helldiving.net. Its certificate had expired on the day; the fetch was made without verification and a visitor sees a privacy error first.',
+ 'Stratagem Hero\'s upkeep. The Last-Modified header says April 2024; a static host can serve a changed app without changing that header, so treat it as a strong hint.',
+ 'Data sources. Only the Training Manual (its API) and Democracy Hub (community collection, stated on the page) say where their numbers come from. The rest are inferred.',
+ 'Ads. No ad network script appeared in any home page HTML on 13 Sep; interior pages were not checked.',
+ 'The scores are ours. Six criteria, fixed weights, one reading each, no second rater.'
+].map(h=>`<li>${h}</li>`).join('');
+})();
+</script>
+</body>
+</html>

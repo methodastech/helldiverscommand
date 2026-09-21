@@ -1,0 +1,284 @@
+.range{position:relative;background:#0b0d10;border:1px solid var(--line-2);clip-path:polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px);min-height:360px;overflow:hidden;user-select:none;touch-action:none}
+.range-canvas{display:block;width:100%;height:auto;cursor:crosshair}
+.range-hud{position:absolute;left:0;right:0;bottom:0;padding:12px 16px;display:grid;gap:8px;background:linear-gradient(to top,rgba(6,7,10,.85),transparent);pointer-events:none}
+.range-msg{font-family:var(--f-ui);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#fff;min-height:1.4em}
+.range-msg.ok{color:var(--gold)}.range-msg.bad{color:var(--red)}
+.range-power{height:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);position:relative;max-width:360px}
+.range-power i{position:absolute;left:0;top:0;bottom:0;background:var(--gold);width:0}
+.range-row{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.range-stats{display:flex;gap:8px}
+.range-stats div{background:rgba(6,7,10,.7);border:1px solid var(--line);padding:6px 12px;min-width:64px;text-align:center}
+.range-stats b{display:block;font-family:var(--f-disp);font-size:20px;line-height:1;color:var(--gold)}
+.range-stats span{font-family:var(--f-ui);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.range-clock{font-family:var(--f-disp);font-size:22px;color:#fff}
+.range-note{font-size:13px;color:var(--ink-2);font-style:italic}
+.range-start{position:absolute;inset:0;display:grid;place-content:center;gap:14px;text-align:center;background:rgba(6,7,10,.7);z-index:3}
+.range-start p{max-width:48ch;color:var(--ink-2);font-size:14px;line-height:1.55}
+.range.on .range-start{display:none}
+.range-keys{position:absolute;top:12px;left:16px;font-family:var(--f-ui);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.7);pointer-events:none}
+
+/* loadout bar and the in-game stratagem list */
+.rg-lab{font-family:var(--f-ui);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);margin-right:4px}
+.rg-slot{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:rgba(0,0,0,.35);padding:4px 6px}
+.rg-slot img{width:22px;height:22px;object-fit:contain}
+.rg-slot select{background:transparent;color:#fff;border:0;font-family:var(--f-ui);font-size:12px;max-width:190px;outline:none}
+.rg-slot select option,.rg-slot select optgroup{background:#15171b;color:#fff}
+.range-list{position:absolute;left:16px;top:44px;display:grid;gap:4px;z-index:2;pointer-events:none;max-width:min(360px,60%)}
+.range-list .rl{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:8px;padding:5px 8px;background:rgba(6,7,10,.72);border:1px solid rgba(255,255,255,.14);font-family:var(--f-ui);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#fff;transition:opacity .12s}
+.range-list .rl img{width:26px;height:26px;object-fit:contain}
+.range-list .rl .arrows{--as:13px;gap:2px}
+.range-list .rl.dim{opacity:.28}
+.range-list .rl.ready{border-color:var(--gold);background:rgba(255,224,27,.16)}
+.range-list .rl-tip{font-family:var(--f-ui);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);padding:4px 8px}
+.range-aim{position:absolute;right:16px;top:12px;font-family:var(--f-ui);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);pointer-events:none}
+.range-hand{font-family:var(--f-ui);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.range-hand.strat{color:var(--gold)}
+.range-power{display:none}
+
+.range-reticle{position:absolute;left:50%;top:50%;width:26px;height:26px;transform:translate(-50%,-50%);border:1.5px solid rgba(255,255,255,.7);border-radius:50%;pointer-events:none;z-index:2}
+.range-reticle::after{content:"";position:absolute;left:50%;top:50%;width:3px;height:3px;background:#fff;transform:translate(-50%,-50%);border-radius:50%}
+.range-mark{position:absolute;left:50%;top:calc(50% + 22px);transform:translateX(-50%);font-family:var(--f-ui);font-size:12px;letter-spacing:.14em;color:#fff;text-shadow:0 0 6px #000;pointer-events:none;z-index:2}
+
+/* in-game HUD pieces: compass tape, stratagem slots with cooldowns, grenade count, mouse-lock hint */
+.range-compass{position:absolute;left:50%;top:10px;transform:translateX(-50%);width:min(360px,60%);height:22px;overflow:hidden;pointer-events:none;z-index:2;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent);mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent)}
+.range-compass i{position:absolute;top:0;width:1px;height:8px;background:rgba(255,255,255,.55);font-style:normal;font-family:var(--f-ui);font-size:11px;color:#fff;text-indent:-4px;line-height:30px;white-space:nowrap}
+.range-compass i.big{height:12px;background:#fff;font-weight:700}
+.range-compass b{position:absolute;left:50%;top:0;width:2px;height:14px;background:var(--gold);transform:translateX(-50%)}
+.range-slots{position:absolute;left:14px;bottom:96px;display:flex;align-items:flex-end;gap:6px;z-index:2;pointer-events:none}
+.range-slots .slot{position:relative;width:58px;height:58px;background:rgba(6,7,10,.7);border:1px solid rgba(255,255,255,.35);display:grid;place-items:center}
+.range-slots .slot img{width:46px;height:46px;object-fit:contain}
+.range-slots .slot.sm{width:44px;height:44px}.range-slots .slot.sm img{width:34px;height:34px}
+.range-slots .slot.cd img{opacity:.25}
+.range-slots .slot b{position:absolute;inset:auto 0 2px 0;text-align:center;font-family:var(--f-ui);font-size:14px;color:#fff;font-weight:700;text-shadow:0 0 4px #000}
+.range-slots .slot.ready{border-color:var(--gold);box-shadow:0 0 10px rgba(255,224,27,.5)}
+.range-slots .slot-sep{width:1px;height:30px;background:rgba(255,255,255,.3);margin:0 4px 6px}
+.range-slots .slot.gren{width:auto;padding:0 10px;height:44px;display:flex;gap:6px;margin-left:6px}
+.range-slots .slot.gren .g{display:inline-grid;place-items:center;width:16px;height:16px;background:#fff;color:#000;border-radius:2px;font:700 10px/1 var(--f-ui)}
+.range-slots .slot.gren b{position:static;font-size:12px}
+.range-lock{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;z-index:2}
+.range-lock span{font-family:var(--f-ui);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#fff;background:rgba(6,7,10,.6);border:1px solid rgba(255,255,255,.3);padding:8px 14px;margin-top:70px}
+.range.locked .range-canvas{cursor:none}
+@media(max-width:640px){.range-slots{bottom:120px}.range-slots .slot{width:36px;height:36px}.range-slots .slot img{width:28px;height:28px}}
+
+.range-slots{position:static;margin-bottom:4px}
+.range-hud{gap:6px}
+
+.range-pad{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:10px 12px;background:rgba(6,7,10,.9);border-top:1px solid var(--line)}
+.range-pad button{min-width:48px;height:44px;padding:0 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.35);color:#fff;font-family:var(--f-ui);font-size:12px;letter-spacing:.14em;text-transform:uppercase;touch-action:none;user-select:none}
+.range-pad button.down,.range-pad button:active{background:rgba(255,224,27,.25);border-color:var(--gold)}
+.range-pad .rp-dpad{display:grid;grid-template-columns:repeat(3,44px);grid-template-rows:repeat(2,44px);gap:4px}
+.range-pad .rp-dpad button{min-width:0;padding:0;font-size:14px}
+.range-pad .rp-dpad button:nth-child(1){grid-column:2;grid-row:1}.range-pad .rp-dpad button:nth-child(2){grid-column:1;grid-row:2}.range-pad .rp-dpad button:nth-child(3){grid-column:3;grid-row:2}.range-pad .rp-dpad button:nth-child(4){grid-column:2;grid-row:2}
+.range-pad .rp-hold{border-color:var(--gold);color:var(--gold)}
+.range-pad .rp-throw{background:var(--gold);color:#000;border-color:var(--gold);font-weight:700}
+@media(hover:hover) and (pointer:fine){.range-pad{gap:8px;padding:8px 12px}.range-pad button{height:36px}.range-pad .rp-dpad{grid-template-columns:repeat(3,36px);grid-template-rows:repeat(2,36px)}}
+
+/* ---------- loadout strip and picker, in the ship's loadout style ---------- */
+.rg-strip{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap}
+.rg-tile{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;width:108px;min-height:96px;padding:8px 6px;background:rgba(6,7,10,.85);border:1px solid rgba(255,255,255,.35);color:#fff;cursor:pointer;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)}
+.rg-tile img{width:50px;height:50px;object-fit:contain;flex:0 0 auto}
+.rg-tile span{font-family:var(--f-ui);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);text-align:center;line-height:1.25}
+.rg-tile:hover{border-color:var(--gold);background:rgba(255,224,27,.08)}
+.rg-tile.arm b{font-family:var(--f-disp);font-size:22px;line-height:50px;color:#fff}
+.rg-tile.arm.on{border-color:var(--gold)}.rg-tile.arm.on b{color:var(--gold)}
+.rg-sep{width:1px;background:rgba(255,255,255,.25);margin:6px 2px}
+.rg-lobtn{align-self:center;padding:12px 16px;background:var(--gold);color:#000;border:0;font-family:var(--f-ui);font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)}
+.rg-strip .chip.aids{align-self:center;display:inline-flex;align-items:center;gap:8px}
+/* the loadout screen */
+.rg-lo{position:fixed;inset:0;z-index:9000;background:rgba(3,4,6,.85);backdrop-filter:blur(10px);display:grid;place-items:center;padding:16px}
+.rg-lo[hidden]{display:none}
+.rg-lo-in{width:min(1080px,100%);max-height:92vh;display:flex;flex-direction:column;background:#0b0d11;border:1px solid rgba(255,224,27,.4);box-shadow:0 30px 80px rgba(0,0,0,.7)}
+.rg-lo-in header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 22px;border-bottom:2px solid #5e5308;background:rgba(20,18,6,.86);flex:0 0 auto}
+.rg-lo-in header h3{font-family:var(--f-disp);font-size:24px;text-transform:uppercase;margin:6px 0 0}
+.rg-lo-body{display:grid;grid-template-columns:290px 1fr;gap:0;min-height:0;overflow:hidden}
+@media(max-width:820px){.rg-lo-body{grid-template-columns:1fr;overflow:auto}}
+.rg-lo-left{padding:16px 18px;border-right:1px solid var(--line);overflow:auto}
+.rg-lo-right{padding:16px 18px;display:flex;flex-direction:column;gap:12px;min-height:0}
+.rg-lo .lab{font-family:var(--f-ui);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);margin:0 0 7px}
+.rg-lo .lab+.rg-lo-slots,.rg-lo .lab+.rg-lo-fixed{margin-bottom:14px}
+.rg-lo-slots,.rg-lo-fixed{display:grid;gap:5px}
+.rg-lo-slot{display:grid;grid-template-columns:38px 1fr 18px;align-items:center;gap:10px;padding:7px 10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.2);color:#fff;text-align:left;cursor:pointer;font-family:var(--f-ui);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;line-height:1.2}
+.rg-lo-slot img{width:34px;height:34px;object-fit:contain;grid-column:1}
+.rg-lo-slot span{grid-column:2;min-width:0}
+.rg-lo-slot i{grid-column:3;font-style:normal;color:var(--dim);font-size:10px;text-align:right}
+.rg-lo-slot.sel{border-color:var(--gold);background:rgba(255,224,27,.12)}
+.rg-lo-slot.fixed{opacity:.55;cursor:default}
+.rg-lo-cats{display:flex;flex-wrap:wrap;gap:2px;border-bottom:1px solid var(--line);flex:0 0 auto}
+.rg-lo-cats button{padding:11px 13px;background:transparent;border:0;border-bottom:3px solid transparent;color:rgba(255,255,255,.68);font-family:var(--f-ui);font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
+.rg-lo-cats button:hover{color:#fff}
+.rg-lo-cats button.on{color:#fff;border-bottom-color:var(--gold)}
+.rg-lo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px;align-content:start;overflow:auto;flex:0 1 auto;min-height:0}
+.rg-lo-ic{position:relative;aspect-ratio:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;padding:6px}
+.rg-lo-ic img{width:100%;height:100%;object-fit:contain;min-height:0}
+.rg-lo-ic u{text-decoration:none;font-family:var(--f-ui);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);flex:0 0 auto}
+.rg-lo-ic:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.rg-lo-ic.taken{border-color:var(--gold);background:rgba(255,224,27,.14)}
+.rg-lo-ic.wide{aspect-ratio:auto;min-height:92px}
+.rg-lo-info{display:flex;align-items:center;gap:14px;min-height:70px;margin-top:2px;padding:10px 12px;background:rgba(255,255,255,.03);border:1px solid var(--line);flex:0 0 auto}
+.rg-lo-info img{width:46px;height:46px;object-fit:contain;flex:0 0 auto}
+.rg-lo-info>div{min-width:0}
+.rg-lo-info b{display:block;font-family:var(--f-ui);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.rg-lo-info .arrows{--as:15px;margin:4px 0;display:flex}
+.rg-lo-info em{display:block;font-style:normal;font-family:var(--f-ui);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-top:3px}
+.rg-lo-info em.note{font-family:var(--f-body);font-size:12px;letter-spacing:0;text-transform:none;color:var(--ink-2)}
+
+/* the pad sits under the glass, never over the HUD */
+.range-pad{margin-top:-1px;border:1px solid var(--line-2);border-top:0}
+.range-hud{padding:10px 14px 12px}
+.range-stats div{padding:5px 10px;min-width:58px}
+.range-stats b{font-size:18px}
+@media(max-width:760px){
+  .range-hud{padding:8px 10px 10px;gap:4px}
+  .range-slots .slot{width:32px;height:32px}
+  .range-slots .slot.sm{width:26px;height:26px}
+  .range-msg{font-size:11px}
+  .range-note{font-size:11.5px}
+  .range-compass{display:none}
+  .range-keys{font-size:9px;letter-spacing:.08em;right:14px}
+  .range-lock span{margin-top:20px;font-size:10px}
+}
+
+/* phones: smaller tiles and pad so nothing is clipped, shorter HUD lines */
+@media(max-width:560px){
+  .rg-strip{gap:6px}
+  .rg-tile{width:74px;min-height:72px;padding:6px 4px;gap:3px}
+  .rg-tile img{width:30px;height:30px}
+  .rg-tile span{font-size:8px;letter-spacing:.04em}
+  .rg-tile.arm b{font-size:15px;line-height:30px}
+  .rg-lobtn{padding:10px 12px;font-size:10px;letter-spacing:.16em}
+  .rg-strip .chip.aids{font-size:10px}
+  .range-pad{gap:6px;padding:8px}
+  .range-pad button{min-width:42px;height:40px;padding:0 8px;font-size:11px}
+  .range-pad .rp-dpad{grid-template-columns:repeat(3,40px);grid-template-rows:repeat(2,40px)}
+  .range-msg{font-size:10.5px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .range-note{font-size:11px}
+  .range-stats div{padding:4px 8px;min-width:50px}
+  .range-stats b{font-size:16px}
+  .range-keys{position:static;padding:8px 10px 0;color:rgba(255,255,255,.55)}
+}
+
+/* ---------- the range only shows its HUD once it is running ---------- */
+.range:not(.on) .range-hud,.range:not(.on) .range-keys,.range:not(.on) .range-compass,
+.range:not(.on) .range-reticle,.range:not(.on) .range-mark,.range:not(.on) .range-lock{display:none}
+#rangeStage:not(.on)~#rgPad{display:none}
+/* the start card */
+.range-start{background:radial-gradient(120% 90% at 50% 40%,rgba(10,12,16,.82),rgba(4,5,8,.95));padding:24px}
+.rs-card{width:min(560px,100%);text-align:center;display:grid;justify-items:center;gap:0}
+.rs-card .tag{margin-bottom:14px}
+.rs-card h3{font-size:clamp(26px,3.4vw,38px);margin:0 0 10px}
+.rs-card p{margin:0;color:var(--ink-2);font-size:15px;max-width:42ch}
+.rs-list{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:18px 0 20px;padding:0}
+.rs-list li{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.rs-list b{font-family:var(--f-disp);font-size:20px;line-height:1;color:var(--gold)}
+.rs-list span{font-family:var(--f-ui);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);text-align:left;max-width:18ch;line-height:1.3}
+.rs-card .btn{padding:16px 28px;font-size:13px}
+.rs-note{margin-top:12px!important;font-family:var(--f-ui);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);white-space:nowrap}
+@media(max-width:560px){.rs-list{gap:6px}.rs-list li{padding:6px 9px}.rs-list span{font-size:9px;max-width:13ch}.rs-card .btn{padding:14px 20px}}
+/* a little depth over the render */
+.range.on::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;box-shadow:inset 0 0 130px rgba(0,0,0,.55)}
+
+/* ---------- the scene keeps only what the game keeps; score and notes live under it ---------- */
+#rgModes{position:static}                     /* one sticky bar on the page, the drill tabs */
+.range-hud{padding:10px 14px 12px;gap:6px;background:linear-gradient(to top,rgba(6,7,10,.8),transparent)}
+.range-line{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.range-hud .range-hand{font-family:var(--f-ui);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.range-hud .range-hand.strat{color:var(--gold)}
+.range-hud .range-clock{font-family:var(--f-disp);font-size:18px;color:#fff;line-height:1}
+.range-hud .range-msg{font-size:12px;letter-spacing:.06em;min-height:1.3em;text-transform:none}
+.range-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:10px 14px;background:rgba(6,7,10,.6);border:1px solid var(--line-2);border-top:0}
+.range-bar .range-stats{display:flex;gap:6px}
+.range-bar .range-stats div{padding:4px 10px;min-width:54px}
+.range-bar .range-stats b{font-size:17px}
+.range-bar .range-note{margin:0;flex:1 1 260px;font-size:12.5px;color:var(--ink-2);font-style:italic}
+.range-pad{border-top:0}
+@media(max-width:560px){.range-bar{gap:10px;padding:8px 10px}.range-bar .range-note{font-size:11.5px}}
+
+/* one console frame: loadout header, viewport, readout, controls. No stacked boxes. */
+#rgModes{border:1px solid var(--line-2);border-bottom:0;background:rgba(6,7,10,.72);padding:12px 14px;margin-inline:0}
+#rgModes .rg-strip{gap:8px}
+.range{clip-path:none;border:1px solid var(--line-2);border-bottom:0;min-height:0}
+.range-bar{border:1px solid var(--line-2);border-bottom:0;background:rgba(6,7,10,.72)}
+.range-pad{border:1px solid var(--line-2);background:rgba(6,7,10,.72)}
+.range-how{margin-bottom:10px}
+/* hairline dividers inside the frame, the way a ship terminal splits its panes */
+#rgModes,.range-bar{position:relative}
+#rgModes::after,.range-bar::after{content:"";position:absolute;left:14px;right:14px;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent)}
+
+/* ---------- icons you can actually read: ID-scoped so nothing downstream shrinks them ---------- */
+#rgSlots{gap:8px}
+#rgSlots .slot{width:68px;height:68px}
+#rgSlots .slot img{width:56px;height:56px;object-fit:contain}
+#rgSlots .slot.sm{width:54px;height:54px}
+#rgSlots .slot.sm img{width:44px;height:44px}
+#rgSlots .slot b{font-size:16px;bottom:3px}
+#rgSlots .slot.gren{height:54px;padding:0 12px;gap:8px}
+#rgSlots .slot.gren .g{width:20px;height:20px;font-size:12px}
+#rgSlots .slot.gren b{font-size:15px}
+#rgSlots .slot-sep{height:38px}
+#rgModes .rg-tile{width:124px;min-height:106px}
+#rgModes .rg-tile img{width:62px;height:62px}
+#rgModes .rg-tile span{font-size:11px;letter-spacing:.06em;line-height:1.22}
+#rgModes .rg-tile.arm b{font-size:26px;line-height:62px}
+.range-msg{font-size:13.5px}
+.range-hud .range-hand{font-size:12px}
+.range-bar .range-stats b{font-size:20px}
+.range-bar .range-stats div{min-width:64px;padding:6px 12px}
+.range-bar .range-note{font-size:13.5px}
+@media(max-width:640px){
+  #rgSlots .slot{width:48px;height:48px}#rgSlots .slot img{width:40px;height:40px}
+  #rgSlots .slot.sm{width:38px;height:38px}#rgSlots .slot.sm img{width:30px;height:30px}
+  #rgModes .rg-tile{width:92px;min-height:90px}#rgModes .rg-tile img{width:46px;height:46px}
+  #rgModes .rg-tile span{font-size:9.5px}
+}
+
+/* icons as fixed boxes: immune to image sizing quirks */
+#rgSlots .slot .ic{display:block;width:56px;height:56px;background-position:center;background-repeat:no-repeat;background-size:contain}
+#rgSlots .slot.sm .ic{width:44px;height:44px}
+#rgSlots .slot.cd .ic{opacity:.25}
+@media(max-width:640px){#rgSlots .slot .ic{width:40px;height:40px}#rgSlots .slot.sm .ic{width:30px;height:30px}}
+
+.range-hud .range-msg{font-size:13.5px;letter-spacing:.05em}
+.range-hud .range-clock{font-size:20px}
+
+/* aim tab: grouped rows, a search, a big selected weapon */
+.rg-lo-grid:has(.rg-aim-grid){display:block}
+.rg-aim-top{display:flex;gap:8px;margin-bottom:12px;position:sticky;top:0;background:#0b0e13;padding-bottom:8px;z-index:2}
+.rg-aim-top input{flex:1;background:rgba(0,0,0,.45);border:1px solid var(--line);color:#fff;font:500 14px var(--f-body);padding:10px 12px;outline:0}
+.rg-aim-top input:focus{border-color:var(--gold)}
+.rg-aim-off{background:transparent;border:1px solid var(--line);color:var(--ink-2);font-family:var(--f-ui);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:0 14px;cursor:pointer}
+.rg-aim-off.taken{border-color:var(--gold);color:var(--gold)}
+.rg-aim-lab{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:14px 0 8px}
+.rg-aim-lab em{font-style:normal;color:var(--gold);margin-left:6px}
+.rg-aim-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px}
+.rg-aim{display:grid;grid-template-columns:76px 1fr;gap:10px;align-items:center;text-align:left;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.18);padding:8px 10px;cursor:pointer;color:#fff;min-height:64px}
+.rg-aim img{width:76px;height:40px;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6))}
+.rg-aim b{display:block;font-family:var(--f-disp);font-size:13.5px;line-height:1.1}
+.rg-aim i{display:block;font-style:normal;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;color:var(--dim);margin-top:3px}
+.rg-aim:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.rg-aim.taken{border-color:var(--gold);background:rgba(255,224,27,.14)}
+.rg-lo-info img.big{width:190px;height:84px;object-fit:contain;filter:drop-shadow(0 8px 16px rgba(0,0,0,.7))}
+.rg-lo-info > div > b{font-family:var(--f-disp);font-size:20px;display:block;margin-bottom:6px}
+.rg-lo-info em{display:block;font-style:normal;font-size:13px;line-height:1.5;color:var(--ink-2)}
+.rg-aim-stats{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px}
+.rg-aim-stats span{border:1px solid var(--line);padding:5px 10px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.rg-aim-stats span b{display:block;font-family:var(--f-disp);font-size:18px;color:var(--gold);letter-spacing:0;margin-bottom:1px}
+
+.rg-lo-title{display:flex;align-items:center;gap:14px}
+.rg-lo-title img{width:56px;height:56px;filter:drop-shadow(0 4px 12px rgba(255,224,27,.35))}
+.rg-lo-title h3{margin:0}
+.rg-lo-title span{display:block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-top:4px}
+
+.range-pad .rp-zoom.on{background:var(--gold);color:#000}
+.range-stage canvas{touch-action:none}
+/* phones: the keys line is for keyboards; the pad is the control surface */
+@media(max-width:640px){.range-keys{display:none}.range-lock{display:none}}
+@media(pointer:coarse){.range-keys,.range-lock{display:none}}
+/* 17 Sep: fullscreen stage */
+.rg-full{position:absolute;right:14px;top:10px;z-index:6;background:rgba(6,7,10,.8);border:1px solid rgba(255,255,255,.35);color:#fff;font-family:var(--f-ui);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:7px 10px;cursor:pointer}
+.rg-full:hover{border-color:var(--gold);color:var(--gold)}
+.range:fullscreen{width:100vw;height:100vh;clip-path:none;border:0;background:#0b0d10}
+.range:fullscreen .range-canvas{width:100%!important;height:100%!important}
+.rg-tile.lo{border-color:var(--gold);background:rgba(255,224,27,.1)}
+.rg-tile.lo img{width:44px;height:44px;filter:drop-shadow(0 0 6px rgba(255,224,27,.35))}
+.rg-tile.lo span{color:var(--gold)}

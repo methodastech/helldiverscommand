@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js";</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06070A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/app/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bmws.css?v=1789681734">
+<link rel="stylesheet" href="assets/core.css?v=1789681734">
+<link rel="stylesheet" href="assets/pages.css?v=1789681734">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<title>Blueberries · the new Helldiver file | Helldive Command</title>
+<meta name="description" content="The personnel file on new Helldivers: how to spot one, testimonials, hug etiquette, and what it feels like to watch one die.">
+</head>
+<body>
+<header class="sec phead" style="padding-bottom:22px">
+  <div class="phead-bg"><img src="assets/img/art/cine-bays.webp" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+  <h1 class="t-h1" style="margin:18px 0 16px" data-decode>Blueberries</h1>
+  <p class="t-lead"><b>Blueberry</b> <i>(noun)</i>: a freshly reinforced Helldiver, usually below level 20, identified by the blue name tag, the default armour, and the shade they turn when a Charger notices them. Every veteran was one. Most veterans were one this morning. This file exists so the next one lasts longer. For Super Earth!</p>
+  </div>
+</header>
+<div class="hazard thin"></div>
+
+<section class="sec wrap" style="padding-top:34px" id="identify">
+  <div class="sec-head"><div><span class="idx">1 / Field identification</span><h2 class="t-h2" data-decode>How to spot one</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">Positive identification requires three of the following. Two if they are already on fire.</p></div>
+  <div class="rules four" id="signs"></div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="testimonials">
+  <div class="sec-head"><div><span class="idx">2 / Testimonials</span><h2 class="t-h2" data-decode>From the Longevity Program intake</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">Collected at debrief, lightly edited for morale. Names changed, ships real.</p></div>
+  <div class="testi-grid" id="testi"></div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="hugs">
+  <div class="sec-head"><div><span class="idx">3 / On hugs</span><h2 class="t-h2" data-decode>The hug, explained</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">The Hug emote ships in the Helldivers Mobilize warbond, page one, for a reason. This is that reason.</p></div>
+  <div class="split">
+    <div>
+      <p class="t-lead">Blueberry (noun): a freshly reinforced Helldiver, usually below level 20. The personnel file: how to spot one, what to do about it, and what Command says when you go down.</p>
+      <div class="rules two" style="margin-top:22px" id="hugRules"></div>
+    </div>
+    <div class="panel" style="padding:clamp(18px,2vw,26px)">
+      <span class="tag">Hug approval matrix</span>
+      <div class="tscroll" style="margin-top:14px"><table class="tbl"><thead><tr><th>Situation</th><th>Approved</th></tr></thead><tbody id="hugTable"></tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="death">
+  <div class="sec-head"><div><span class="idx">4 / Loss</span><h2 class="t-h2" data-decode>What it feels like to watch a Helldiver die</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">The Ministry of Truth reminds you that Helldivers do not die. They are reinforced. This section is about the four to fifteen seconds in between.</p></div>
+  <div class="stages" id="stages"></div>
+  <div class="split" style="margin-top:28px">
+    <div class="panel" style="padding:clamp(18px,2vw,26px)"><span class="tag red">What Command says when you go down</span><div class="qlist" id="deathLines"></div></div>
+    <div class="panel" style="padding:clamp(18px,2vw,26px)"><span class="tag">The honest part</span>
+      <p class="t-lead" style="margin-top:14px">You will watch someone you have known for eleven minutes get stepped on by a Factory Strider, and you will feel it. Then you will dial the code, throw the ball, and they will land on the Strider. That is the whole game. That is why people hug at the pad.</p>
+      <p class="mono dim" style="margin-top:14px">Reinforce. Every time. Even the one who took your Exosuit.</p></div>
+  </div>
+</section>
+
+<div class="hazard thin"></div>
+<section class="sec wrap" id="mark">
+  <div class="sec-head"><div><span class="idx">5 / Leave your mark</span><h2 class="t-h2" data-decode>Add your testimonial</h2></div>
+    <p class="t-lead" style="max-width:44ch;margin:0">Stored on this device only. The Ministry does not read it. Probably.</p></div>
+  <form class="markform" id="markForm"><input class="search" id="markName" maxlength="40" placeholder="Rank and name, e.g. Cadet R. Vasquez" autocomplete="off"><textarea class="search" id="markText" maxlength="280" rows="3" placeholder="What happened on your first dive"></textarea><button class="btn sm" type="submit">File it</button></form>
+  <div class="testi-grid" id="marks" style="margin-top:18px"></div>
+</section>
+
+<script src="data/quotes.js?v=1789681734"></script>
+<script src="data/comms.js?v=1789681734"></script>
+<script src="assets/core.js?v=1789681734"></script>
+<script src="assets/motion.js?v=1789681734"></script>
+<script src="assets/blueberries.js?v=1789681734"></script>
+<script src="assets/stars.js?v=1789681734"></script>
+</body>
+</html>

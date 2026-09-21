@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=" js";</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06070A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/app/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HDC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Play:wght@400;700&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bmws.css?v=1789681734">
+<link rel="stylesheet" href="assets/core.css?v=1789681734">
+<link rel="stylesheet" href="assets/pages.css?v=1789681734">
+<link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
+<title>Field Ops · terminals, phase for phase | Helldive Command</title>
+<meta name="description" content="Play the Helldivers 2 terminals in the browser: extraction, fuel routing, E-710 flow, SAM site, security grid, dials, fuses, Hellbomb.">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+
+<header class="sec phead" style="padding-bottom:22px">
+  <div class="phead-bg"><img src="assets/img/art/cine-frostown.webp" alt="" fetchpriority="high"></div>
+  <div class="wrap">
+  <h1 class="t-h1" style="margin:18px 0 16px" data-decode>The terminals</h1>
+  <p class="t-lead">Eleven mission terminals rebuilt from the real step lists, with the real input beeps. Pick an objective and run it: W A S D to interact, exactly as the prompt in the game.</p>
+  <p class="mono dim" style="margin-top:12px">Sequences, pipe grids and security patterns are randomised each run, exactly as the terminals in the field. Arrow keys work too. Enter confirms, Escape aborts.</p>
+  <div class="ctl-card" id="controls"><div class="lab">Controls, PC defaults</div><table class="ctl"><tbody>
+    <tr><td>Interact with a terminal, valve or lever</td><td><kbd>E</kbd> hold</td></tr>
+    <tr><td>Terminal inputs</td><td><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or the arrow keys</td></tr>
+    <tr><td>Confirm on a terminal</td><td><kbd>W</kbd> (up)</td></tr>
+    <tr><td>Turn a valve</td><td>hold <kbd>D</kbd>, two turns counterclockwise, until the light</td></tr>
+    <tr><td>Sprint</td><td><kbd>Shift</kbd> + <kbd>W</kbd></td></tr>
+    <tr><td>Dive</td><td><kbd>Space</kbd></td></tr>
+    <tr><td>Stratagem menu</td><td>hold <kbd>Ctrl</kbd>, input the code, release</td></tr>
+    <tr><td>Throw stratagem</td><td>left mouse</td></tr>
+    <tr><td>Throw grenade</td><td><kbd>G</kbd></td></tr>
+  </tbody></table><p class="mono dim">On this site the interact key is not needed. W A S D and the arrow keys work as in the field, Enter also confirms, Escape aborts.</p></div>
+  <p class="mono dim" style="margin-top:8px">Step lists and screen wording are the wiki's. The pipe and security-grid column controls follow the wiki and the published guides (A D pick a column, W S move it, locked columns stay). The sub-system switch names and the Hellbomb timer are reconstructed from screenshots. Waits run in real time at the wiki's durations. Enemy pressure and the sprint meter are training aids, not game mechanics, and are off by default.</p>
+  </div>
+</header>
+
+<div class="hazard thin"></div>
+
+<section class="sec wrap" style="padding-top:34px" id="ops">
+  <div class="sec-head"><div><span class="idx">Select objective</span><h2 class="t-h2" data-decode>Mission board</h2></div>
+    <p class="count" id="opsBest"></p></div>
+  <div class="ops" id="opsGrid"></div>
+</section>
+
+<section class="sec wrap" id="termSec" style="padding-top:0">
+  <div class="term-atmo" id="termAtmo" aria-hidden="true">
+    <span class="atmo-sky"></span>
+    <span class="atmo-ridge"></span>
+    <span class="atmo-rig"></span>
+    <span class="atmo-placard"><b>CAUTION</b><i>DRILL IN OPERATION</i></span>
+    <span class="atmo-led"></span>
+    <span class="atmo-haze"></span>
+    <span class="atmo-haze b"></span>
+    <span class="atmo-fire"></span>
+    <span class="atmo-dust"></span>
+    <span class="atmo-vig"></span>
+  </div>
+  <div class="term" id="term" hidden>
+    <div class="term-top">
+      <div class="term-lead"><img class="tm-ic" id="tmIcon" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><div><span class="term-id">SEAF FIELD TERMINAL &middot; MK.IV</span><h3 id="tmName">—</h3><p class="term-brief" id="tmBrief"></p></div></div>
+      <div class="game-stats">
+        <div><b id="tmMission">T: 40:00</b><span>Mission clock</span></div>
+        <div><b id="tmClock">0.0s</b><span>Real time</span></div>
+        <div><b id="tmErr">0</b><span>Mistakes</span></div>
+        <label class="chip" style="display:inline-flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="tmHostiles" style="accent-color:var(--gold)"> Enemy pressure <small class="dim">(training aid)</small></label>
+        <label class="chip" style="display:inline-flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="tmView" style="accent-color:var(--gold)"> Console view <small class="dim">(experimental)</small></label>
+        <button class="chip" id="tmAbort">Abort</button>
+      </div>
+    </div>
+    <div class="term-hud" id="tmHud"><div class="term-head"><span id="tmStepNo">STEP 1</span><span id="tmStepLabel"></span></div><div class="hud-radio term-radio" id="tmRadio"></div></div>
+    <div class="term-body" id="tmBody"><div class="c3d" id="tm3d" hidden></div>
+      <div class="term-bezel"><div class="term-screen" id="tmScreen">
+        <div class="term-scan"></div>
+        <div class="term-ui" id="tmUI"></div>
+      </div></div>
+      <aside class="term-steps"><div class="lab">Objective</div><ol id="tmSteps"></ol>
+        <div class="dpad" id="tmPad" style="margin-top:18px"></div>
+        <button class="btn sm" id="tmOk" style="width:100%;justify-content:center;margin-top:10px">Confirm</button>
+      </aside>
+    </div>
+    <div class="term-prompt" id="tmHint"><span class="kc">W</span><span class="kc">A</span><span class="kc">S</span><span class="kc">D</span><b>Interact</b></div>
+  </div>
+  <div class="term-done panel" id="tmDone" hidden>
+    <span class="tag">Objective complete</span>
+    <h3 class="t-h2" id="tmDoneTitle" style="margin:14px 0 8px">—</h3>
+    <p class="sh-cat" id="tmDoneSum"></p>
+    <p class="fd-officer" id="tmDoneVoice"></p>
+    <div class="hero-cta" style="margin-top:20px"><button class="btn" id="tmAgain">Run it again <span class="ar">&#9654;</span></button><a class="btn ghost" href="#ops">Mission board</a></div>
+  </div>
+</section>
+
+<script src="data/comms.js?v=1789681734"></script>
+<script src="data/stratagems.js?v=1789681734"></script>
+<script src="data/images.js?v=1789681734"></script>
+<script src="assets/core.js?v=1789681734"></script>
+<script src="assets/motion.js?v=1789681734"></script>
+<script>window.CONSOLE3D_SRC="assets/console3d.js?v=1789681734";</script>
+<script src="assets/terminals.js?v=1789681734"></script>
+<script src="assets/stars.js?v=1789681734"></script>
+</body>
+</html>
