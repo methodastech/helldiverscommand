@@ -355,15 +355,18 @@ function nav(){
     '<a class="btn sm nav-cta" href="arcade.html">Train now <span class="ar">&#9654;</span></a>'+
   '</div>';
   document.body.insertBefore(n,document.body.firstChild);
-  /* super admin bar: one markup, every page; only the current tab differs. Sheet: assets/bmws.css */
-  const bar=el('div','bmws'); bar.setAttribute('style','--bmws-acc:#2536F5');
-  const TABS=[['index.html','00','Website'],['competitors.html','01','Competitors'],['logo.html','02','Logo'],['taste.html','03','Taste']];
-  const curTab=['competitors.html','logo.html','taste.html'].includes(here)?here:'index.html';
-  bar.innerHTML='<div class="bmws-in"><div class="bmws-crumb"><b>Helldive Command &middot; Website 1</b><span>Brand Method &middot; Admin Navigation</span></div><nav class="bmws-tabs">'+
-    TABS.map(t=>`<a href="${t[0]}"${t[0]===curTab?' class="on"':''}><i>${t[1]}</i>${t[2]}</a>`).join('')+'</nav></div>';
-  document.body.insertBefore(bar,n);
-  const fit=()=>document.documentElement.style.setProperty('--bmws-h',Math.round(bar.getBoundingClientRect().height)+'px');
-  fit(); if(window.ResizeObserver) new ResizeObserver(fit).observe(bar); addEventListener('resize',fit); addEventListener('load',fit);
+  /* super admin bar: local work only, never on the live site. Sheet: assets/bmws.css */
+  const LOCAL=location.protocol==='file:'||['localhost','127.0.0.1','::1',''].includes(location.hostname);
+  if(LOCAL){
+    const bar=el('div','bmws'); bar.setAttribute('style','--bmws-acc:#2536F5');
+    const TABS=[['index.html','00','Website'],['competitors.html','01','Competitors'],['logo.html','02','Logo'],['taste.html','03','Taste']];
+    const curTab=['competitors.html','logo.html','taste.html'].includes(here)?here:'index.html';
+    bar.innerHTML='<div class="bmws-in"><div class="bmws-crumb"><b>Helldive Command &middot; Website 1</b><span>Brand Method &middot; Admin Navigation</span></div><nav class="bmws-tabs">'+
+      TABS.map(t=>`<a href="${t[0]}"${t[0]===curTab?' class="on"':''}><i>${t[1]}</i>${t[2]}</a>`).join('')+'</nav></div>';
+    document.body.insertBefore(bar,n);
+    const fit=()=>document.documentElement.style.setProperty('--bmws-h',Math.round(bar.getBoundingClientRect().height)+'px');
+    fit(); if(window.ResizeObserver) new ResizeObserver(fit).observe(bar); addEventListener('resize',fit); addEventListener('load',fit);
+  } else document.documentElement.style.setProperty('--bmws-h','0px');
   n.querySelector('#navSearch').addEventListener('click',()=>search());
   const sfxBtn=n.querySelector('#navSfx');
   const paintSfx=()=>{sfxBtn.classList.toggle('off',!window.HDSFX.on);sfxBtn.setAttribute('aria-pressed',String(window.HDSFX.on));};
