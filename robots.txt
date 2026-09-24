@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /competitors.html
+Disallow: /logo.html
+Disallow: /taste.html
+
+Sitemap: https://helldiverscommand.com/sitemap.xml

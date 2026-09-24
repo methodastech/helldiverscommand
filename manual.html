@@ -13,12 +13,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/bmws.css?v=1790221463">
-<link rel="stylesheet" href="assets/core.css?v=1790221463">
-<link rel="stylesheet" href="assets/pages.css?v=1790221463">
+<link rel="stylesheet" href="assets/bmws.css?v=1790222691">
+<link rel="stylesheet" href="assets/core.css?v=1790222691">
+<link rel="stylesheet" href="assets/pages.css?v=1790222691">
 <link rel="icon" type="image/png" href="assets/img/brand/favicon.png">
 <title>Field Manual · currencies, modules | Helldive Command</title>
 <meta name="description" content="Helldivers 2 answers: currencies and caps, samples, ship module order, level unlocks, default controls, operation modifiers.">
+<link rel="canonical" href="https://helldiverscommand.com/manual.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Helldive Command">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://helldiverscommand.com/manual.html">
+<meta property="og:title" content="Field Manual · currencies, modules | Helldive Command">
+<meta property="og:description" content="Helldivers 2 answers: currencies and caps, samples, ship module order, level unlocks, default controls, operation modifiers.">
+<meta property="og:image" content="https://helldiverscommand.com/assets/img/brand/share.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Helldive Command &mdash; dive harder, die less">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Field Manual · currencies, modules | Helldive Command">
+<meta name="twitter:description" content="Helldivers 2 answers: currencies and caps, samples, ship module order, level unlocks, default controls, operation modifiers.">
+<meta name="twitter:image" content="https://helldiverscommand.com/assets/img/brand/share.jpg">
 </head>
 <body>
 <header class="sec phead" style="padding-bottom:22px">
@@ -123,10 +139,10 @@
   </div>
 </section>
 
-<script src="data/manual.js?v=1790221463"></script>
-<script src="data/images.js?v=1790221463"></script>
-<script src="assets/core.js?v=1790221463"></script>
-<script src="assets/motion.js?v=1790221463"></script>
+<script src="data/manual.js?v=1790222691"></script>
+<script src="data/images.js?v=1790222691"></script>
+<script src="assets/core.js?v=1790222691"></script>
+<script src="assets/motion.js?v=1790222691"></script>
 <script>
 (function(){
   const {$}=window.HD; const M=window.HD_MANUAL||{levels:[],modules:[]};
@@ -139,6 +155,6 @@
   $('#modTables').innerHTML=M.modules.map(m=>`<h3 class="t-h3" id="mod-${m.dept.replace(/\s+/g,'-')}" style="margin:26px 0 10px">${m.dept}</h3><div class="tscroll"><table class="tbl"><thead><tr><th>Tier</th><th>Module</th><th>Effect</th><th>Cost</th></tr></thead><tbody>${m.tiers.map((t,i)=>`<tr><td class="mono gold">${i+1}</td><td style="font-weight:600">${t.n}${t.desc?`<div class="dim" style="font-weight:400;font-size:12px;margin-top:4px">“${t.desc}”</div>`:''}</td><td>${t.effect}</td><td class="dim nowrap">${t.cost}</td></tr>`).join('')}</tbody></table></div>`).join('')||'<p class="empty">Module tables unavailable</p>';
 })();
 </script>
-<script src="assets/stars.js?v=1790221463"></script>
+<script src="assets/stars.js?v=1790222691"></script>
 </body>
 </html>
