@@ -1,6 +1,6 @@
 /* Helldive Command service worker: pages network-first, versioned assets cache-first.
    Cross-origin requests (war API, fonts, CDN) are never touched. */
-const VERSION='hdc-1790222691';
+const VERSION='hdc-1790223167';
 self.addEventListener('install',()=>self.skipWaiting());
 self.addEventListener('activate',e=>{
   e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==VERSION).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));
