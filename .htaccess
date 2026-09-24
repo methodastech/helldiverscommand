@@ -1,0 +1,6 @@
+# Serve the home page at the folder root: /index.html redirects to /
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+</IfModule>
