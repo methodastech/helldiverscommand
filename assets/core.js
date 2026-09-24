@@ -851,8 +851,16 @@ function pwa(){
   window.HD.install=()=>{ const p=window.HD.installPrompt; if(!p)return Promise.resolve(false); return p.prompt().then(()=>p.userChoice).then(c=>{ if(c&&c.outcome==='accepted'){ window.HD.installPrompt=null; document.documentElement.classList.remove('can-install'); return true; } return false; }); };
 }
 
+/* ---------- tidy address: /index.html reads as the folder root ---------- */
+function tidyUrl(){
+  if(location.protocol==='file:'||!history.replaceState)return;
+  const p=location.pathname; if(!/\/index\.html$/i.test(p))return;
+  try{ history.replaceState(history.state,'',p.replace(/index\.html$/i,'')+location.search+location.hash); }catch(e){}
+}
+
 /* ---------- init ---------- */
 function init(){
+  tidyUrl();
   skipLink(); chrome(); nav(); tabbar(); footer(); boot(); transitions(); pwa(); compactLists(); cardDetails(); navBehaviour(); sectionNav(); tierReadout(); toTop(); toggles(); pheadMeta(); setTimeout(()=>intro(false),1800);
   reveals(); decoders(); counters(); pointer(); heroMotion();
 }
