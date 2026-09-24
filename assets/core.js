@@ -129,29 +129,53 @@ function reveals(){
   window.HD.revealAll=()=>$$('.rv').forEach(n=>n.classList.add('in'));
 }
 
-/* ---------- decode / scramble type ---------- */
-const GLYPH='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%*/\\<>[]';
+/* ---------- decode / scramble type ----------
+   Headings are uppercased in CSS, so the glyph pool holds only wide, even
+   shapes: narrow ones (I, J, 1, slashes, brackets) made the scrambled line
+   short enough to fit where the real line wraps, and the heading jumped
+   between one and two lines mid-animation. Each word is also pinned to the
+   width it will end at, so nothing reflows while the letters churn. */
+const GLYPH='ABCDEFGHKMNOPQRSTUVWXYZ0234689#%*';
+const DEC_HTML=new WeakMap();   /* the markup each decoded node goes back to */
 function decode(node,dur){
   const target=node.dataset.txt||node.textContent.trim();
   node.dataset.txt=target;
+  if(!DEC_HTML.has(node)) DEC_HTML.set(node,node.innerHTML);
   /* a scramble nobody can watch is just broken text: skip it when hidden */
-  if(document.hidden || matchMedia('(prefers-reduced-motion:reduce)').matches){
-    node.textContent=target; return;
-  }
+  if(document.hidden || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
   const start=performance.now(), D=dur||760;
   let done=false;
-  const finish=()=>{ if(done)return; done=true; node.textContent=target; };
+  /* wrap every word in a span so the original markup, <em> and all, comes back intact */
+  const words=[];
+  const walk=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);
+  const texts=[]; for(let t=walk.nextNode();t;t=walk.nextNode()) texts.push(t);
+  texts.forEach(t=>{
+    if(!t.nodeValue.trim())return;
+    const frag=document.createDocumentFragment();
+    t.nodeValue.split(/(\s+)/).forEach(tok=>{
+      if(!tok)return;
+      if(/^\s+$/.test(tok)){ frag.appendChild(document.createTextNode(tok)); return; }
+      const sp=document.createElement('span'); sp.textContent=tok; words.push(sp); frag.appendChild(sp);
+    });
+    t.parentNode.replaceChild(frag,t);
+  });
+  if(!words.length) return;
+  /* one read of the finished layout, then lock each word to that width */
+  const widths=words.map(sp=>sp.getBoundingClientRect().width);
+  words.forEach((sp,i)=>{ sp.style.cssText='display:inline-block;white-space:pre;text-align:left;width:'+widths[i]+'px'; });
+  const total=words.reduce((a,sp)=>a+sp.textContent.length,0);
+  const finish=()=>{ if(done)return; done=true; node.innerHTML=DEC_HTML.get(node); };
   (function step(t){
     if(done)return;
     const p=clamp((t-start)/D,0,1);
-    const shown=Math.floor(target.length*p);
-    let out='';
-    for(let i=0;i<target.length;i++){
-      const ch=target[i];
-      if(ch===' '){out+=' ';continue;}
-      out+= i<shown ? ch : GLYPH[(Math.random()*GLYPH.length)|0];
-    }
-    node.textContent=out;
+    const shown=Math.floor(total*p);
+    let seen=0;
+    words.forEach(sp=>{
+      const w=sp.dataset.w||(sp.dataset.w=sp.textContent);
+      let out='';
+      for(let i=0;i<w.length;i++) out+= (seen+i)<shown ? w[i] : GLYPH[(Math.random()*GLYPH.length)|0];
+      sp.textContent=out; seen+=w.length;
+    });
     if(p<1)requestAnimationFrame(step); else finish();
   })(start);
   /* rAF is paused in background tabs: guarantee the readable text lands */
@@ -162,7 +186,10 @@ function decoders(){
   const io=new IntersectionObserver(es=>{
     es.forEach(e=>{ if(e.isIntersecting){ decode(e.target); io.unobserve(e.target);} });
   },{threshold:.4});
-  $$('[data-decode]').forEach(n=>io.observe(n));
+  /* word widths are measured before the scramble starts: wait for the display
+     face, or they are measured in the fallback font and land wrong */
+  const watch=()=>$$('[data-decode]').forEach(n=>io.observe(n));
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(watch).catch(watch); else watch();
 }
 
 /* ---------- count up ---------- */
