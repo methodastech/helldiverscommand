@@ -2,7 +2,7 @@
   "name": "Helldive Command",
   "short_name": "HDC",
   "description": "Helldivers 2 stratagem codex, arsenal, bestiary, live galactic war and input trainer.",
-  "start_url": "index.html?src=pwa",
+  "start_url": "./?src=pwa",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
@@ -16,6 +16,6 @@
   "shortcuts": [
     { "name": "Code Rush", "short_name": "Rush", "url": "arcade.html?go=rush" },
     { "name": "Stratagem codex", "short_name": "Codex", "url": "stratagems.html" },
-    { "name": "Live war", "short_name": "War", "url": "index.html#war" }
+    { "name": "Live war", "short_name": "War", "url": "./#war" }
   ]
 }

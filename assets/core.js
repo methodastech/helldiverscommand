@@ -332,17 +332,19 @@ const GROUPS=[
  {n:'Intel',items:[['blueberries.html','Blueberries','The file on new Helldivers'],['hellpod.html','Hellpod','Cross-section and the drop'],['intel.html','Intel','Difficulty, boosters, glossary']]}
 ];
 /* brand mark: the Helldivers skull */
+/* the home page is served at the folder root: index.html stays the internal key, links point at ./ */
+const HREF=h=>String(h).replace(/^index\.html(?=$|[#?])/,'./');
 const MARK='<img class="brand-mk" src="assets/img/brand/crest.webp" alt="" width="34" height="34" decoding="async">';
 function nav(){
   const here=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   const n=el('header','nav');
   n.innerHTML='<div class="nav-in">'+
-    `<a class="brand" href="index.html">${MARK}<span><b>Helldive Command</b><span>Longevity Program &middot; Classified</span></span></a>`+
+    `<a class="brand" href="./">${MARK}<span><b>Helldive Command</b><span>Longevity Program &middot; Classified</span></span></a>`+
     '<div class="nav-wrap"><nav class="nav-links" aria-label="Primary">'+
       GROUPS.map(g=>{
-        if(g.href) return `<a href="${g.href}"${g.href===here?' class="on" aria-current="page"':''}>${g.n}</a>`;
+        if(g.href) return `<a href="${HREF(g.href)}"${g.href===here?' class="on" aria-current="page"':''}>${g.n}</a>`;
         const on=g.items.some(i=>i[0]===here);
-        return `<div class="nav-g${on?' on':''}"><button type="button" aria-haspopup="true" aria-expanded="false">${g.n}<i></i></button><div class="nav-dd" role="menu"><div class="nav-dd-in">${g.items.map(i=>`<a role="menuitem" href="${i[0]}"${i[0]===here?' class="on" aria-current="page"':''}><i class="dd-ic"><svg viewBox="0 0 24 24" aria-hidden="true">${NAVICON[i[0]]||''}</svg></i><span class="dd-tx"><b>${i[1]}</b><span>${i[2]}</span></span></a>`).join('')}</div></div></div>`;
+        return `<div class="nav-g${on?' on':''}"><button type="button" aria-haspopup="true" aria-expanded="false">${g.n}<i></i></button><div class="nav-dd" role="menu"><div class="nav-dd-in">${g.items.map(i=>`<a role="menuitem" href="${HREF(i[0])}"${i[0]===here?' class="on" aria-current="page"':''}><i class="dd-ic"><svg viewBox="0 0 24 24" aria-hidden="true">${NAVICON[i[0]]||''}</svg></i><span class="dd-tx"><b>${i[1]}</b><span>${i[2]}</span></span></a>`).join('')}</div></div></div>`;
       }).join('')+
     '</nav></div>'+
     `<button type="button" class="nav-search" id="navSearch" aria-label="Search the codex">${SEARCH_ICON}<kbd>/</kbd></button>`+
@@ -401,12 +403,12 @@ const FICON_=()=>({
 function footer(){
   const FICON=FICON_();   /* built at call time: TABS is declared further down the file */
   const f=el('footer','foot');
-  const col=(icon,title,items)=>`<div class="foot-col"><p class="foot-h"><i class="fi">${icon}</i>${title}</p><ul>${items.map(([href,label,ext])=>`<li><a href="${href}"${ext?' target="_blank" rel="noopener noreferrer"':''}>${label}${ext?'<i class="fi ext">'+FICON.link+'</i>':''}</a></li>`).join('')}</ul></div>`;
+  const col=(icon,title,items)=>`<div class="foot-col"><p class="foot-h"><i class="fi">${icon}</i>${title}</p><ul>${items.map(([href,label,ext])=>`<li><a href="${HREF(href)}"${ext?' target="_blank" rel="noopener noreferrer"':''}>${label}${ext?'<i class="fi ext">'+FICON.link+'</i>':''}</a></li>`).join('')}</ul></div>`;
   f.innerHTML=
   '<div class="hazard thin foot-hazard"></div>'+
   '<div class="wrap">'+
   '<div class="foot-grid">'+
-    `<div class="foot-brandcol"><a class="brand" href="index.html">${MARK}<span><b>Helldive Command</b><span>Longevity Program &middot; Classified</span></span></a>`+
+    `<div class="foot-brandcol"><a class="brand" href="./">${MARK}<span><b>Helldive Command</b><span>Longevity Program &middot; Classified</span></span></a>`+
     '<p class="t-lead">Classified continuation training for divers who intend to finish Super Helldive on the life they already have. Live war telemetry, the full codex, the real terminal puzzles, and drills that fit the wait between deaths. Freedom never sleeps!</p>'+
     '<div class="foot-insignia"><img src="assets/img/brand/flag.webp" alt="Flag of Super Earth" width="84" height="51"><img src="assets/img/brand/seaf.webp" alt="Super Earth Armed Forces" width="66" height="47"><img src="assets/img/brand/ministry-truth.svg" alt="Ministry of Truth" width="40" height="40"><img src="assets/img/brand/ministry-defense.svg" alt="Ministry of Defense" width="40" height="40"></div>'+
     '<p class="foot-approved">Approved by the Ministry of Truth. Sweet Liberty protects the reader.</p></div>'+
@@ -421,7 +423,7 @@ function footer(){
   '<span class="mono dim">Data current to Patch 7.x &middot; September 2026 &middot; <a href="intel.html#legal">Legal</a> &middot; <a href="#top" onclick="scrollTo({top:0,behavior:\'smooth\'});return false">Top</a></span></div>'+
   '</div>';
   document.body.appendChild(f);
-  const fr=document.querySelector('footer'); if(fr&&!fr.querySelector('.foot-report')){ const a=document.createElement('a'); a.className='foot-report'; a.href='index.html#feedback'; a.textContent='Report an error'; (fr.querySelector('.foot-in, .wrap')||fr).appendChild(a); }
+  const fr=document.querySelector('footer'); if(fr&&!fr.querySelector('.foot-report')){ const a=document.createElement('a'); a.className='foot-report'; a.href='./#feedback'; a.textContent='Report an error'; (fr.querySelector('.foot-in, .wrap')||fr).appendChild(a); }
 }
 
 /* ---------- page transitions: hazard wipe ---------- */
@@ -478,14 +480,14 @@ const TABS=[
 function tabbar(){
   const here=(location.pathname.split('/').pop()||'index.html').toLowerCase();
   const b=el('nav','tabbar'); b.setAttribute('aria-label','Quick navigation');
-  b.innerHTML=TABS.map(t=>`<a href="${t[0]}"${t[0]===here?' class="on" aria-current="page"':''}>${t[2]}<span>${t[1]}</span></a>`).join('')+
+  b.innerHTML=TABS.map(t=>`<a href="${HREF(t[0])}"${t[0]===here?' class="on" aria-current="page"':''}>${t[2]}<span>${t[1]}</span></a>`).join('')+
     `<button type="button" class="tab-more" id="tabMore" aria-haspopup="dialog" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="2.2" fill="currentColor"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/><circle cx="19" cy="12" r="2.2" fill="currentColor"/></svg><span>More</span></button>`;
   document.body.appendChild(b);
   const s=el('div','sheet'); s.id='moreSheet'; s.setAttribute('role','dialog'); s.setAttribute('aria-label','All sections');
   s.innerHTML=`<div class="sheet-bg"></div><div class="sheet-in"><div class="sheet-grab"></div>
     <button type="button" class="sheet-search" id="sheetSearch">${SEARCH_ICON}<span>Search codes, weapons, enemies</span></button>
     <button type="button" class="sheet-search" id="sheetRec">${REC_ICON}<span>Training record and certifications</span></button>
-    ${GROUPS.map(g=>g.href?`<div class="sheet-grid" style="margin-top:12px"><a href="${g.href}"${g.href===here?' class="on" aria-current="page"':''}>${g.n}</a></div>`:`<div class="sheet-grp"><b>${g.n}</b><div class="sheet-grid">${g.items.map(i=>`<a href="${i[0]}"${i[0]===here?' class="on" aria-current="page"':''}><svg viewBox="0 0 24 24" aria-hidden="true">${NAVICON[i[0]]||''}</svg>${i[1]}</a>`).join('')}</div></div>`).join('')}
+    ${GROUPS.map(g=>g.href?`<div class="sheet-grid" style="margin-top:12px"><a href="${HREF(g.href)}"${g.href===here?' class="on" aria-current="page"':''}>${g.n}</a></div>`:`<div class="sheet-grp"><b>${g.n}</b><div class="sheet-grid">${g.items.map(i=>`<a href="${HREF(i[0])}"${i[0]===here?' class="on" aria-current="page"':''}><svg viewBox="0 0 24 24" aria-hidden="true">${NAVICON[i[0]]||''}</svg>${i[1]}</a>`).join('')}</div></div>`).join('')}
     <button type="button" class="sheet-search" id="sheetWhat" style="margin-top:12px">?<span>What is the Longevity Program</span></button>
     <p class="sheet-tip" id="sheetTip">Add Helldive Command to your home screen for one tap between dives.</p></div>`;
   document.body.appendChild(s);
@@ -532,7 +534,7 @@ function search(){
        +g('Enemies',en.map(e=>{const im=R.enemies&&R.enemies[e.n];return `<a href="enemies.html?q=${enc(e.n)}">${im?`<img src="assets/img/enemies/${im}" alt="">`:'<u></u>'}<span><i>${e.n}</i><em>${e.f} &middot; weak point: ${e.weak}</em></span></a>`;}))
        +g('Armour',A.filter(a=>hit(a.name)||hit(a.code)||hit(a.passive)).slice(0,5).map(a=>`<a href="armory.html?q=${enc(a.name)}">${a.img?`<img src="${a.img}" alt="">`:'<u></u>'}<span><i>${a.code} ${a.name}</i><em>${a.cls} &middot; ${a.passive||''}</em></span></a>`))
        +g('Warbonds',B.filter(b=>hit(b.n)||hit(b.kind)).slice(0,5).map(b=>`<a href="warbonds.html#wb-${b.n.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim().replace(/ /g,'-')}">${b.cover?`<img src="${b.cover}" alt="">`:'<u></u>'}<span><i>${b.n}</i><em>${b.kind}${b.price?' &middot; '+b.price:''}</em></span></a>`))
-       +g('Pages',PG.filter(pg=>hit(pg[1])||hit(pg[2])).slice(0,5).map(pg=>`<a href="${pg[0]}"><u></u><span><i>${pg[1]}</i><em>${pg[2]}</em></span></a>`));
+       +g('Pages',PG.filter(pg=>hit(pg[1])||hit(pg[2])).slice(0,5).map(pg=>`<a href="${HREF(pg[0])}"><u></u><span><i>${pg[1]}</i><em>${pg[2]}</em></span></a>`));
       res.innerHTML=html||'<p class="qs-hint">Nothing matches. Try a shorter word.</p>';
     }
     o._paint=paint;
@@ -660,7 +662,7 @@ function record(){
     $('#recBody').innerHTML=head+`<div class="rec-top"><div><span class="rec-grade">${st.grade}</span><span class="rec-sub">Longevity grade &middot; ${st.done} of ${CERTS.length} certifications</span></div>
       <div class="rec-stats"><div><b>${st.life}</b><span>Estimated life expectancy</span></div><div><b>${st.saved}</b><span>Reinforcements saved</span></div></div></div>
       <div class="rec-bar"><i style="width:${st.done/CERTS.length*100}%"></i></div>
-      <div class="rec-list">${st.rows.map(r=>`<a class="rec-c ${r.done?'done':''}" href="${r.go}"><span class="rec-chk">${r.done?'&#10003;':''}</span><span class="rec-in"><b>${r.n}</b><em>${r.d}</em><i style="width:${r.p*100}%"></i></span><span class="rec-val">${r.done?'Certified':Math.min(r.val,r.t)+' / '+r.t}</span></a>`).join('')}</div>
+      <div class="rec-list">${st.rows.map(r=>`<a class="rec-c ${r.done?'done':''}" href="${HREF(r.go)}"><span class="rec-chk">${r.done?'&#10003;':''}</span><span class="rec-in"><b>${r.n}</b><em>${r.d}</em><i style="width:${r.p*100}%"></i></span><span class="rec-val">${r.done?'Certified':Math.min(r.val,r.t)+' / '+r.t}</span></a>`).join('')}</div>
       <p class="rec-foot">Scores live in this browser only. <button type="button" class="rec-link" id="recIntro">Replay the Democracy Officer's briefing</button> &middot; <button type="button" class="rec-link" id="recReset">Reset record</button></p>`;
   }
   paint(); o.classList.add('on'); document.documentElement.classList.add('qs-open');
