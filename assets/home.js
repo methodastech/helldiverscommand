@@ -551,7 +551,12 @@ document.addEventListener('click',e=>{
   const HOLD=23000;               /* seconds on screen per clip */
   const hero=document.querySelector('.hero');
   const credit=document.getElementById('heroCredit');
-  let i=0, player=null, timer=null, watch=null, live=false, want=true;
+  let i=0, player=null, timer=null, watch=null, live=false, want=true, calm=0;
+  /* YouTube flashes a round play/pause glyph over the film for about half a second after
+     every play, pause or clip change, so the film is hidden before each command and only
+     fades back in once playback has run steadily for SETTLE ms */
+  const SETTLE=1500;
+  const hide=()=>{ calm=0; box.classList.remove('on'); if(hero) hero.classList.remove('vid-on'); };
 
   function say(c){
     if(!credit) return;
@@ -561,6 +566,7 @@ document.addEventListener('click',e=>{
   }
   function play(n){
     const c=CLIPS[((n%CLIPS.length)+CLIPS.length)%CLIPS.length]; i=n;
+    hide();
     try{ player.loadVideoById({videoId:c.v,startSeconds:c.s,suggestedQuality:'hd1080'}); player.mute(); }catch(e){ return; }
     say(c);
   }
@@ -571,7 +577,6 @@ document.addEventListener('click',e=>{
     const c=CLIPS[i];
     /* the film is only ever visible while YouTube reports "playing" (1); any other state
        hides the iframe at once so the player's pause glyph never reaches the banner */
-    const hide=()=>{ box.classList.remove('on'); if(hero) hero.classList.remove('vid-on'); };
     player=new YT.Player('hvMount',{
       videoId:c.v,
       playerVars:{autoplay:1,mute:1,controls:0,rel:0,playsinline:1,fs:0,disablekb:1,cc_load_policy:0,
@@ -588,11 +593,11 @@ document.addEventListener('click',e=>{
     watch=setInterval(()=>{
       let st; try{ st=player.getPlayerState(); }catch(e){ return; }
       if(st===1){
-        waited=0;
-        if(want&&!box.classList.contains('on')){ box.classList.add('on'); if(hero) hero.classList.add('vid-on'); }
+        waited=0; calm+=300;
+        if(want&&calm>=SETTLE&&!box.classList.contains('on')){ box.classList.add('on'); if(hero) hero.classList.add('vid-on'); }
         if(!live){ live=true; say(CLIPS[i]); queue(); }
       }else if(st===0){ play(i+1); queue(); }
-      else if(want){ waited+=0.3; if(waited>8){ waited=0; try{ player.mute(); player.playVideo(); }catch(e){} } }
+      else if(want){ waited+=0.3; if(waited>8){ waited=0; hide(); try{ player.mute(); player.playVideo(); }catch(e){} } }
       if(st!==1&&box.classList.contains('on')) hide();
     },300);
   };
@@ -604,9 +609,10 @@ document.addEventListener('click',e=>{
     want=onScreen&&!document.hidden&&!userPaused;
     if(!player) return;
     /* fade the film out before pausing so YouTube's pause glyph never shows; the poll fades it back once it plays */
-    if(!want){ box.classList.remove('on'); if(hero) hero.classList.remove('vid-on'); }
-    try{ want?player.playVideo():player.pauseVideo(); }catch(e){}
-    if(want){ let n=0; const re=setInterval(()=>{ let st; try{ st=player.getPlayerState(); }catch(e){} if(st===1||!want||++n>3) return clearInterval(re); if(n===2){ play(i); } else if(n===1){ try{ player.mute(); player.playVideo(); }catch(e){} } },700); }
+    /* a play call on a film that is already running would still flash the glyph, so skip it */
+    let now; try{ now=player.getPlayerState(); }catch(e){}
+    if(!want||now!==1){ hide(); try{ want?player.playVideo():player.pauseVideo(); }catch(e){} }
+    if(want){ let n=0; const re=setInterval(()=>{ let st; try{ st=player.getPlayerState(); }catch(e){} if(st===1||!want||++n>3) return clearInterval(re); if(n===2){ play(i); } else if(n===1){ hide(); try{ player.mute(); player.playVideo(); }catch(e){} } },700); }
     if(want&&live) queue(); else clearTimeout(timer);
   }
   if(hero&&'IntersectionObserver' in window){
